@@ -9,6 +9,7 @@
 namespace Manager;
 
 use Model\NewsList;
+use Model\NewsInfo;
 
 class NewsManager {
 
@@ -31,6 +32,14 @@ class NewsManager {
      */
     public static function getNewsList($column_id, $count = 9) {
         return NewsList::getNewsListByColumnId($column_id, 0, $count);
+    }
+
+    /**
+     * 根据id获取新闻内容
+     * @param type $id
+     */
+    public static function getNewsContent($id) {
+        return NewsInfo::getNewsInfoById($id);
     }
 
 }

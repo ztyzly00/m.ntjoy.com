@@ -16,6 +16,7 @@ $news_list = NewsManager::getNewsList($column_id);
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
         <title>江海明珠网</title>
+
         <!--加载css-->
         <link href="css/ntjoy_home.css" rel="stylesheet">
     </head>
@@ -74,7 +75,7 @@ $news_list = NewsManager::getNewsList($column_id);
                         for ($i = 0; $i < 3; $i++) {
                             ?>
                             <div class="item" style="">
-                                <a href="#">
+                                <a href="news.php?id=<?= $news_list[$i]['id'] ?>">
                                     <img src="<?= $news_list[$i]['thumbfile2_url'] ?>">
                                     <span class="pic_slide_info">
                                         <i class="pic_slide_t"><?= $news_list[$i]['title_cut'] ?></i>
@@ -109,7 +110,7 @@ $news_list = NewsManager::getNewsList($column_id);
             <?php
             for ($i = 5; $i < count($news_list); $i++) {
                 ?>
-                <a href="#">
+                <a href="news.php?id=<?= $news_list[$i]['id'] ?>">
                     <dl class="f_card">
                         <dt class="f_card_dt">
                         <img src="<?= $news_list[$i]['small_thumbfile_url'] ?>">
