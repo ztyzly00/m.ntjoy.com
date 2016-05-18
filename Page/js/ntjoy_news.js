@@ -3,7 +3,7 @@
  */
 
 //浏览器的高度
-var BROWSER_HEIGHT = document.body.clientHeight;
+var BROWSER_HEIGHT = document.documentElement.clientHeight;
 
 //初始化css
 function cssInit() {
@@ -35,7 +35,8 @@ $('#goPageTop').click(function() {
 $('#foot_cmt_id').click(function() {
     $('#main_body').css('display', 'none');
     $('#j_cmnt_pop').css('display', 'block');
-    $('#j_blankBox').css('height', (BROWSER_HEIGHT - 850) + 'px');
+    $('#j_blankBox').css('height', (BROWSER_HEIGHT - 200) + 'px');
+    window.scrollTo(0, BROWSER_HEIGHT);
 });
 
 $('#j_cmnt_cancel').click(function() {
