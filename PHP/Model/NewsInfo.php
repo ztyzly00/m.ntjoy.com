@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * NewsInfo实例对象  新闻单例
+ */
+
+namespace Model;
+
+use Core\MySql\Mysql_Model;
+use Core\Redis\RedisFactory;
+
+class NewsInfo {
+
+    /**
+     * 需要性能优化，除了缓存，调用方法尽量以静态为准
+     * (因是迫不得已为了框架性大量循环，所以加入redis缓存)
+     * 获取新闻信息,根据文章id和栏目id
+     * @param type $article_id 文章id
+     * @param type $column_id 栏目id
+     */
+    public static function getNewsInfoById($id) {
+        //初始化redis链接
+        $redis_obj = RedisFactory::createRedisInstance();
+        //缓存未命中
+        if (!$return_array = $redis_obj->hGetAll('newsinfo_' . $id)) {
+            $mysql_obj = Mysql_Model\MysqlObj::getInstance();
+            $query = "select * from liv_contentmap lc "
+                    . "LEFT JOIN liv_article la on lc.contentid=la.articleid "
+                    . "left join liv_article_contentbody lac on lac.articleid=lc.contentid "
+                    . "left join liv_material lm on la.loadfile=lm.materialid "
+                    . "WHERE lc.id=$id limit 1";
+
+            $fetch_array = $mysql_obj->fetch_assoc($query);
+            $return_array = self::addExtraAttributes($fetch_array[0]);
+            //redis缓存数据
+            $redis_obj->hMset('newsinfo_' . $id, $return_array);
+        }
+
+        return $return_array;
+    }
+
+    /**
+     * 给相应的数组添加相应的属性
+     * @param type $array
+     */
+    public static function addExtraAttributes($array) {
+        $base_url = "http://www.ntjoy.com";
+        $video_string = $array['video'];
+        $video_array = explode('#', $video_string);
+        $array['video_url'] = $video_array[0];
+        $array['title_cut'] = mb_substr($array['title'], 0, 19);
+        $array['title_cut'] = $array['title_cut'] . '..';
+        $array['brief_cut'] = mb_substr($array['brief'], 0, 35);
+        $array['brief_cut'] = $array['brief_cut'] . '...';
+
+        if (count($video_array) > 2) {
+            $array['video_img_url'] = 'http://www.ntjoy.com/' . $video_array[2];
+        } else {
+            $array['video_img_url'] = "img/dianshitai.jpg";
+        }
+
+        $array['thumbfile_url'] = $base_url . $array['filepath'] . $array['thumbfile'];
+        $array['thumbfile2_url'] = $base_url . $array['filepath'] . $array['thumbfile2'];
+        $array['small_thumbfile_url'] = $base_url . $array['filepath'] . $array['small_thumbfile'];
+        if ($array['thumbfile2_url'] == $base_url) {
+            $array['thumbfile2_url'] = $array['video_img_url'];
+        }
+
+        if ($array['small_thumbfile_url'] == $base_url) {
+            $array['small_thumbfile_url'] = $array['video_img_url'];
+        }
+
+        return $array;
+    }
+
+}
