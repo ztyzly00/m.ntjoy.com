@@ -14,7 +14,7 @@ class NewsInfo {
     /**
      * 需要性能优化，除了缓存，调用方法尽量以静态为准
      * (因是迫不得已为了框架性大量循环，所以加入redis缓存)
-     * 获取新闻信息,根据文章id和栏目id
+     * 获取单新闻信息,根据liv_contentmap中的唯一id
      * @param type $article_id 文章id
      * @param type $column_id 栏目id
      */
@@ -33,18 +33,21 @@ class NewsInfo {
             $fetch_array = $mysql_obj->fetch_assoc($query);
             $return_array = self::addExtraAttributes($fetch_array[0]);
             //redis缓存数据
-            $redis_obj->hMset('newsinfo_' . $id, $return_array);
+            //$redis_obj->hMset('newsinfo_' . $id, $return_array);
         }
 
         return $return_array;
     }
 
     /**
-     * 给相应的数组添加相应的属性
+     * 给新闻数据数组添加相应的属性
      * @param type $array
      */
     public static function addExtraAttributes($array) {
+        //基础内容网站地址
         $base_url = "http://www.ntjoy.com";
+
+        //处理标题截取和视频地址
         $video_string = $array['video'];
         $video_array = explode('#', $video_string);
         $array['video_url'] = $video_array[0];
@@ -52,24 +55,25 @@ class NewsInfo {
         $array['title_cut'] = $array['title_cut'] . '..';
         $array['brief_cut'] = mb_substr($array['brief'], 0, 35);
         $array['brief_cut'] = $array['brief_cut'] . '...';
-
         if (count($video_array) > 2) {
             $array['video_img_url'] = 'http://www.ntjoy.com/' . $video_array[2];
         } else {
             $array['video_img_url'] = "img/dianshitai.jpg";
         }
 
+        //获取图片地址 thumbfile_url 正方形压缩图片  thumbfile2_url 扁长压缩图片  small_thumbfile_url 超小正方形压缩图片
         $array['thumbfile_url'] = $base_url . $array['filepath'] . $array['thumbfile'];
         $array['thumbfile2_url'] = $base_url . $array['filepath'] . $array['thumbfile2'];
         $array['small_thumbfile_url'] = $base_url . $array['filepath'] . $array['small_thumbfile'];
         if ($array['thumbfile2_url'] == $base_url) {
             $array['thumbfile2_url'] = $array['video_img_url'];
         }
-
         if ($array['small_thumbfile_url'] == $base_url) {
             $array['small_thumbfile_url'] = $array['video_img_url'];
         }
-
+        if ($array['thumbfile_url'] == $base_url) {
+            $array['thumbfile_url'] = $array['video_img_url'];
+        }
         return $array;
     }
 
