@@ -26,7 +26,7 @@ $new_content_array = NewsManager::getNewsContent($id);
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
                 </ul>
             </nav>
 
@@ -87,8 +87,8 @@ $new_content_array = NewsManager::getNewsContent($id);
                                 </span>
                             </mark>
                             <mark class="dig_num j_p_num">
-                                <span class="">2482</span>
-                                <span class="">2482</span>
+                                <span class="">0</span>
+                                <span class="">0</span>
                             </mark>
                         </div>
 
@@ -109,8 +109,8 @@ $new_content_array = NewsManager::getNewsContent($id);
                                 </span>
                             </mark>
                             <mark class="tread_num j_p_num">
-                                <span>371</span>
-                                <span>371</span>
+                                <span>0</span>
+                                <span>0</span>
                             </mark>
                         </div>
                     </aside>

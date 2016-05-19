@@ -36,7 +36,7 @@ class NewsInfo {
             $fetch_array = $mysql_obj->fetch_assoc($query);
             $return_array = self::addExtraAttributes($fetch_array[0]);
             //redis缓存数据
-            //$redis_obj->hMset('newsinfo_' . $id, $return_array);
+            $redis_obj->hMset('newsinfo_' . $id, $return_array);
         }
 
         return $return_array;

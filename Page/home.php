@@ -108,7 +108,7 @@ $news_list = NewsManager::getNewsList($column_id);
         </section>
 
         <!--新闻区域-->
-        <section class="card_module j_normal_card ">            
+        <section class="card_module j_normal_card " id="main_news">            
             <?php
             for ($i = 5; $i < count($news_list); $i++) {
                 ?>
@@ -134,21 +134,25 @@ $news_list = NewsManager::getNewsList($column_id);
             }
             ?>
         </section>
-        <aside class="load-more j_load_bar">
+        <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
             <span class="loading">小镇加载中.....</span>
         </aside>
+
         <!--回顶部-->
         <aside class="topbtn j_topBtn" id="j_toTop" style="display: none;">
             <span class="icon_top_1"></span>
         </aside>
 
-        <div id="test"></div>
-
-
+        <footer class="f_module">
+            <aside>Sina.cn(京ICP0000007) &nbsp; 2016-05-19 18:00</aside>
+        </footer>
 
         <!--加载js-->
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
         <script>
+            var columnid =<?= $column_id ?>;
+            var offset = 9;
+            var count = 5;
             $(function() {
                 $('#nav_item<?= $column_id ?>').css('color', '#129bf0');
                 $('#nav_item<?= $column_id ?>').css('font-size', '20px');

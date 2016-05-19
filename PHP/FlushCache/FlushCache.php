@@ -7,7 +7,7 @@
  */
 
 $dir = __DIR__ . "/../../Page/static/";
-
-echo $dir;
-
-exec("rm -f $dir.news*", $info);
+$redis = new redis();
+$redis->connect('127.0.0.1', 6379);
+$redis->flushall();
+$fe = exec("rm -f $dir" . "news*", $info);

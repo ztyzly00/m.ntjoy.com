@@ -413,6 +413,19 @@ h1, h2, h3, strong {
     display: none;
 }
 
+/*尾部css*/
+.f_module {
+    clear: both;
+    overflow: hidden;
+    background: #fff;
+    padding: 14px 0 20px;
+    background-color: #129bf0;
+    font-size: 11px;
+    color: #e8f5fd;
+    text-align: center;
+    line-height: 1.6;
+}
+
 /*小图标表示区域*/
 @font-face {
     font-family: 'SinaHomeFont';

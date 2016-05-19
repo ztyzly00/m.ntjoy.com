@@ -106,7 +106,7 @@
         </section>
 
         <!--新闻区域-->
-        <section class="card_module j_normal_card ">            
+        <section class="card_module j_normal_card " id="main_news">            
                             <a href="news351439.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
@@ -180,21 +180,25 @@
                     </dl>
                 </a>
                         </section>
-        <aside class="load-more j_load_bar">
+        <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
             <span class="loading">小镇加载中.....</span>
         </aside>
+
         <!--回顶部-->
         <aside class="topbtn j_topBtn" id="j_toTop" style="display: none;">
             <span class="icon_top_1"></span>
         </aside>
 
-        <div id="test"></div>
-
-
+        <footer class="f_module">
+            <aside>Sina.cn(京ICP0000007) &nbsp; 2016-05-19 18:00</aside>
+        </footer>
 
         <!--加载js-->
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
         <script>
+            var columnid =9;
+            var offset = 9;
+            var count = 5;
             $(function() {
                 $('#nav_item9').css('color', '#129bf0');
                 $('#nav_item9').css('font-size', '20px');
