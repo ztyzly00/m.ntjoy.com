@@ -68,6 +68,7 @@ class NewsInfo {
         $array['thumbfile_url'] = $base_url . $array['filepath'] . $array['thumbfile'];
         $array['thumbfile2_url'] = $base_url . $array['filepath'] . $array['thumbfile2'];
         $array['small_thumbfile_url'] = $base_url . $array['filepath'] . $array['small_thumbfile'];
+        $array['common_img_url'] = $base_url . $array['filepath'] . $array['filename'];
         if ($array['thumbfile2_url'] == $base_url) {
             $array['thumbfile2_url'] = $array['video_img_url'];
         }
@@ -77,7 +78,9 @@ class NewsInfo {
         if ($array['thumbfile_url'] == $base_url) {
             $array['thumbfile_url'] = $array['video_img_url'];
         }
-
+        if ($array['common_img_url'] == $base_url) {
+            $array['common_img_url'] = $array['video_img_url'];
+        }
         //时间转换
         $array['pubdate'] = date("Y-m-d H:i:s", $array['pubdate']);
 

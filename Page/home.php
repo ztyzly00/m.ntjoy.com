@@ -32,7 +32,7 @@ $news_list = NewsManager::getNewsList($column_id);
                                 class=" h_nav_t icon_user" style="line-height: 40px">个人中心</span></a>
                     </li>
                 </ul>
-                <font size="5">江海明珠网</font>
+                <a style="color:white;font-size:24px;line-height: 40px">江海明珠网</a>
                 <ul class="h_nav">
                     <li class="h_nav_li" id="j_menu">
                         <a href="#" style="color :white;">
@@ -78,7 +78,7 @@ $news_list = NewsManager::getNewsList($column_id);
                             ?>
                             <div class="item" style="">
                                 <a href="news<?= $news_list[$i]['id'] ?>.html">
-                                    <img src="<?= $news_list[$i]['thumbfile2_url'] ?>">
+                                    <img src="<?= $news_list[$i]['common_img_url'] ?>">
                                     <span class="pic_slide_info">
                                         <i class="pic_slide_t"><?= $news_list[$i]['title_cut'] ?></i>
                                     </span>
@@ -102,7 +102,7 @@ $news_list = NewsManager::getNewsList($column_id);
             <ul class="recommend_items j_roll" id="j_news_scroll" data-sudaclick="ls_live">
                 <li>
                     <span>HOT</span>
-                    <a href="#" title=""><?= $news_list[4]['title'] ?></a>
+                    <a href="news<?= $news_list[4]['id'] ?>.html" title=""><?= $news_list[4]['title'] ?></a>
                 </li>
             </ul>
         </section>
@@ -143,8 +143,9 @@ $news_list = NewsManager::getNewsList($column_id);
             <span class="icon_top_1"></span>
         </aside>
 
+        <!--底部-->
         <footer class="f_module">
-            <aside>Sina.cn(京ICP0000007) &nbsp; 2016-05-19 18:00</aside>
+            <aside>m.ntjoy.com (苏新网备2012062号)</aside>
         </footer>
 
         <!--加载js-->
