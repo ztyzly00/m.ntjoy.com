@@ -1,19 +1,9 @@
-<?php
-ob_start();
-require_once __DIR__ . '/../PHP/autoload.php';
-
-use Manager\NewsManager;
-
-$id = $_GET['id'];
-
-$new_content_array = NewsManager::getNewsContent($id);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title><?= $new_content_array['title'] ?></title>
+        <title>多条铁路在建待建 南通迈向长三角北翼铁路枢纽</title>
         <!--加载css-->
         <link href="css/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -21,12 +11,12 @@ $new_content_array = NewsManager::getNewsContent($id);
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">首页</a></h2>
+                <h2><a class="h_txt" href="home3.html">首页</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="home.html">要闻</a></li>
                 </ul>
             </nav>
 
@@ -34,9 +24,9 @@ $new_content_array = NewsManager::getNewsContent($id);
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
+                    <h1 class="art_title_h1">多条铁路在建待建 南通迈向长三角北翼铁路枢纽</h1>
                     <article class="art_title_op">
-                        <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
+                        <time>2016-05-15 18:47:06 江海明珠网</time>
                         <aside>
                             <a href="#">
                                 <i class="comment_num icon-page_comment_2"></i>
@@ -49,14 +39,11 @@ $new_content_array = NewsManager::getNewsContent($id);
                 </section>
 
                 <!--视频-->
-                <?php
-                if ($new_content_array['video_url']) {
-                    ?>
-                    <div id="player" style="margin-bottom: 20px"></div>
+                                    <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
                         var flashvars = {
-                            f: "<?= $new_content_array['video_url'] ?>",
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-15/115177/14311.mp4",
                             c: 0,
                             p: 0,
                             r: "http://www.ntjoy.com/tiaozhuan15.html",
@@ -65,16 +52,15 @@ $new_content_array = NewsManager::getNewsContent($id);
                             my_url: encodeURIComponent(window.location.href)
                         };
 
-                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-15/115177/14311.mp4->video/mp4"];
                         CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
-                    <?php
-                }
-                ?>
-
+                    
                 <div id="art_main_card_id">
-                    <?= $new_content_array['content'] ?>
-                </div>
+                    <P>　　十多年间，南通从“地无寸铁”到开通动车，张謇老先生90多年前的铁路梦正一个个实现。展望“十三五”，沪通铁路、宁启铁路二期在建，盐通客专计划年内开工，南通将力争形成“三纵两横”为骨架的铁路网络，初步建成长三角北翼铁路枢纽。</P>
+<P>　　南通铁路事业始于20世纪90年代，逐步实现从“地无寸铁”到“连线成网”的跨越，目前，南通已形成新长、宁启、海洋“一纵两横”铁路网络。在建的沪通铁路、宁启铁路二期，年内计划开工的盐城-南通客运专线等三个铁路项目，将进一步完善南通铁路网络。</P>
+<P>　　今天，宁启铁路复线电气化改造工程正式通车。它的建成运营，不仅改善了南通人的出行条件，也将为南通发展带来新的契机。</P>
+<P>　　“十三五”期间，南通铁路将围绕长三角北翼铁路枢纽的目标，推动“高铁建枢纽、普铁成网络、客运通四方、货运连江海”。力争形成以沪通、盐通-通苏嘉、洋吕为“三纵”，宁启、海洋为“两横”的铁路网络，铁路营业里程从目前的220公里增加到350公里，一半以上的铁路完成复线电气化改造，一半以上的县级城市通上快速铁路。</P>                </div>
                 <!--顶踩begin-->
                 <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
@@ -220,7 +206,3 @@ $new_content_array = NewsManager::getNewsContent($id);
 </html>
 
 
-<?php
-$flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
-?>

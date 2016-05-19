@@ -1,19 +1,9 @@
-<?php
-ob_start();
-require_once __DIR__ . '/../PHP/autoload.php';
-
-use Manager\NewsManager;
-
-$id = $_GET['id'];
-
-$new_content_array = NewsManager::getNewsContent($id);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title><?= $new_content_array['title'] ?></title>
+        <title>全国供销总社监事会主任诸葛彩华来南通调研</title>
         <!--加载css-->
         <link href="css/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -21,12 +11,12 @@ $new_content_array = NewsManager::getNewsContent($id);
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">首页</a></h2>
+                <h2><a class="h_txt" href="#">首页</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="#">要闻</a></li>
                 </ul>
             </nav>
 
@@ -34,9 +24,9 @@ $new_content_array = NewsManager::getNewsContent($id);
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
+                    <h1 class="art_title_h1">全国供销总社监事会主任诸葛彩华来南通调研</h1>
                     <article class="art_title_op">
-                        <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
+                        <time>2016-05-19 08:35:38 江海明珠网</time>
                         <aside>
                             <a href="#">
                                 <i class="comment_num icon-page_comment_2"></i>
@@ -49,32 +39,12 @@ $new_content_array = NewsManager::getNewsContent($id);
                 </section>
 
                 <!--视频-->
-                <?php
-                if ($new_content_array['video_url']) {
-                    ?>
-                    <div id="player" style="margin-bottom: 20px"></div>
-                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
-                    <script type="text/javascript">
-                        var flashvars = {
-                            f: "<?= $new_content_array['video_url'] ?>",
-                            c: 0,
-                            p: 0,
-                            r: "http://www.ntjoy.com/tiaozhuan15.html",
-                            t: 15,
-                            b: 1,
-                            my_url: encodeURIComponent(window.location.href)
-                        };
-
-                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
-                    </script>
-                    <?php
-                }
-                ?>
-
+                
                 <div id="art_main_card_id">
-                    <?= $new_content_array['content'] ?>
-                </div>
+                    <P>　　江海明珠网讯（记者 费军）昨天下午，中华全国供销合作总社监事会主任诸葛彩华来通调研。在通期间，诸葛彩华一行先后考察了南通农副产品批发中心、江苏商贸职业学院、中国供销集团南通供销产业园等地。在江苏商贸职业学院，诸葛彩华听取了学校近年来办学情况汇报，参观了实验室、实训中心等地。</P>
+<P align=center><IMG border=0 alt="" src="http://www.ntjoy.com/liv_loadfile/news/yw/fold64/1463618617_25936700.jpg" width=500></P>
+<P>　　诸葛彩华对学校的快速发展表示肯定，希望学校继续创新办学体制机制、突出内涵质量建设，全面提升核心竞争力，为地方经济建设培养更多实用型人才。市委常委秦厚德等陪同调研。</P>
+<P align=center><IMG border=0 alt="" src="http://www.ntjoy.com/liv_loadfile/news/yw/fold64/1463618656_39341200.jpg" width=500></P>                </div>
                 <!--顶踩begin-->
                 <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
@@ -220,7 +190,3 @@ $new_content_array = NewsManager::getNewsContent($id);
 </html>
 
 
-<?php
-$flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
-?>

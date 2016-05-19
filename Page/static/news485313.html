@@ -1,19 +1,9 @@
-<?php
-ob_start();
-require_once __DIR__ . '/../PHP/autoload.php';
-
-use Manager\NewsManager;
-
-$id = $_GET['id'];
-
-$new_content_array = NewsManager::getNewsContent($id);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title><?= $new_content_array['title'] ?></title>
+        <title>韩立明率团赴日本开展招商引资活动 扩大经贸合作 加快项目集聚</title>
         <!--加载css-->
         <link href="css/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -21,12 +11,12 @@ $new_content_array = NewsManager::getNewsContent($id);
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">首页</a></h2>
+                <h2><a class="h_txt" href="home3.html">首页</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="home.html">要闻</a></li>
                 </ul>
             </nav>
 
@@ -34,9 +24,9 @@ $new_content_array = NewsManager::getNewsContent($id);
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
+                    <h1 class="art_title_h1">韩立明率团赴日本开展招商引资活动 扩大经贸合作 加快项目集聚</h1>
                     <article class="art_title_op">
-                        <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
+                        <time>2016-05-16 18:29:56 江海明珠网</time>
                         <aside>
                             <a href="#">
                                 <i class="comment_num icon-page_comment_2"></i>
@@ -49,14 +39,11 @@ $new_content_array = NewsManager::getNewsContent($id);
                 </section>
 
                 <!--视频-->
-                <?php
-                if ($new_content_array['video_url']) {
-                    ?>
-                    <div id="player" style="margin-bottom: 20px"></div>
+                                    <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
                         var flashvars = {
-                            f: "<?= $new_content_array['video_url'] ?>",
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-16/115210/14344.mp4",
                             c: 0,
                             p: 0,
                             r: "http://www.ntjoy.com/tiaozhuan15.html",
@@ -65,16 +52,12 @@ $new_content_array = NewsManager::getNewsContent($id);
                             my_url: encodeURIComponent(window.location.href)
                         };
 
-                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-16/115210/14344.mp4->video/mp4"];
                         CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
-                    <?php
-                }
-                ?>
-
+                    
                 <div id="art_main_card_id">
-                    <?= $new_content_array['content'] ?>
-                </div>
+                    　　5月7日-13日，市委副书记、市长韩立明率市政府经贸代表团赴日本开展系列招商活动。在日期间，市政府经贸代表团参加了省政府组织的江苏·日本经贸合作交流会，随石泰峰省长率领的江苏省经济友好代表团拜访了富士通、三菱东京日联银行等企业。同时，在东京举办重点企业投资合作恳谈会，广泛接触日本企业界人士，推进在手重大项目，达成一批合作意向 和增资扩股、追加投资的意向，取得了积极成果。韩立明指出，要认真研究日本产业发展新动态，盯紧抓牢产业项目这一根本，进一步加强经贸合作，加快引进优质重大项目，以增量带动产业集聚和结构优化，为培育战略性新兴产业、实现转型升级提供更强支撑。                 </div>
                 <!--顶踩begin-->
                 <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
@@ -220,7 +203,3 @@ $new_content_array = NewsManager::getNewsContent($id);
 </html>
 
 
-<?php
-$flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
-?>

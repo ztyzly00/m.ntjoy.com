@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 require_once __DIR__ . '/../PHP/autoload.php';
 
 use Manager\NewsManager;
@@ -45,24 +47,24 @@ $news_list = NewsManager::getNewsList($column_id);
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
 
-                <a href="home.php?columnid=3">要闻</a>
-                <a href="home.php?columnid=704">快讯</a>
+                <a id="nav_item3"  href="home3.html">要闻</a>
+                <a id="nav_item704" href="home704.html">快讯</a>
                 <a href="#">点播</a>
                 <a href="#">直播</a>
-                <a href="home.php?columnid=4">社会</a>
-                <a href="home.php?columnid=5">民生</a>
-                <a href="home.php?columnid=6">省内</a>
-                <a href="home.php?columnid=7">国内</a>
-                <a href="home.php?columnid=8">国际</a>
-                <a href="home.php?columnid=483">网罗</a>
-                <a href="home.php?columnid=9">市区</a>
-                <a href="home.php?columnid=1377" class="hide">娱乐</a>
-                <a href="home.php?columnid=10" class="hide">如皋</a>
-                <a href="home.php?columnid=11" class="hide">如东</a>
-                <a href="home.php?columnid=12" class="hide">海安</a>
-                <a href="home.php?columnid=13" class="hide">海门</a>
-                <a href="home.php?columnid=14" class="hide">启东</a>
-                <a href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>
+                <a id="nav_item4" href="home4.html">社会</a>
+                <a id="nav_item5" href="home5.html">民生</a>
+                <a id="nav_item6" href="home6.html">省内</a>
+                <a id="nav_item7" href="home7.html">国内</a>
+                <a id="nav_item8" href="home8.html">国际</a>
+                <a id="nav_item483" href="home483.html">网罗</a>
+                <a id="nav_item9" href="home9.html">市区</a>
+                <a id="nav_item1377" href="home1377.html" class="hide">娱乐</a>
+                <a id="nav_item10" href="home10.html" class="hide">如皋</a>
+                <a id="nav_item11" href="home11.html" class="hide">如东</a>
+                <a id="nav_item12" href="home12.html" class="hide">海安</a>
+                <a id="nav_item13" href="home13.html" class="hide">海门</a>
+                <a id="nav_item14" href="home14.html" class="hide">启东</a>
+                <a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>
             </nav>
         </section>
 
@@ -75,7 +77,7 @@ $news_list = NewsManager::getNewsList($column_id);
                         for ($i = 0; $i < 3; $i++) {
                             ?>
                             <div class="item" style="">
-                                <a href="news.php?id=<?= $news_list[$i]['id'] ?>">
+                                <a href="news<?= $news_list[$i]['id'] ?>.html">
                                     <img src="<?= $news_list[$i]['thumbfile2_url'] ?>">
                                     <span class="pic_slide_info">
                                         <i class="pic_slide_t"><?= $news_list[$i]['title_cut'] ?></i>
@@ -110,7 +112,7 @@ $news_list = NewsManager::getNewsList($column_id);
             <?php
             for ($i = 5; $i < count($news_list); $i++) {
                 ?>
-                <a href="news.php?id=<?= $news_list[$i]['id'] ?>">
+                <a href="news<?= $news_list[$i]['id'] ?>.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
                         <img src="<?= $news_list[$i]['small_thumbfile_url'] ?>">
@@ -132,7 +134,9 @@ $news_list = NewsManager::getNewsList($column_id);
             }
             ?>
         </section>
-
+        <aside class="load-more j_load_bar">
+            <span class="loading">小镇加载中.....</span>
+        </aside>
         <!--回顶部-->
         <aside class="topbtn j_topBtn" id="j_toTop" style="display: none;">
             <span class="icon_top_1"></span>
@@ -140,10 +144,24 @@ $news_list = NewsManager::getNewsList($column_id);
 
         <div id="test"></div>
 
+
+
         <!--加载js-->
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $('#nav_item<?= $column_id ?>').css('color', '#129bf0');
+                $('#nav_item<?= $column_id ?>').css('font-size', '20px');
+                $('#nav_item<?= $column_id ?>').css('font-weight', '700');
+            });
+        </script>
         <script src="js/swipe.min.js"></script>
         <script src="js/ntjoy_home.js"></script>
 
     </body>
 </html>
+
+<?php
+$flush = ob_get_contents();
+file_put_contents(__DIR__ . "/static/home" . $column_id . ".html", $flush);
+?>

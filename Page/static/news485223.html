@@ -1,19 +1,9 @@
-<?php
-ob_start();
-require_once __DIR__ . '/../PHP/autoload.php';
-
-use Manager\NewsManager;
-
-$id = $_GET['id'];
-
-$new_content_array = NewsManager::getNewsContent($id);
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title><?= $new_content_array['title'] ?></title>
+        <title>南通启东100个重大项目提速推进</title>
         <!--加载css-->
         <link href="css/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -21,12 +11,12 @@ $new_content_array = NewsManager::getNewsContent($id);
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">首页</a></h2>
+                <h2><a class="h_txt" href="home3.html">首页</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="home3.html">要闻</a></li>
                 </ul>
             </nav>
 
@@ -34,9 +24,9 @@ $new_content_array = NewsManager::getNewsContent($id);
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
+                    <h1 class="art_title_h1">南通启东100个重大项目提速推进</h1>
                     <article class="art_title_op">
-                        <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
+                        <time>2016-05-16 09:47:41 江海明珠网</time>
                         <aside>
                             <a href="#">
                                 <i class="comment_num icon-page_comment_2"></i>
@@ -49,32 +39,11 @@ $new_content_array = NewsManager::getNewsContent($id);
                 </section>
 
                 <!--视频-->
-                <?php
-                if ($new_content_array['video_url']) {
-                    ?>
-                    <div id="player" style="margin-bottom: 20px"></div>
-                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
-                    <script type="text/javascript">
-                        var flashvars = {
-                            f: "<?= $new_content_array['video_url'] ?>",
-                            c: 0,
-                            p: 0,
-                            r: "http://www.ntjoy.com/tiaozhuan15.html",
-                            t: 15,
-                            b: 1,
-                            my_url: encodeURIComponent(window.location.href)
-                        };
-
-                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
-                    </script>
-                    <?php
-                }
-                ?>
-
+                
                 <div id="art_main_card_id">
-                    <?= $new_content_array['content'] ?>
-                </div>
+                    <P>　　这几天，华峰集团启东华峰工业园项目现场特别繁忙，该工业园一期建设年产7500万米产业用非织造布超纤材料项目总投资近43亿元，开工仅一年即已全面进行设备安装。</P>
+<P>　　“华峰速度”是启东启动“项目建设提速年”的缩影。年初，该市列出100个平均单体投资11.95亿元市级重大项目，逐一排出开工、竣工、达产节点，明确时间表、路线图、责任人，定期召开党政联席会、协调会、专题会办会，集中会商、协调解决项目建设重大事项。</P>
+<P>　　强大的推动力带来项目建设新热潮。目前，总投资20亿元的启东姚记扑克文化产业园项目已完成50亩地面桩基工程，1万平方米主体工程正式动工；总投资5亿元的启东米歌酒庄项目主体工程全面开工；广汇能源项目建设进展顺利。（陈明 朱蓓毓） </P>                </div>
                 <!--顶踩begin-->
                 <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
@@ -220,7 +189,3 @@ $new_content_array = NewsManager::getNewsContent($id);
 </html>
 
 
-<?php
-$flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
-?>

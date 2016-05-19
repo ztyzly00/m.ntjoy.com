@@ -5,7 +5,7 @@
 
 //dom加载完毕执行
 $(function() {
-    initCss();
+    initCss();    
 });
 
 function initCss() {
