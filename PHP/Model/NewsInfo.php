@@ -27,19 +27,48 @@ class NewsInfo {
             $query = "select "
                     . "lc.*,lac.content,la.*,lm.*,lcol.colname "
                     . "from liv_contentmap lc "
-                    . "LEFT JOIN liv_article la on lc.contentid=la.articleid "
                     . "left join liv_article_contentbody lac on lac.articleid=lc.contentid "
+                    . "LEFT JOIN liv_article la on lc.contentid=la.articleid "
                     . "left join liv_material lm on la.loadfile=lm.materialid "
                     . "left join liv_column lcol on lc.columnid=lcol.columnid "
                     . "WHERE lc.id=$id limit 1";
 
-            $fetch_array = $mysql_obj->fetch_assoc($query);
-            $return_array = self::addExtraAttributes($fetch_array[0]);
+            $return_array = self::processNewsInfo($mysql_obj->fetch_assoc($query));
             //redis缓存数据
             $redis_obj->hMset('newsinfo_' . $id, $return_array);
         }
 
         return $return_array;
+    }
+
+    /**
+     * 处理相应的新闻信息
+     * @param type $array
+     * @return type
+     */
+    public static function processNewsInfo($array) {
+        $return_array = self::addExtraContent($array);
+        $return_array = self::addExtraAttributes($return_array[0]);
+        return $return_array;
+    }
+
+    /**
+     * 编辑发的文章是分页的，需要全部抓取
+     */
+    public static function addExtraContent($array) {
+        $articleid = $array[0]['articleid'];
+        $mysql_obj = Mysql_Model\MysqlObj::getInstance();
+        $query = "select * from liv_article a "
+                . "left join liv_article_contentbody ab on ab.articleid=a.articleid "
+                . "where a.articleid=$articleid";
+        $fetch_array = $mysql_obj->fetch_assoc($query);
+        for ($i = 0; $i < count($fetch_array); $i++) {
+            if ($i == 0) {
+                continue;
+            }
+            $array[0]['content'] = $array[0]['content'] . $fetch_array[$i]['content'];
+        }
+        return $array;
     }
 
     /**
