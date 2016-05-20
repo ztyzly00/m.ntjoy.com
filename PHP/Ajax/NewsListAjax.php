@@ -18,7 +18,7 @@ $list = NewsList::getNewsListByColumnId($column_id, $offset, $count);
 for ($i = 0; $i < count($list); $i++) {
     $return_list[$i]['title'] = $list[$i]['title'];
     $return_list[$i]['id'] = $list[$i]['id'];
-    $return_list[$i]['title_cut'] = $list[$i]['title_cut'];
+    //$return_list[$i]['title_cut'] = $list[$i]['title_cut'];
     $return_list[$i]['small_thumbfile_url'] = $list[$i]['small_thumbfile_url'];
     $return_list[$i]['brief_cut'] = $list[$i]['brief_cut'];
 }

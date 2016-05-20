@@ -11,8 +11,8 @@ class MysqlObj implements Mysql_Interface\iMySqlObj {
     private $link;
 
     public function __construct() {
-        //获取红包数据库实例
-        $dataBaseInstance = SqlLink\SqlLinkFactory::createTestDatabase();
+        //获取ntjoy数据库实例(192.168.20.20)
+        $dataBaseInstance = SqlLink\SqlLinkFactory::createNtjoyDatabase();
         //获取连接句柄
         $this->link = $dataBaseInstance->getDbLink();
     }
