@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115448/14582.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115448/14582.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　昨晚八点左右，南通开发区星月花园，一辆小轿车突然失火，居民发现后将火扑灭，但车头已被烧得面目全非。</P>
 <P>　　着火的轿车是一辆黄色的海南马自达，当时就停在星月花园三十幢楼楼下。</P>
@@ -186,6 +202,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

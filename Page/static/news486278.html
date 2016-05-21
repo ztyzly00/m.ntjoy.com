@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115449/14583.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115449/14583.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　520号，因为谐音“我爱你”，受到不少年轻人的喜爱和追捧，也因此成为一个备受关注的“网络情人节”。今天，好多市民就鼓足勇气，用自己的方式向所爱的人，所爱的城市，表达爱意。</P>
 <P>　　今天上午，“520为爱奔跑”趣味马拉松赛在狼山风景区温情上演。全程一共6.7公里。从军山起跑，围绕狼山，园博园，剑山，然后回到起点。</P>
@@ -189,6 +205,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

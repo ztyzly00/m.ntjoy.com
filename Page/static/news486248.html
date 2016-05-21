@@ -16,7 +16,7 @@
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home.html">社会</a></li>
+                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home360.html">社会</a></li>
                 </ul>
             </nav>
 
@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115443/14577.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115443/14577.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　市民沈女士最近发现，读小学六年级的儿子居然偷偷拿了家里的钱，到学校边的文具店大量购买游戏充值卡，几次下来一共花去2800元。沈女士觉得，儿子这种行为家长有责任 ，但是学校附近小店向未成年人兜售游戏充值卡，这不就是在变相助长孩子沉迷网络游戏吗？</P>
 <P>　　前两天沈女士接到老师电话说，儿子手上有多张游戏充值卡。沈女士回家一查，发现少了2800元现金，一问儿子，儿子就承认拿钱去买游戏充值卡了。</P>
@@ -187,6 +203,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

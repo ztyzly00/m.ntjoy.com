@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115445/14579.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115445/14579.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　之前我们栏目曾经报道过奥迪车车窗抛物的新闻，当时引发了不少市民的谴责。今天早上7点半左右，在跃龙路上又出现了一名车窗抛物的奥迪车，并且一路开，一路丢，几次丢物后，引起其他市民极大的不满。</P>
 <P>　　这是今天上午7点半左右，一位市民的行车记录仪拍下的视频，在跃龙路由南向北的行车途中，咖啡色奥迪车连续三次抛洒白色垃圾。早晨，清洁工刚刚清扫过的干净马路，就在这样的抛洒中没一会儿就成了麻子脸。</P>
@@ -186,6 +202,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

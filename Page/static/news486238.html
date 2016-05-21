@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115432/14566.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115432/14566.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　古树名木被称为“绿色的文物”，位于市区华达广场的两棵730年树龄的古银杏树，近三年来出现长势衰弱、腐烂空洞等症状，由于救治工作复杂、专业性强，市园林绿化管理处特地从北京邀请了有着40多年古树复壮经验的专家丛生教授来通，为古树诊治。</P>
 <P>　　今年78岁的丛生是我国著名的古树修复复壮专家，先后救活了南京的六朝松、上海的古榉树、黄山的迎客松、中南海古槐树等，被誉为古树名木的保护神。</P>
@@ -187,6 +203,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

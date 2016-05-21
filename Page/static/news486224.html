@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115452/14586.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115452/14586.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　今天上午，我市召开2016中国南通文化创意设计大赛启动工作会议，相关筹备工作正式启动。</P>
 <P>　　本次大赛主题为“创意创造价值，设计改变生活”，共设置了产品设计大赛、建筑及环境设计大赛、公益广告设计大赛、工艺美术设计大赛、“未来之星”创意设计大赛、旅游商品创新设计大赛等6项专业赛事。考虑到工艺美术设计大赛由三个分项赛组成，所以大赛一共设置了8个金奖、16个银奖、32个铜奖、40个优秀奖，金奖奖金2万元。赛程从5月延续至10月底。</P>
@@ -185,6 +201,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

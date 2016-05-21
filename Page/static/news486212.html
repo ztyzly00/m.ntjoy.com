@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115431/14565.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115431/14565.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　建筑业是我市传统支柱产业，新常态下，建筑业如何转型升级，谋得持续发展动能，南通二建集团董事长杨晓东通过一系列改革创新，交出了一份令人欣喜的成绩单。</P>
 <P>　　2015年，中国房地产市场仍处于观望状态，建筑业首当其冲、受到影响，然而，南通二建全年主营业务收入却达到446亿元，保持了稳中有进的良好态势。耀眼的成绩背后是董事长杨晓东的运筹帷幄。辅一上任，他就大刀阔斧改革创新：一方面依托技术升级，促进建筑产业化、现代化；另一方面着力管理优化，引入项目股份制，提升项目利润率超过10%。</P>
@@ -185,6 +201,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

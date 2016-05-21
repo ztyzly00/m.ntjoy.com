@@ -9,12 +9,15 @@ var BROWSER_HEIGHT = document.documentElement.clientHeight;
 function cssInit() {
     //若没有图片js会报一条错误，不过无所谓
     $('#art_main_card_id img').addClass('news_img');
+    $('#art_main_card_id img').addClass('lazy');
     $('#art_main_card_id p').addClass('art_t');
 }
 
 $(function() {
     cssInit();
+    $("img.lazy").lazyload();
 });
+
 
 /*事件列表*/
 //滚动事件

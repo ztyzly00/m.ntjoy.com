@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115447/14581.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115447/14581.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　今天上午，一名女子在微博上发文称，她的汽车停在南通书城门口，出来时发现一位在门口维持秩序的老人在放她汽车前胎的气，并且附上两张老人的照片。到底是怎么回事呢？</P>
 <P>　　微博中，这名女子称，她一大早去南通书城边的教材门市部买教材，发现来得太早，只在门市部停留了三十秒便返回汽车处，来回花了两分钟左右。返回时发现一名自称维护南通书城门口车辆秩序的老人 在放汽车左前胎的气，并附上两张当时的照片。</P>
@@ -188,6 +204,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

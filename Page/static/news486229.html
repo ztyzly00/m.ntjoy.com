@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115430/14564.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115430/14564.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　今天22时36分迎来“小满”节气。进入小满也意味着夏季闷热、潮湿的天气将要来临。市气象台预报，从今天开始，通城将迎来连续2天的阴雨天气。</P>
 <P>　　小满是夏季的第二个节气。此时我国北方地区麦类等夏熟作物籽粒已开始饱满，但还没有成熟，处于乳熟后期，所以叫小满。南方地区自古就有“小满大满江河满”这一俗语，反映了这一时期降雨多、雨量大的气候特征。昨天，通城最高气温升到26℃，感觉较为闷热。今天，最高气温仍保持在24℃，较湿热。市气象台预测，今天中午到夜里市区转阴有阵雨。明天小到中雨，最低气温17℃左右。市民应注意早晚温差，及时增减衣服。饮食上以清淡为主，常吃薏米、绿豆等有清热、健脾、利湿功效的食物。</P>                </div>
@@ -184,6 +200,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

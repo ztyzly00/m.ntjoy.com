@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115444/14578.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115444/14578.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　再过两个多礼拜，高三学生将迎来人生中的大考。就在不少学生积极备考的时候，我们南通有14名学霸通过了清华北大的自主招生初审，其中，海门中学和启东中学都以5人入选，位居榜首。</P>
 <P>　　今年，南通共有6所学校，总计14名同学通过了清华和北大的自主招生初审。记者在教育部阳光高考信息公开平台上看到，2016年，北京大学自主招生报名审核通过公示名单上，海门中学5人，启东中学4人，通州高级中学1人，如东高级中学1人，如皋中学1人，南通中学1人。2016年清华大学自主招生报名审核通过公示名单上，启东中学1人。</P>
@@ -187,6 +203,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

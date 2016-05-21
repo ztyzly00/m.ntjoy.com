@@ -8,6 +8,7 @@ namespace Model;
 
 use Core\MySql\Mysql_Model;
 use Core\Redis\RedisFactory;
+use Model\NewsCss;
 
 class NewsInfo {
 
@@ -33,6 +34,7 @@ class NewsInfo {
                     . "left join liv_column lcol on lc.columnid=lcol.columnid "
                     . "WHERE lc.id=$id limit 1";
 
+            //处理文章数据，适应浏览器
             $return_array = self::processNewsInfo($mysql_obj->fetch_assoc($query));
             //redis缓存数据
             $redis_obj->hMset('newsinfo_' . $id, $return_array);
@@ -47,8 +49,12 @@ class NewsInfo {
      * @return type
      */
     public static function processNewsInfo($array) {
-        $return_array = self::addExtraContent($array);
-        $return_array = self::addExtraAttributes($return_array[0]);
+        //将编辑的分页连接
+        $return_array = self::addExtraContent($array[0]);
+        //修改内容中图片css
+        $return_array = NewsCss::ModifyContentImgCss($return_array);
+        //增加额外的属性
+        $return_array = self::addExtraAttributes($return_array);
         return $return_array;
     }
 
@@ -56,7 +62,7 @@ class NewsInfo {
      * 编辑发的文章是分页的，需要全部抓取
      */
     public static function addExtraContent($array) {
-        $articleid = $array[0]['articleid'];
+        $articleid = $array['articleid'];
         $mysql_obj = Mysql_Model\MysqlObj::getInstance();
         $query = "select * from liv_article a "
                 . "left join liv_article_contentbody ab on ab.articleid=a.articleid "
@@ -66,7 +72,7 @@ class NewsInfo {
             if ($i == 0) {
                 continue;
             }
-            $array[0]['content'] = $array[0]['content'] . $fetch_array[$i]['content'];
+            $array['content'] = $array['content'] . $fetch_array[$i]['content'];
         }
         return $array;
     }

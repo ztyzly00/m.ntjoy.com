@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-20/115437/14571.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-20/115437/14571.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　酝酿多年的国家《盐业体制改革方案》近日出台，我国盐业将在半年后迎来价格放开、打破区域限制等一系列市场化改革。今后盐业公司与生产企业，将有可能由现在产销合作的上下游关系，变成同台竞技的对手。南通盐业部门未雨绸缪，精心打造“苏盐生活家”品牌，向着“非盐经济”转型创新迈进。</P>
 <P>　　在苏盐南通公司位于市区青年路的这家门店，记者见到了食盐、竹盐牙膏、浴盐，还有盐理疗热敷包、盐疗呼吸瓶等各种盐产品和创意类生活用品。</P>
@@ -185,6 +201,7 @@
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="js/Jquery.lazyload.min.js"></script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 
