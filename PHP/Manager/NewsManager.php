@@ -8,8 +8,8 @@
 
 namespace Manager;
 
-use Model\NewsList;
-use Model\NewsInfo;
+use Model\News\NewsList;
+use Model\News\NewsInfo;
 
 class NewsManager {
 

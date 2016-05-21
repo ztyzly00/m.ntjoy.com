@@ -4,7 +4,7 @@
  * NewsInfo实例对象  新闻单例
  */
 
-namespace Model;
+namespace Model\News;
 
 class NewsCss {
 

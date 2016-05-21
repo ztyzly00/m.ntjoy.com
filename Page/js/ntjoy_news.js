@@ -9,15 +9,17 @@ var BROWSER_HEIGHT = document.documentElement.clientHeight;
 function cssInit() {
     //若没有图片js会报一条错误，不过无所谓
     $('#art_main_card_id img').addClass('news_img');
+    //让图片延时加载
     $('#art_main_card_id img').addClass('lazy');
     $('#art_main_card_id p').addClass('art_t');
 }
 
+//dom加载完毕执行
 $(function() {
     cssInit();
+    //图片延时加载
     $("img.lazy").lazyload();
 });
-
 
 /*事件列表*/
 //滚动事件
@@ -42,6 +44,7 @@ $('#foot_cmt_id').click(function() {
     window.scrollTo(0, BROWSER_HEIGHT);
 });
 
+//评论框取消事件
 $('#j_cmnt_cancel').click(function() {
     $('#main_body').css('display', 'block');
     $('#j_cmnt_pop').css('display', 'none');

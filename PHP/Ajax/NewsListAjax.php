@@ -6,7 +6,7 @@
 
 require_once __DIR__ . '/../autoload.php';
 
-use Model\NewsList;
+use Model\News\NewsList;
 
 $column_id = $_POST['columnid'];
 $offset = $_POST['offset'];

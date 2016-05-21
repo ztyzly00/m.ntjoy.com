@@ -6,9 +6,9 @@
  * and open the template in the editor.
  */
 
-namespace Model;
+namespace Model\News;
 
-use Model\NewsInfo;
+use Model\News\NewsInfo;
 use Core\MySql\Mysql_Model\MysqlObj;
 use Core\Redis\RedisFactory;
 

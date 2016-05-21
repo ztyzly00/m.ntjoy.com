@@ -8,7 +8,7 @@ require_once 'UpdateColumn.php';
 
 require_once __DIR__ . '/../autoload.php';
 
-use Model\NewsList;
+use Model\News\NewsList;
 
 $array = UpdateColumn::$column_array;
 $redis = new redis();

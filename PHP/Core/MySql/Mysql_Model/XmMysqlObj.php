@@ -5,7 +5,7 @@ namespace Core\MySql\Mysql_Model;
 use Core\MySql\Mysql_Interface;
 use Core\SqlLink;
 
-class MysqlObj implements Mysql_Interface\iMySqlObj {
+class XmMysqlObj implements Mysql_Interface\iMySqlObj {
 
     private static $_instance;
     private $link;
