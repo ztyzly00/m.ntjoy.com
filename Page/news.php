@@ -221,11 +221,11 @@ $new_content_array = NewsManager::getNewsContent($id);
     <script src="js/Jquery.lazyload.min.js"></script>
 
     <script>
-                    var offset = 0;
-                    var count = 4;
-                    var userid = '';
-                    var newsid =<?= $id ?>;
-                    var touserid = '';
+                        var offset = 0;
+                        var count = 4;
+                        var userid = '';
+                        var newsid =<?= $id ?>;
+                        var touserid = '';
     </script>
     <script src="js/ntjoy_news.js"></script>
 </html>

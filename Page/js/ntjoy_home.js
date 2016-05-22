@@ -51,7 +51,7 @@ $(window).scroll(function() {
     }
 
     //到底加载
-    if (($(window).height() + $(window).scrollTop()) + 1 >= $(document).height()) {
+    if (($(window).height() + $(window).scrollTop()) + 2 >= $(document).height()) {
         $('#load_more_id').css('display', 'block');
         $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/NewsListAjax.php", {columnid: columnid, offset: offset, count: count}, function(result) {
             var news_list = eval('(' + result + ')');
