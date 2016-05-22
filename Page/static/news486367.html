@@ -11,12 +11,12 @@
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home704.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home.html">要闻</a></li>
+                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">要闻</a></li>
                 </ul>
             </nav>
 
@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-21/115472/14606.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-21/115472/14606.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　抓创新就是抓发展，谋创新就是谋未来。在今天上午举办的海安第三届“创新创业在海安”主题活动上，10名两院院士，480名专家教授云集海安，与当地企业对接“院地合作”，共签订产学研合作项目 60 个，助力海安创新创业热潮。</P>
 <P>　　今天创新创业活动，共签约20个高新技术产业项目、20个产学研合作项目、10个成果转化项目，10个天使基金项目。来自华东理工大学方云进教授所带领的团队将与海安本土企业合作研发水泥旋窑超低排放技术，实现水泥工业企业污染物超低排放。</P>
@@ -47,9 +63,9 @@
 <P>　　通过开展以“创新创业在海安”主题活动为代表的产学研活动，近两年来，海安累计实施产学研合作项目426项，新引进成果转化项目89项。项目与人才互动并进，也有力促进了海安产业转型升级。目前，海安新能源、节能环保等四大新兴产业开票销售突破200亿元。</P>
 <P>　　市委常委、组织部长张兆江参加活动。</P>                </div>
                 <!--顶踩begin-->
-                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
+<!--                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
-                        <!-- 顶部区域-->
+                         顶部区域
                         <div class="p_act j_pact">
                             <mark class="hand dig">
                                 <span class="hand_pic j_p_btn">
@@ -64,13 +80,13 @@
                         </div>
 
                         <div class="p_bar j_p_bar" style="width: 153px; margin-left: -76px;">
-                            <!-- 红线 -->
+                             红线 
                             <span class="sub_bar dig_bar j_p_upbar"></span>
-                            <!-- 蓝线 -->
+                             蓝线 
                             <span class="sub_bar tread_bar j_p_downbar"></span>
                         </div>
 
-                        <!-- 踩部区域-->
+                         踩部区域
                         <div class="p_act j_pact">
                             <mark class="hand tread">
                                 <span class="hand_pic j_p_btn">
@@ -86,7 +102,7 @@
                         </div>
                     </aside>
 
-                </section>
+                </section>-->
                 <!--顶踩end-->
             </section>
 
@@ -159,7 +175,10 @@
                 </aside>
             </section>
         </div>
-
+        <!--        <div id="SOHUCS"></div>
+                <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
+                        src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cys5huSxC&conf=prod_3241f76198064c3df41cf3b818e5fb9b">
+                </script>-->
     </body>
 
     <!--评论框弹出-->
@@ -169,17 +188,16 @@
                 <span class="fl">
                     <a href="javascript:void(0);" class="cmnt_cancel" id="j_cmnt_cancel" data-sudaclick="article_new_cms_send_cancel">取消</a>
                 </span>
-                <span class="fr"><a href="javascript:void(0);" class="cmnt_smt" id="j_cmnt_smt" data-sudaclick="article_new_cms_send_cmnt">发送
+                <span class="fr"><a class="cmnt_smt" id="j_cmnt_smt" data-sudaclick="article_new_cms_send_cmnt">发送
                     </a>
                 </span>
             </div>
             <div class="cmnt_login">
                 <span class="fl">
-
-                    ztyzly00
+                    匿名用户
                 </span>
             </div><div class="cmntarea">
-                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法"></textarea>
+                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,请大家按照规范填写）"></textarea>
             </div>
         </aside>
     </section>
@@ -188,6 +206,14 @@
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/Jquery.lazyload.min.js"></script>
+
+    <script>
+                    var offset = 0;
+                    var count = 4;
+                    var userid = '';
+                    var newsid =486367;
+                    var touserid = '';
+    </script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

@@ -2,8 +2,8 @@
 
 require_once 'autoload.php';
 
-use Model\NewsList;
+use Model\News\NewsList;
 
-$array = NewsList::getNewsListByColumnId(8, 0, 1);
+$array = NewsList::getNewsListByColumnId(10, 0, 1);
 
 print_r($array);

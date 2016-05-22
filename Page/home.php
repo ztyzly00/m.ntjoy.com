@@ -47,10 +47,11 @@ $news_list = NewsManager::getNewsList($column_id);
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
 
-                <a id="nav_item3"  href="home3.html">要闻</a>
                 <a id="nav_item704" href="home704.html">快讯</a>
-                <a href="#">点播</a>
-                <a href="#">直播</a>
+                <a id="nav_item3"  href="home3.html">要闻</a>
+
+                <!--                <a href="#">点播</a>
+                                <a href="#">直播</a>-->
                 <a id="nav_item4" href="home4.html">社会</a>
                 <a id="nav_item5" href="home5.html">民生</a>
                 <a id="nav_item6" href="home6.html">省内</a>
@@ -58,8 +59,8 @@ $news_list = NewsManager::getNewsList($column_id);
                 <a id="nav_item8" href="home8.html">国际</a>
                 <a id="nav_item483" href="home483.html">网罗</a>
                 <a id="nav_item9" href="home9.html">市区</a>
-                <a id="nav_item1377" href="home1377.html" class="hide">娱乐</a>
-                <a id="nav_item10" href="home10.html" class="hide">如皋</a>
+                <a id="nav_item1377" href="home1377.html" >娱乐</a>
+                <a id="nav_item10" href="home10.html" >如皋</a>
                 <a id="nav_item11" href="home11.html" class="hide">如东</a>
                 <a id="nav_item12" href="home12.html" class="hide">海安</a>
                 <a id="nav_item13" href="home13.html" class="hide">海门</a>
@@ -74,7 +75,7 @@ $news_list = NewsManager::getNewsList($column_id);
                 <div class="top_slide_wrap" id="top_slide_wrap_id" style="">
                     <div class="swipe-wrap">
                         <?php
-                        for ($i = 0; $i < 3; $i++) {
+                        for ($i = 0; $i < 2; $i++) {
                             ?>
                             <div class="item" style="">
                                 <a href="news<?= $news_list[$i]['id'] ?>.html">
@@ -102,7 +103,7 @@ $news_list = NewsManager::getNewsList($column_id);
             <ul class="recommend_items j_roll" id="j_news_scroll" data-sudaclick="ls_live">
                 <li>
                     <span>HOT</span>
-                    <a href="news<?= $news_list[4]['id'] ?>.html" title=""><?= $news_list[4]['title'] ?></a>
+                    <a href="news<?= $news_list[2]['id'] ?>.html" title=""><?= $news_list[2]['title'] ?></a>
                 </li>
             </ul>
         </section>
@@ -110,7 +111,7 @@ $news_list = NewsManager::getNewsList($column_id);
         <!--新闻区域-->
         <section class="card_module j_normal_card " id="main_news">            
             <?php
-            for ($i = 5; $i < count($news_list); $i++) {
+            for ($i = 3; $i < count($news_list); $i++) {
                 ?>
                 <a href="news<?= $news_list[$i]['id'] ?>.html">
                     <dl class="f_card">

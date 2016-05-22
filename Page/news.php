@@ -21,7 +21,7 @@ $new_content_array = NewsManager::getNewsContent($id);
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home704.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
@@ -76,9 +76,9 @@ $new_content_array = NewsManager::getNewsContent($id);
                     <?= $new_content_array['content'] ?>
                 </div>
                 <!--顶踩begin-->
-                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
+<!--                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
-                        <!-- 顶部区域-->
+                         顶部区域
                         <div class="p_act j_pact">
                             <mark class="hand dig">
                                 <span class="hand_pic j_p_btn">
@@ -93,13 +93,13 @@ $new_content_array = NewsManager::getNewsContent($id);
                         </div>
 
                         <div class="p_bar j_p_bar" style="width: 153px; margin-left: -76px;">
-                            <!-- 红线 -->
+                             红线 
                             <span class="sub_bar dig_bar j_p_upbar"></span>
-                            <!-- 蓝线 -->
+                             蓝线 
                             <span class="sub_bar tread_bar j_p_downbar"></span>
                         </div>
 
-                        <!-- 踩部区域-->
+                         踩部区域
                         <div class="p_act j_pact">
                             <mark class="hand tread">
                                 <span class="hand_pic j_p_btn">
@@ -115,13 +115,13 @@ $new_content_array = NewsManager::getNewsContent($id);
                         </div>
                     </aside>
 
-                </section>
+                </section>-->
                 <!--顶踩end-->
             </section>
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td">热门评论</aside>
+                <aside class="th_td">最新评论</aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
                         <div class="author clearfix">
@@ -166,7 +166,7 @@ $new_content_array = NewsManager::getNewsContent($id);
             <section id="pageJumpBtn" style="position: fixed; bottom: 74px; right: 12px; width: 42px; z-index: 999;">
                 <a href="javascript:;" id="goPageTop"
                    style="width:42px; height:42px; margin-bottom:10px; border-radius:50%; background:url(img/go_top_icon.png) no-repeat 0 0; background-size:42px auto; display: none;"></a>
-                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html" id="goPageHome"
+                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html" id="goPageHome"
                    style=" width:42px; height:42px; position: relative; border-radius:50%; background:url(img/go_home_icon.png) no-repeat 0 0; background-size:42px auto;display: none;">
                     <i style="position: absolute; top: 0px; right: 0px; width: 10px; height: 10px; border: 2px solid rgb(239, 248, 255); border-radius: 50%; background: rgb(255, 71, 67);">
                     </i>
@@ -188,7 +188,10 @@ $new_content_array = NewsManager::getNewsContent($id);
                 </aside>
             </section>
         </div>
-
+        <!--        <div id="SOHUCS"></div>
+                <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
+                        src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cys5huSxC&conf=prod_3241f76198064c3df41cf3b818e5fb9b">
+                </script>-->
     </body>
 
     <!--评论框弹出-->
@@ -198,17 +201,16 @@ $new_content_array = NewsManager::getNewsContent($id);
                 <span class="fl">
                     <a href="javascript:void(0);" class="cmnt_cancel" id="j_cmnt_cancel" data-sudaclick="article_new_cms_send_cancel">取消</a>
                 </span>
-                <span class="fr"><a href="javascript:void(0);" class="cmnt_smt" id="j_cmnt_smt" data-sudaclick="article_new_cms_send_cmnt">发送
+                <span class="fr"><a class="cmnt_smt" id="j_cmnt_smt" data-sudaclick="article_new_cms_send_cmnt">发送
                     </a>
                 </span>
             </div>
             <div class="cmnt_login">
                 <span class="fl">
-
-                    ztyzly00
+                    匿名用户
                 </span>
             </div><div class="cmntarea">
-                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法"></textarea>
+                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,请大家按照规范填写）"></textarea>
             </div>
         </aside>
     </section>
@@ -217,6 +219,14 @@ $new_content_array = NewsManager::getNewsContent($id);
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/Jquery.lazyload.min.js"></script>
+
+    <script>
+                    var offset = 0;
+                    var count = 4;
+                    var userid = '';
+                    var newsid =<?= $id ?>;
+                    var touserid = '';
+    </script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

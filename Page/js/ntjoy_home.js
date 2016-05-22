@@ -15,7 +15,7 @@ function initCss() {
 //调用swipe.js插件
 var slider =
         Swipe(document.getElementById('top_slide_wrap_id'), {
-            auto: 1000,
+            auto: 3000,
             continuous: true,
             callback: function(pos) {
                 $('#j_topSlide_index').html(pos + 1);

@@ -26,7 +26,7 @@ class NewsInfo {
         if (!$return_array = $redis_obj->hGetAll('newsinfo_' . $id)) {
             $mysql_obj = Mysql_Model\MysqlObj::getInstance();
             $query = "select "
-                    . "lc.*,lac.content,la.*,lm.*,lcol.colname "
+                    . "lc.*,lac.content,la.*,lm.*,lcol.colname,lc.columnid "
                     . "from liv_contentmap lc "
                     . "left join liv_article_contentbody lac on lac.articleid=lc.contentid "
                     . "LEFT JOIN liv_article la on lc.contentid=la.articleid "
@@ -36,6 +36,7 @@ class NewsInfo {
 
             //处理文章数据，适应浏览器
             $return_array = NewsModify::processNewsInfo($mysql_obj->fetch_assoc($query));
+
             //redis缓存数据
             $redis_obj->hMset('newsinfo_' . $id, $return_array);
         }

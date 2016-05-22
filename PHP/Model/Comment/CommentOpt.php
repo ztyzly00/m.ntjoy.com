@@ -59,13 +59,28 @@ class CommentOpt {
          */
         $query = "insert into m_ntjoy_comment_upcount (`commentid`,`upcount`) values ('$commentid','$upcount')";
         $xm_mysql_obj->exec_query($query);
-
-        /**
-         * 将赞的数据插入redis
-         * 可以插入也可以不插入，后续有自动的缓存加载
-         */
         $redis_key = 'comment_upcount_' . $commentid;
         $redis_obj->set($redis_key, $upcount);
+
+        /**
+         * 更新新闻的评论数数据库，若用myisam数据库引擎没有必要，innodb select count（*） 会进行全表扫描，所以需要另外计数
+         */
+        $query = "select * from m_ntjoy_news_comment_count where newsid=$newsid";
+        if (!$xm_mysql_obj->num_rows($query)) {
+            //插入新数据
+            $query = "insert into m_ntjoy_news_comment_count (`newsid`,`commentcount`) values ($newsid,1)";
+        } else {
+            //更新数据
+            $query = "update m_ntjoy_news_comment_count set commentcount=commentcount+1 where newsid=$newsid";
+        }
+        $xm_mysql_obj->exec_query($query);
+
+        //更新redis中的值
+        $redis_key = 'comment_count_' . $newsid;
+        if ($redis_obj->exists($redis_key)) {
+            $comment_count = $redis_obj->get($redis_key);
+            $redis_obj->set($redis_key, $comment_count + 1);
+        }
     }
 
     /**

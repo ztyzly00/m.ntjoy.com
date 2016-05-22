@@ -11,12 +11,12 @@
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home704.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home.html">要闻</a></li>
+                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home3.html">要闻</a></li>
                 </ul>
             </nav>
 
@@ -39,7 +39,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                        var flashvars = {
+                            f: "http://media.ntjoy.com/vod/vol1/2016-05-21/115476/14610.mp4",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
+
+                        var video = ["http://media.ntjoy.com/vod/vol1/2016-05-21/115476/14610.mp4->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　在老百姓心中，人大代表更多的是倾听民情民意，事实上，南通崇川区的人大代表们都像杨洪琴一样，利用工作之余认领“微公益项目”。杨洪琴的履职行动也仅仅是崇川区“两张清单”力推“万名代表小康行”的一个缩影，目前这项活动已经在狼山镇以及整个崇川区全面展开。</P>
 <P>　　所谓两张“清单”，一张是“助推小康民生事实项目清单”，一张是“人大代表小康行活动项目认领清单”。活动开始时，狼山镇街道组织社区在选民中征集意见和项目，前两轮形成的清单中有些项目不具备可操作性，街道将“城山社区”的清单作为模板，最终形成了“狼山镇街道人大工委助推小康民生实事项目清单”。</P>
@@ -47,9 +63,9 @@
 <P>　　据了解，项目清单来源于区委区政府的中心工作、人大常委会的重点工作、小康的短板指标、街道的工作任务、社区建设与管理的需求以及广大选民群众的期盼等六个方面，崇川区人大要求各街道人大围绕“五个一”的要求，组织代表从一件一件小事做起，切实当好群众奔小康的领路人、代言人。全区10个街道共排出了700多个项目，包括经济项目的推进、小康短板的补足、老小区的改造、停车难缓解等几十个方面。目前，全区222名省、市、区代表共认领了1153个项目。在下一步的推进过程中，区人大将畅通三个渠道，做到件件有回音，提高办成率。</P>
 <P>　　同时，崇川区人大还将进一步加强组织领导、强化监督力度，推进全区全面小康社会建设的进程。随着“万名代表小康行”活动持续深入推进，全市各地涌现出一批“助力小康、争当五员”的典型代表，本台将作跟踪报道。</P>                </div>
                 <!--顶踩begin-->
-                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
+<!--                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
-                        <!-- 顶部区域-->
+                         顶部区域
                         <div class="p_act j_pact">
                             <mark class="hand dig">
                                 <span class="hand_pic j_p_btn">
@@ -64,13 +80,13 @@
                         </div>
 
                         <div class="p_bar j_p_bar" style="width: 153px; margin-left: -76px;">
-                            <!-- 红线 -->
+                             红线 
                             <span class="sub_bar dig_bar j_p_upbar"></span>
-                            <!-- 蓝线 -->
+                             蓝线 
                             <span class="sub_bar tread_bar j_p_downbar"></span>
                         </div>
 
-                        <!-- 踩部区域-->
+                         踩部区域
                         <div class="p_act j_pact">
                             <mark class="hand tread">
                                 <span class="hand_pic j_p_btn">
@@ -86,7 +102,7 @@
                         </div>
                     </aside>
 
-                </section>
+                </section>-->
                 <!--顶踩end-->
             </section>
 
@@ -159,7 +175,10 @@
                 </aside>
             </section>
         </div>
-
+        <!--        <div id="SOHUCS"></div>
+                <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
+                        src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cys5huSxC&conf=prod_3241f76198064c3df41cf3b818e5fb9b">
+                </script>-->
     </body>
 
     <!--评论框弹出-->
@@ -169,17 +188,16 @@
                 <span class="fl">
                     <a href="javascript:void(0);" class="cmnt_cancel" id="j_cmnt_cancel" data-sudaclick="article_new_cms_send_cancel">取消</a>
                 </span>
-                <span class="fr"><a href="javascript:void(0);" class="cmnt_smt" id="j_cmnt_smt" data-sudaclick="article_new_cms_send_cmnt">发送
+                <span class="fr"><a class="cmnt_smt" id="j_cmnt_smt" data-sudaclick="article_new_cms_send_cmnt">发送
                     </a>
                 </span>
             </div>
             <div class="cmnt_login">
                 <span class="fl">
-
-                    ztyzly00
+                    匿名用户
                 </span>
             </div><div class="cmntarea">
-                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法"></textarea>
+                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,请大家按照规范填写）"></textarea>
             </div>
         </aside>
     </section>
@@ -188,6 +206,14 @@
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/Jquery.lazyload.min.js"></script>
+
+    <script>
+                    var offset = 0;
+                    var count = 4;
+                    var userid = '';
+                    var newsid =486380;
+                    var touserid = '';
+    </script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

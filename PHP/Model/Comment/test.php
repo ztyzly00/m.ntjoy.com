@@ -21,8 +21,11 @@ $array['touserid'] = 'ffff';
 $array['comment'] = 'fffffffffffffffffffff';
 
 //CommentOpt::insertComment($array);
+//print_r(\Model\Comment\CommentCount::getCommentCount(486320));
 
-CommentList::getCommentListRangeByUpCount(1155522, 0, 7);
+print_r(CommentList::getCommentListRangeByTime(486320, 0, 7));
+
+
 
 //CommentOpt::addUpCount('57403ee45c303');
 
