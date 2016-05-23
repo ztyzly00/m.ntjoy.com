@@ -1,15 +1,14 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 内容管理，直接跟内容打交道，后期可以做数据库路由操作,类似于controller 但不做内容页面渲染路由。
  */
 
 namespace Manager;
 
 use Model\Comment\CommentList;
 use Model\Comment\CommentOpt;
+use Model\Comment\CommentInfo;
 use Model\Comment\CommentCount;
 
 class CommentManager {
@@ -27,14 +26,16 @@ class CommentManager {
         return CommentCount::getCommentCount($newsid);
     }
 
+    public static function getCommentById($commentid) {
+        return CommentInfo::getCommentInfoById($commentid);
+    }
+
     public static function getCommentListByUpCount($newsid, $offset, $count) {
         return CommentList::getCommentListRangeByUpCount($newsid, $offset, $offset + $count - 1);
     }
 
     public static function getCommentListByTime($newsid, $offset, $count) {
-        return CommentList::getCommentListRangeByUpCount($newsid, $offset, $offset + $count - 1);
+        return CommentList::getCommentListRangeByTime($newsid, $offset, $offset + $count - 1);
     }
 
-    
-    
 }

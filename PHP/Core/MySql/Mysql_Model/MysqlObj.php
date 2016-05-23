@@ -34,6 +34,7 @@ class MysqlObj implements Mysql_Interface\iMySqlObj {
 
     public function fetch_array($query) {
         $result = mysqli_query($this->link, $query);
+        $returnString = array();
         while ($row = mysqli_fetch_array($result)) {
             $returnString[] = $row;
         }
@@ -42,6 +43,7 @@ class MysqlObj implements Mysql_Interface\iMySqlObj {
 
     public function fetch_assoc($query) {
         $result = mysqli_query($this->link, $query);
+        $returnString = array();
         while ($row = mysqli_fetch_assoc($result)) {
             $returnString[] = $row;
         }

@@ -39,7 +39,7 @@ function loadCommentListByUpCount() {
     $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
         $(".j_comment_box").html("");
         var comment_list = eval('(' + result + ')');
-        if (comment_list) {
+        if (comment_list.length != 0) {
             for (var i = 0; i < comment_list.length; i++) {
                 var add_string = "<div class=\"comment-wrap clearfix\"><div class=\"author clearfix\"><address>" + comment_list[i]['nickname'] + "<\/address><time class=\"cmnt_op_bottom_times\">" + comment_list[i]['time'] + "<\/time><\/div><article class=\"j_cmnt_article\">" + comment_list[i]['comment'] + "<\/article><div class=\"cmnt_op_bottom clearfix\"><span class=\"cmnt_op\" style=\"display:none\"><a href=\"javascript:void(0);\" title=\"赞\" class=\"good on\"><i class=\"icon-page_praise\"><\/i>103<i class=\"fly icon-page_praise\"><\/i><\/a><a href=\"javascript:void(0);\" title=\"评论\" class=\"cmntico\"><i class=\"icon-page_comment_4\"><\/i><\/a><\/span><\/div><\/div>";
                 $(".j_comment_box").append(add_string);
@@ -73,6 +73,11 @@ $(window).scroll(function() {
     }
 });
 
+//登录按钮
+$('.hIcon').click(function() {
+    alert('掌上南通账号登录功能开发中~如有问题请联系小镇：小镇微信号：ztyzly00');
+});
+
 //回顶部按钮事件
 $('#goPageTop').click(function() {
     window.scrollTo(0, 0);
@@ -101,10 +106,16 @@ $('#j_cmnt_smt').click(function() {
     if (comment.length <= 0 || comment.length > 200) {
         alert("请按照规范填写");
     } else {
-        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, touserid: touserid, comment: comment}, function(result) {
+        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
             $('#j_cmnt_pop').css('display', 'none');
             $('#main_body').css('display', 'block');
             $('#j_cmnt_input').val('');
+            //评论数加载
+            loadCommentCount();
+            //加载热门评论
+            loadCommentListByUpCount();
+            //滚动到最底部，让用户直接看到自己的评论
+            window.scrollTo(0, $(document).height() + 100);
         });
     }
 });

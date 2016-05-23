@@ -13,9 +13,16 @@ $new_content_array = NewsManager::getNewsContent($id);
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title><?= $new_content_array['title'] ?></title>
+        <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/ntjoy_news.css" rel="stylesheet">
+        <link href="css/ntjoy_news.min.css" rel="stylesheet">
+        <script>
+            var offset = 0;
+            var count = 4;
+            var userid = '';
+            var newsid =<?= $id ?>;
+            var tocommentid = '';
+        </script>
     </head>
     <body>
         <div id="main_body">
@@ -38,7 +45,7 @@ $new_content_array = NewsManager::getNewsContent($id);
                     <article class="art_title_op">
                         <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
                         <aside>
-                            <a href="#">
+                            <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>">
                                 <i class="comment_num icon-page_comment_2"></i>
                                 <span class="j_article_cmnt_count">0</span>
                             </a>
@@ -55,18 +62,18 @@ $new_content_array = NewsManager::getNewsContent($id);
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-                        var flashvars = {
-                            f: "<?= $new_content_array['video_url'] ?>",
-                            c: 0,
-                            p: 0,
-                            r: "http://www.ntjoy.com/tiaozhuan15.html",
-                            t: 15,
-                            b: 1,
-                            my_url: encodeURIComponent(window.location.href)
-                        };
+                var flashvars = {
+                    f: "<?= $new_content_array['video_url'] ?>",
+                    c: 0,
+                    p: 0,
+                    r: "http://www.ntjoy.com/tiaozhuan15.html",
+                    t: 15,
+                    b: 1,
+                    my_url: encodeURIComponent(window.location.href)
+                };
 
-                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }
@@ -180,7 +187,7 @@ $new_content_array = NewsManager::getNewsContent($id);
                         <p>说说你的看法</p>
                     </div>            
                     <div class="foot_cmt_num j_p_comt">
-                        <a href="#" data-sudaclick="article_new_cms_comt">
+                        <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
                             <span class="cmt_num_t j_article_cmnt_count">0</span>
                         </a>
                     </div>
@@ -219,14 +226,6 @@ $new_content_array = NewsManager::getNewsContent($id);
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/Jquery.lazyload.min.js"></script>
-
-    <script>
-                        var offset = 0;
-                        var count = 4;
-                        var userid = '';
-                        var newsid =<?= $id ?>;
-                        var touserid = '';
-    </script>
     <script src="js/ntjoy_news.js"></script>
 </html>
 

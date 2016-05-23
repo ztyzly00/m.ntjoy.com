@@ -17,15 +17,13 @@ use Core\MySql\Mysql_Model\XmMysqlObj;
 
 $array['userid'] = "random";
 $array['newsid'] = 1155522;
-$array['touserid'] = 'ffff';
+$array['tocommentid'] = 'ffff';
 $array['comment'] = 'fffffffffffffffffffff';
 
 //CommentOpt::insertComment($array);
 //print_r(\Model\Comment\CommentCount::getCommentCount(486320));
-
-print_r(CommentList::getCommentListRangeByTime(486320, 0, 7));
-
-
+print_r(CommentList::getCommentListRangeByUpCount(486458, 0, 7));
+print_r(CommentList::getCommentListRangeByTime(486458, 0, 7));
 
 //CommentOpt::addUpCount('57403ee45c303');
 

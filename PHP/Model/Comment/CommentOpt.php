@@ -27,7 +27,7 @@ class CommentOpt {
         $cmt_array['commentid'] = $commentid;
         $userid = $cmt_array['userid'];
         $newsid = $cmt_array['newsid'];
-        $touserid = $cmt_array['touserid'];
+        $tocommentid = $cmt_array['tocommentid'];
         $comment = $cmt_array['comment'];
         //获取ip地址
         $ip = WebUtils::getIp();
@@ -39,8 +39,8 @@ class CommentOpt {
         $upcount = 0;
 
         //将数据插入数据库
-        $query = "insert into m_ntjoy_comment_detail (`commentid`,`userid`,`newsid`,`touserid`,`comment`,`ip`,`time`) "
-                . "values ('$commentid','$userid','$newsid','$touserid','$comment','$ip','$time')";
+        $query = "insert into m_ntjoy_comment_detail (`commentid`,`userid`,`newsid`,`tocommentid`,`comment`,`ip`,`time`) "
+                . "values ('$commentid','$userid','$newsid','$tocommentid','$comment','$ip','$time')";
         $xm_mysql_obj->exec_query($query);
 
         /**
@@ -50,7 +50,7 @@ class CommentOpt {
         $redis_key = 'news_comment_range_upcount_' . $newsid;
         $redis_obj->zAdd($redis_key, $upcount, $commentid);
         //时间排序
-        $redis_key = 'new_comment_range_time_' . $newsid;
+        $redis_key = 'news_comment_range_time_' . $newsid;
         $redis_obj->zAdd($redis_key, $time, $commentid);
 
         /**
