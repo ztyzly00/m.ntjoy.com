@@ -35,4 +35,6 @@ class CommentManager {
         return CommentList::getCommentListRangeByUpCount($newsid, $offset, $offset + $count - 1);
     }
 
+    
+    
 }

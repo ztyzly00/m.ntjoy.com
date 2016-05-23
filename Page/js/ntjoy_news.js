@@ -105,9 +105,6 @@ $('#j_cmnt_smt').click(function() {
             $('#j_cmnt_pop').css('display', 'none');
             $('#main_body').css('display', 'block');
             $('#j_cmnt_input').val('');
-            loadCommentListByUpCount();
-            loadCommentCount();
-            window.scrollTo(0, document.body.scrollHeight);
         });
     }
 });
