@@ -81,6 +81,7 @@ $('.cmnt_smt').click(function() {
 //滚动到页面底部触发事件
 var offset = 5;
 var count = 4;
+
 $(window).scroll(function() {
     if (($(window).height() + $(window).scrollTop()) + 1 >= $(document).height()) {
         $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {

@@ -41,7 +41,6 @@ class NewsList {
 
         //从新闻列表读取唯一id，获取真正的新闻
         foreach ($news_list as $id) {
-            //$v是id的值
             $return_list[] = NewsInfo::getNewsInfoById($id);
         }
 

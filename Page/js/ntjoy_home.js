@@ -67,6 +67,10 @@ $(window).scroll(function() {
 $('#j_toTop').click(function() {
     window.scrollTo(0, 0);
 });
+$('.h_nav_li').click(function() {
+    alert('功能开发中，有问题或者bug请联系小镇，小镇微信号：ztyzly00');
+});
+
 
 function debug(string) {
     $('#test').append(string);

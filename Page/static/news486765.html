@@ -18,7 +18,7 @@
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home704.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home483.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
@@ -46,7 +46,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                var flashvars = {
+                    f: "http://media.ntjoy.com/vod/vol1/2016-05-23/115586/14720.mp4",
+                    c: 0,
+                    p: 0,
+                    r: "http://www.ntjoy.com/tiaozhuan15.html",
+                    t: 15,
+                    b: 1,
+                    my_url: encodeURIComponent(window.location.href)
+                };
+
+                var video = ["http://media.ntjoy.com/vod/vol1/2016-05-23/115586/14720.mp4->video/mp4"];
+                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　既然电瓶车停车收费，不在物价部门的定价目录内，公共领域电瓶车停车收费都是不合法的。上周六，记者在采访通大附院门口电瓶车乱收费，很多部门都说是历史遗留问题，具体是什么样的历史遗留问题呢？相关部门对通大附院门口电瓶车又是如何管理的呢？</P>
 <P>　　南通市车辆寄存管理处是个什么样的单位？因为年代久远，记者询问通大附院、启秀社区等多个部门都说不清楚。曾经在南通市车辆寄存管理处工作十几年的顾师傅，向记者讲述了来龙去脉。</P>
@@ -190,7 +206,7 @@
                     匿名用户
                 </span>
             </div><div class="cmntarea">
-                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,请大家按照规范填写）"></textarea>
+                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,评论需要审核通过才会显示）"></textarea>
             </div>
         </aside>
     </section>

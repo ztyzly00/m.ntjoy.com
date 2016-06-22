@@ -47,7 +47,11 @@ class XmMysqlObj implements Mysql_Interface\iMySqlObj {
         while ($row = mysqli_fetch_assoc($result)) {
             $returnString[] = $row;
         }
-        return $returnString;
+        if ($returnString) {
+            return $returnString;
+        } else {
+            return null;
+        }
     }
 
     public function fetch_row($query) {

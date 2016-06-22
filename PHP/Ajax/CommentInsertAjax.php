@@ -11,7 +11,8 @@ $comment_array['comment'] = $_POST['comment'];
 
 
 if ($comment_array['comment']) {
-    echo '评论成功';
+//    echo '评论审核中';
+//    return;
     CommentManager::insertComment($comment_array);
 } else {
     echo '评论失败';

@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title>【江海明珠网】记者体验：副驾驶开窗等红灯 你的包包很“危险”</title>
+        <title>【江海南通】记者体验：副驾驶开窗等红灯 你的包包很“危险”</title>
         <!--加载css-->
         <link href="css/ntjoy_news.min.css" rel="stylesheet">
         <script>
@@ -18,7 +18,7 @@
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home704.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home483.html">江海南通</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
@@ -46,7 +46,23 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>
+                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+                    <script type="text/javascript">
+                var flashvars = {
+                    f: "http://media.ntjoy.com/vod/vol1/2016-05-23/115587/14721.mp4",
+                    c: 0,
+                    p: 0,
+                    r: "http://www.ntjoy.com/tiaozhuan15.html",
+                    t: 15,
+                    b: 1,
+                    my_url: encodeURIComponent(window.location.href)
+                };
+
+                var video = ["http://media.ntjoy.com/vod/vol1/2016-05-23/115587/14721.mp4->video/mp4"];
+                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                    </script>
+                    
                 <div id="art_main_card_id">
                     <P>　　春夏交替，闷却不热，行车时很多市民都会选择开窗透气。可开窗享受时，却隐含了一种潜在的危险，你知道吗？</P>
 <P>　　最近外省市发生多起因开车窗被抢包的案件，记者调查发现，南通很多女司机，平时也都缺乏这样的忧患意识。</P>
@@ -187,7 +203,7 @@
                     匿名用户
                 </span>
             </div><div class="cmntarea">
-                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,请大家按照规范填写）"></textarea>
+                <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,评论需要审核通过才会显示）"></textarea>
             </div>
         </aside>
     </section>
