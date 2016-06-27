@@ -39,8 +39,8 @@ class CommentOpt {
         $upcount = 0;
 
         //将数据插入数据库
-        $query = "insert into m_ntjoy_comment_detail (`commentid`,`userid`,`newsid`,`tocommentid`,`comment`,`ip`,`time`) "
-                . "values ('$commentid','$userid','$newsid','$tocommentid','$comment','$ip','$time')";
+        $query = "insert into m_ntjoy_comment_detail (`commentid`,`userid`,`newsid`,`tocommentid`,`comment`,`ip`,`time`,`status`) "
+                . "values ('$commentid','$userid','$newsid','$tocommentid','$comment','$ip','$time',0)";
         $xm_mysql_obj->exec_query($query);
 
         /**

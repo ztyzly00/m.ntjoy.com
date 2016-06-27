@@ -29,14 +29,15 @@ class CommentList {
         $upcount_list = array();
         $return_list = array();
 
-        if (!$redis_obj->get('cmt_list_upcount_flush' . $newsid)) {
+        //启用缓存需要把xx前缀去掉
+        if (!$redis_obj->get('xx_cmt_list_upcount_flush' . $newsid)) {
             //一次刷新数量
             $mysql_count = 6;
             $xm_mysql_obj = XmMysqlObj::getInstance();
 
             $query = "select mncu.upcount,mncd.commentid from m_ntjoy_comment_detail mncd "
                     . "left join m_ntjoy_comment_upcount mncu on mncu.commentid=mncd.commentid "
-                    . "where mncd.newsid=$newsid "
+                    . "where mncd.newsid=$newsid and status=1 "
                     . "order by mncu.upcount desc limit $mysql_count";
             $fetch_array = $xm_mysql_obj->fetch_assoc($query);
 
@@ -75,13 +76,15 @@ class CommentList {
         $time_list = array();
         $return_list = array();
 
-        if (!$redis_obj->get('cmt_list_time_flush' . $newsid)) {
+        //启用缓存需要把xx前缀去掉
+        if (!$redis_obj->get('xx_cmt_list_time_flush' . $newsid)) {
             //缓存未命中
             $xm_mysql_obj = XmMysqlObj::getInstance();
 
             //mysql预取值，预先取10000,后续不足有需求时再做判定
             $mysql_count = 10000;
-            $query = "select commentid,time from m_ntjoy_comment_detail where newsid=$newsid order by time desc limit $mysql_count";
+            $query = "select commentid,time from m_ntjoy_comment_detail where newsid=$newsid and status=1 "
+                    . "order by time desc limit $mysql_count";
             $fetch_array = $xm_mysql_obj->fetch_assoc($query);
 
             //redis缓存相应数据

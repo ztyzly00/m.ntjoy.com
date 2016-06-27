@@ -13,7 +13,7 @@ $new_content_array = NewsManager::getNewsContent($id);
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title>【江海南通】<?= $new_content_array['title'] ?></title>
+        <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
         <link href="css/ntjoy_news.min.css" rel="stylesheet">
         <script>
@@ -28,7 +28,7 @@ $new_content_array = NewsManager::getNewsContent($id);
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home483.html">江海南通</a></h2>
+                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home483.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->

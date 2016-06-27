@@ -42,7 +42,19 @@ $news_list = NewsManager::getNewsList($column_id);
                 </ul>
             </div>
         </header>
-
+        
+<!--        <div id="topLevelNav" class="top_level_container" style="display: block; height: 407px; opacity: 1;">
+            <div class="i_cor"></div>
+            <div class="top_level_nav fix">
+                <a href="index.php?fid=2"><i class="i i_zx"></i>资讯</a>  
+                <a href="zhibo.php"><i class="i i_live"></i>直播</a>
+                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>
+                <a href="http://m.ntjoy.cn/mob/activity/activity.html"><i class="i i_events"></i>活动</a>
+                <a href="dianbo_list.php?columnid=weishipin"><i class="i i_wdy"></i>微视频</a>
+                                 <a href="http://m.ntjoy.cn/mob/mzt/m_zdo/index.html"><i class="i "></i>中东欧</a>
+            </div>
+        </div>
+        -->
         <!--navi导航栏-->
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
