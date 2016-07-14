@@ -23,6 +23,8 @@ var slider =
         });
 
 //触发事件
+
+
 $('#j_toggle_nav').click(function() {
     //判断展开按钮状态
     //我不推荐通过赋值class的方法来,可以用数值循环
@@ -67,8 +69,12 @@ $(window).scroll(function() {
 $('#j_toTop').click(function() {
     window.scrollTo(0, 0);
 });
-$('.h_nav_li').click(function() {
-    alert('功能开发中，有问题或者bug请联系小镇，小镇微信号：ztyzly00');
+$('#j_menu').click(function() {
+    if ($('#topLevelNav').css('display') == 'none') {
+        $('#topLevelNav').css('display', 'block');
+    } else {
+        $('#topLevelNav').css('display', 'none');
+    }
 });
 
 

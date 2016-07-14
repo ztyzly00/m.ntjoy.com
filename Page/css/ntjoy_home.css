@@ -97,6 +97,112 @@ h1, h2, h3, strong {
     display: inline-block;
 }
 
+/*功能弹出模块*/
+.top_level_container {
+    color:#fff;
+    display: none;
+    height: 0;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    z-index: 999;
+    opacity: 0;
+}
+.top_level_nav {
+    height: 40px;
+    color:#fff;
+    padding: 0  10px;
+    line-height: 40px;
+    background:#129bf0;
+    border-radius: 0px;
+    box-shadow: 3px 3px 10px #333;
+}
+.top_level_nav a{
+    margin-left: 10px;
+    font-size: 27px;
+    color:#fff;
+}
+.top_level_nav a:first-child{
+    margin-left: 0px;
+    // border-right:   solid 1px;
+    font-size: 27px;
+    color:#fff;
+}
+
+/*live的掌上南通广告*/
+.app-top-bar {
+    position: relative;
+    height: 40px;
+    padding: 14px 12px;
+    background: #fff;
+    overflow: hidden;
+}
+.app-top-bar .icon {
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    background: url(../img/app-icon.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.app-top-bar .describe {
+    font-size: 14px;
+    margin-left: 51px;
+    margin-top: 2px;
+    color: #888;
+}
+.app-top-bar .title {
+    font-size: 16px;
+    margin-left: 51px;
+    margin-top: -1px;
+}
+.app-top-bar .download-btn {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    height: 36px;
+    padding: 0 1em;
+    font-size: 14px;
+    line-height: 36px;
+    color: #fff;
+    background: -webkit-gradient(linear,left top,right top,from(#26abc9),to(#2359cd));
+    background: -webkit-linear-gradient(left,#26abc9,#2359cd);
+    background: linear-gradient(to right,#26abc9,#2359cd);
+    border-radius: 5px;
+}
+
+/*live的nav*/
+.tab_item_list {
+    height: 200px;
+    background-color: #fff;
+    padding: 20px 0 20px 20px;
+}
+.tab_item_list a.tv_1 {
+    background-position: 0 0;
+}
+.tab_item_list a.tv_2 {
+    background-position: 0 -60px;
+}
+.tab_item_list a.tv_3 {
+    background-position: 0 -120px;
+}
+.tab_item_list a.tv_4 {
+    background-position: 0 -180px;
+}
+.tab_item_list a.tv_5 {
+    background-position: 0 -240px;
+}
+.tab_item_list a {
+    width: 60px;
+    height:60px;
+    margin-right: 10px;    
+    background: url(../img/live_cell_mid.png);
+    float: left;
+}
+
 /*导航栏区域*/
 .nav_ntjoy {
     font-size: 18px;
