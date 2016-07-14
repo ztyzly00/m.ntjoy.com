@@ -61,8 +61,9 @@ if ($cid == 1) {
         <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
             <div class="i_cor"></div>
             <div class="top_level_nav fix">
-                <a href="home483.html"><i class="i i_zx"></i>资讯</a>  
+                <a href="home483.html"><i class="i i_zx"></i>资讯</a>
                 <a href="live.php"><i class="i i_live"></i>直播</a>
+                <a href="video.php"><i class="i i_live"></i>宽频</a>
 <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
             </div>
         </div>

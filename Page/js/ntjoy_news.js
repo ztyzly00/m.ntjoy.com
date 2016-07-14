@@ -75,7 +75,7 @@ $(window).scroll(function() {
 
 //登录按钮
 $('.hIcon').click(function() {
-    alert('掌上南通账号登录功能开发中~如有问题请联系小镇：小镇微信号：ztyzly00');
+    alert('功能开发中~如有问题请联系微信号：ztyzly00');
 });
 
 //回顶部按钮事件

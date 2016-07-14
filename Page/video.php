@@ -5,10 +5,13 @@ require_once __DIR__ . '/../PHP/autoload.php';
 
 use Manager\NewsManager;
 
-$column_id = $_GET['columnid'];
-if (!$column_id) {
-    $column_id = 3;
+if (!isset($_GET['columnid'])) {
+    $column_id = 359;
+} else {
+    $column_id = $_GET['columnid'];
 }
+
+
 $news_list = NewsManager::getNewsList($column_id);
 ?>
 
@@ -21,6 +24,15 @@ $news_list = NewsManager::getNewsList($column_id);
 
         <!--加载css-->
         <link href="css/ntjoy_home.css" rel="stylesheet">
+        <style>
+            .nav_ntjoy_list a{
+                width:23%;
+            }
+
+            .nav_ntjoy{
+                padding:3px 0;
+            }
+        </style>
     </head>
     <body>
         <header class="ntjoy_header">
@@ -49,6 +61,7 @@ $news_list = NewsManager::getNewsList($column_id);
             <div class="top_level_nav fix">
                 <a href="home483.html"><i class="i i_zx"></i>资讯</a>  
                 <a href="live.php"><i class="i i_live"></i>直播</a>
+                <a href="video.php"><i class="i i_live"></i>宽频</a>
 <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
             </div>
         </div>
@@ -56,28 +69,12 @@ $news_list = NewsManager::getNewsList($column_id);
         <!--navi导航栏-->
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
-                <a id="nav_item483" href="home483.html">网罗</a>
-                <a id="nav_item1377" href="home1377.html" >娱乐</a>
-                <a id="nav_item8" href="home8.html">国际</a>
-                <a id="nav_item704" href="home704.html">快讯</a>
-                <a id="nav_item3"  href="home3.html">要闻</a>
+                <a id="nav_item359" href="video.php?columnid=359">NTTV新闻</a>
+                <a id="nav_item360" href="video.php?columnid=360" >城市日历</a>
+                <a id="nav_item365" href="video.php?columnid=365">总而言之</a>
+                <a id="nav_item362" href="video.php?columnid=362">媒体大放送</a>
 
-                <!--                <a href="#">点播</a>
-                                <a href="#">直播</a>-->
-                <a id="nav_item4" href="home4.html">社会</a>
-                <a id="nav_item5" href="home5.html">民生</a>
-                <a id="nav_item6" href="home6.html">省内</a>
-                <a id="nav_item7" href="home7.html">国内</a>
-
-
-                <a id="nav_item9" href="home9.html">市区</a>
-
-                <a id="nav_item10" href="home10.html" >如皋</a>
-                <a id="nav_item11" href="home11.html" class="hide">如东</a>
-                <a id="nav_item12" href="home12.html" class="hide">海安</a>
-                <a id="nav_item13" href="home13.html" class="hide">海门</a>
-                <a id="nav_item14" href="home14.html" class="hide">启东</a>
-                <a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>
+                <!--<a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>-->
             </nav>
         </section>
 
