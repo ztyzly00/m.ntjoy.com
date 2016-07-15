@@ -30,7 +30,7 @@ class NewsManager {
      * 根据columnid返回新闻列表
      * @param type $columnid
      */
-    public static function getNewsList($column_id, $count = 9) {
+    public static function getNewsList($column_id, $count = 7) {
         return NewsList::getNewsListByColumnId($column_id, 0, $count);
     }
 

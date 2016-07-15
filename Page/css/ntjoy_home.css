@@ -124,7 +124,6 @@ h1, h2, h3, strong {
 }
 .top_level_nav a:first-child{
     margin-left: 0px;
-    // border-right:   solid 1px;
     font-size: 27px;
     color:#fff;
 }

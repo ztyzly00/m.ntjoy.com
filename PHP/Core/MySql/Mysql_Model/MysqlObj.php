@@ -50,6 +50,16 @@ class MysqlObj implements Mysql_Interface\iMySqlObj {
         return $returnString;
     }
 
+    public function fetch_assoc_one($query) {
+        $result = mysqli_query($this->link, $query);
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+            return $row;
+        } else {
+            return null;
+        }
+    }
+
     public function fetch_row($query) {
         
     }

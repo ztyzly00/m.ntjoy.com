@@ -21,6 +21,11 @@ interface iMySqlObj {
     public function fetch_assoc($query);
 
     /**
+     * 返回一行结果集，键值形式
+     */
+    public function fetch_assoc_one($query);
+
+    /**
      * 返回结果集，索引+鍵值形式
      */
     public function fetch_array($query);

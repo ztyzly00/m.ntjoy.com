@@ -20,7 +20,7 @@ $news_list = NewsManager::getNewsList($column_id);
         <title>江海明珠网</title>
 
         <!--加载css-->
-        <link href="css/ntjoy_home.css" rel="stylesheet">
+        <link href="css/ntjoy_home.min.css" rel="stylesheet">
     </head>
     <body>
         <header class="ntjoy_header">
@@ -47,7 +47,7 @@ $news_list = NewsManager::getNewsList($column_id);
         <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
             <div class="i_cor"></div>
             <div class="top_level_nav fix">
-                <a href="home483.html"><i class="i i_zx"></i>资讯</a>  
+                <a href="home704.html"><i class="i i_zx"></i>资讯</a>  
                 <a href="live.php"><i class="i i_live"></i>直播</a>
                 <a href="video.php"><i class="i i_live"></i>宽频</a>
 <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
@@ -57,12 +57,11 @@ $news_list = NewsManager::getNewsList($column_id);
         <!--navi导航栏-->
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
+                <a id="nav_item704" href="home704.html">快讯</a>
                 <a id="nav_item483" href="home483.html">网罗</a>
                 <a id="nav_item1377" href="home1377.html" >娱乐</a>
                 <a id="nav_item8" href="home8.html">国际</a>
-                <a id="nav_item704" href="home704.html">快讯</a>
                 <a id="nav_item3"  href="home3.html">要闻</a>
-
                 <!--                <a href="#">点播</a>
                                 <a href="#">直播</a>-->
                 <a id="nav_item4" href="home4.html">社会</a>
