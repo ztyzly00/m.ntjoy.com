@@ -29,7 +29,10 @@ class NewsRecommend {
             $yst_time = $crt_time - 86400;
 
             /* 获取最热新闻列表的id */
-            $query = "select id from liv_contentmap where pubdate > $yst_time order by pointnum desc limit 3";
+            $query = "select id from liv_contentmap lc "
+                    . "left join liv_article la on lc.contentid=la.articleid "
+                    . "where pubdate > $yst_time and la.video='' "
+                    . "order by pointnum desc limit 3";
             $fetch_list = $mysql_obj->fetch_assoc($query);
             foreach ($fetch_list as $value) {
                 foreach ($value as $id) {

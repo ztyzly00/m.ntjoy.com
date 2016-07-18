@@ -380,7 +380,7 @@ a {
 /*正文段落*/
 .art_t {
     margin-bottom: 20px;
-    text-align: justify;
+    /*text-align: justify;*/
 }
 
 /*点赞分享模块*/
@@ -1106,9 +1106,6 @@ a.cmnt_smt {
     width: 80px;
     float: left;
     margin-right: 16px;
-    // background: url(../images/img/feed_default.jpg) no-repeat;
-    // background-size: auto 100%;
-    // background-position: center;
 }
 .recommend_moudule dd h3 {
     color: #2f2f2f;

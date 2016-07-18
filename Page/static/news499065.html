@@ -1,29 +1,16 @@
-<?php
-ob_start();
-require_once __DIR__ . '/../PHP/autoload.php';
-
-use Manager\NewsManager;
-
-$id = $_GET['id'];
-
-$new_content_array = NewsManager::getNewsContent($id);
-
-$hot_news_array = NewsManager::getHotNews();
-$hot_video_array = NewsManager::getHotVideo();
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
+        <title>【江海明珠网】美国艺术家组织100名女性裸体抗议特朗普</title>
         <!--加载css-->
         <link href="css/ntjoy_news.min.css" rel="stylesheet">
         <script>
             var offset = 0;
             var count = 4;
             var userid = '';
-            var newsid =<?= $id ?>;
+            var newsid =499065;
             var tocommentid = '';
         </script>
     </head>
@@ -36,7 +23,7 @@ $hot_video_array = NewsManager::getHotVideo();
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home8.html">国际</a></li>
                 </ul>
             </nav>
 
@@ -44,11 +31,11 @@ $hot_video_array = NewsManager::getHotVideo();
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
+                    <h1 class="art_title_h1">美国艺术家组织100名女性裸体抗议特朗普</h1>
                     <article class="art_title_op">
-                        <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
+                        <time>2016-07-18 16:18:53 江海明珠网</time>
                         <aside>
-                            <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>">
+                            <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=499065">
                                 <i class="comment_num icon-page_comment_2"></i>
                                 <span class="j_article_cmnt_count">0</span>
                             </a>
@@ -59,32 +46,19 @@ $hot_video_array = NewsManager::getHotVideo();
                 </section>
 
                 <!--视频-->
-                <?php
-                if ($new_content_array['video_url']) {
-                    ?>
-                    <div id="player" style="margin-bottom: 20px"></div>
-                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
-                    <script type="text/javascript">
-                var flashvars = {
-                    f: "<?= $new_content_array['video_url'] ?>",
-                    c: 0,
-                    p: 0,
-                    r: "http://www.ntjoy.com/tiaozhuan15.html",
-                    t: 15,
-                    b: 1,
-                    my_url: encodeURIComponent(window.location.href)
-                };
-
-                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
-                    </script>
-                    <?php
-                }
-                ?>
-
+                
                 <div id="art_main_card_id">
-                    <?= $new_content_array['content'] ?>
-                </div>
+                    <P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468829976_55965600.png" width=500 /></P>
+<P>　　综合外媒报道，美国克利夫兰市本周即将举办共和党全国代表大会，17日，艺术家斯宾塞·图尼克（Spencer Tunick）在大会场馆附近组织了一场装置艺术活动并进行拍摄，100名不同肤色和身材的裸体女性面向体育馆高举镜子，表达对大会即将提名唐纳德·特朗普（Donald Trump）为共和党总统候选人的抗议。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468829988_83260700.png" width=500 /></P>
+<P align=left>　　这次活动是图尼克的大型装置艺术系列“她言即一切”（Everything She Says Means Everything）的最新作品。49岁的艺术家图尼克以拍摄裸体照片闻名，他在个人网站上说，镜子映射出了“进步女性的知识和智慧，以及‘大自然’的概念”。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830010_98403900.png" width=500 /></P>
+<P align=left>　　同时图尼克也表示这次作品含有政治意味。在谈到共和党候选人特朗普曾粗鲁评价墨西哥裔、阿拉伯裔和女性记者等群体时，图尼克说：“我真的无法投这一票，我得做点什么。”他呼吁美国每一位艺术家都应该在大选之前进行创作。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830029_39351700.png" width=500 /></P>
+<P align=left>　　从规模上来说，这次的作品远不及图尼克之前的创作。过去六年间，他创作的最大的装置艺术发生在今年六月，当时饱受战争之苦的哥伦比亚临近和平，图尼克招募了6000多名女性在其首都波哥大的中央广场上集体完成裸体行为艺术。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830051_80733500.png" width=500 /></P>
+<P align=left>　　图尼克曾在巴塞罗那组织了7000人的裸体艺术行为，之后在墨西哥城更是将这个数字扩大到了18000人。但此前他从未在美国创作过类似的装置艺术，因为在美国“裸体被视为犯罪或暴力的象征”。在共和党全国代表大会举办前夕，克利夫兰当地的安保力量更是全方位加强，因此这次装置艺术行为的开展也尤为困难。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830074_43598600.png" width=500 /></P>
+<P align=left>　　确实有一些警察到活动现场进行监管，但图尼克表示，到活动结束时，警察都对女性们脱下衣服举镜抗议的场景留下了深刻印象。“他们明显不是特朗普的粉丝。”图尼克说。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830093_59332800.png" width=500 /></P>
+<P align=left>　　图尼克从2013年便开始筹划“她言即一切”系列，那时特朗普还未在总统竞选中展露锋芒。他说，因为对于种族问题的成功展示，这一系列的作品产生了更深刻的意义。他之前的作品都没有真正的政治意味，这次是个例外。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830112_73777300.png" width=500 /></P>
+<P align=left>　　活动当天，数名网页开发者、摄影师、摄像师和公关人员聚集在一起，共同协助拍摄作品。图尼克说，活动举办前有1800多名女性报名参加，这证明她们是支持艺术的勇士。“她们能愿意不穿衣服走进高压危险区，真的很不可思议。”</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830162_85240100.png" width=500 /></P>
+<P align=left>　　这次活动是图尼克自己出资的，他认为博物馆不会插手这样的项目。除了花销巨大之外，现场状况也比较危险。抗议者是不允许太靠近体育馆的，此前美国公民自由协会（ACLU）的抗议者就是因离体育馆场地太近而引发了官司。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold391/1468830185_11803000.png" width=500 /></P>
+<P align=left>　　对图尼克作品的争议从未中断。一些批评认为图尼克的作品毫无挑战性，因为让人们对裸体照片施以注意并不难。还有人质疑图尼克的作品是“为了侵犯而侵犯”，或是借用了裸体女性的名义为自己贴金。但图尼克还是怀着热情将这个系列持续做了下来。</P>                </div>
                 <!--顶踩begin-->
 <!--                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
                     <aside class="operate" id="j_operate">
@@ -133,7 +107,7 @@ $hot_video_array = NewsManager::getHotVideo();
             <section id="pageJumpBtn" style="position: fixed; bottom: 74px; right: 12px; width: 42px; z-index: 999;">
                 <a href="javascript:;" id="goPageTop"
                    style="width:42px; height:42px; margin-bottom:10px; border-radius:50%; background:url(img/go_top_icon.png) no-repeat 0 0; background-size:42px auto; display: none;"></a>
-                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html" id="goPageHome"
+                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home8.html" id="goPageHome"
                    style=" width:42px; height:42px; position: relative; border-radius:50%; background:url(img/go_home_icon.png) no-repeat 0 0; background-size:42px auto;display: none;">
                     <i style="position: absolute; top: 0px; right: 0px; width: 10px; height: 10px; border: 2px solid rgb(239, 248, 255); border-radius: 50%; background: rgb(255, 71, 67);">
                     </i>
@@ -147,7 +121,7 @@ $hot_video_array = NewsManager::getHotVideo();
                         <p>说说你的看法</p>
                     </div>            
                     <div class="foot_cmt_num j_p_comt">
-                        <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
+                        <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=499065" data-sudaclick="article_new_cms_comt">
                             <span class="cmt_num_t j_article_cmnt_count">0</span>
                         </a>
                     </div>
@@ -163,26 +137,46 @@ $hot_video_array = NewsManager::getHotVideo();
                     <span>HOT</span>
                 </aside>
                 <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-                    <?php
-                    for ($i = 0; $i < count($hot_news_array); $i++) {
-                        ?>
-                        <a href="news<?= $hot_news_array[$i]['id'] ?>.html">
+                                            <a href="news499018.html">
                             <dl class="clearfix">
                                 <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="<?= $hot_news_array[$i]['small_thumbfile_url'] ?>">
+                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold778/small_1468810926_76212800.png">
                                 </dt>
                                 <dd>
-                                    <h3 class="title"><?= $hot_news_array[$i]['title'] ?></h3>
+                                    <h3 class="title">中戏2016新生报名啦！美女如云颜值个个秒杀关晓彤</h3>
                                     <div class="mark_count">
-                                        <time><?= $hot_news_array[$i]['pubdate'] ?></time>
+                                        <time>2016-07-18 10:39:43</time>
                                     </div>
                                 </dd>
                             </dl>
                         </a>
-                        <?php
-                    }
-                    ?>
-                </aside>
+                                                <a href="news498977.html">
+                            <dl class="clearfix">
+                                <dt class="j_art_lazy"> 
+                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/yw/fold67/small_1468804946_89518100.jpg">
+                                </dt>
+                                <dd>
+                                    <h3 class="title">沈峻峰同志任南通如东县副县长、代县长 </h3>
+                                    <div class="mark_count">
+                                        <time>2016-07-18 09:17:23</time>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                                                <a href="news499047.html">
+                            <dl class="clearfix">
+                                <dt class="j_art_lazy"> 
+                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold778/small_1468826263_14473700.jpg">
+                                </dt>
+                                <dd>
+                                    <h3 class="title">D奶韩女星Clara青纯范儿甜笑 深V俯身秀美胸</h3>
+                                    <div class="mark_count">
+                                        <time>2016-07-18 15:09:25</time>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                                        </aside>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -197,26 +191,46 @@ $hot_video_array = NewsManager::getHotVideo();
                 </aside>
                 <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
 
-                    <?php
-                    for ($i = 0; $i < count($hot_video_array); $i++) {
-                        ?>
-                        <a href="news<?= $hot_video_array[$i]['id'] ?>.html">
+                                            <a href="news498919.html">
                             <dl class="clearfix">
                                 <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="<?= $hot_video_array[$i]['small_thumbfile_url'] ?>">
+                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/59/118531.jpg">
                                 </dt>
                                 <dd>
-                                    <h3 class="title"><?= $hot_video_array[$i]['title'] ?></h3>
+                                    <h3 class="title">20160717城市日历</h3>
                                     <div class="mark_count">
-                                        <time><?= $hot_video_array[$i]['pubdate'] ?></time>
+                                        <time>2016-07-17 20:30:01</time>
                                     </div>
                                 </dd>
                             </dl>
                         </a>
-                        <?php
-                    }
-                    ?>
-
+                                                <a href="news498894.html">
+                            <dl class="clearfix">
+                                <dt class="j_art_lazy"> 
+                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/59/118516.jpg">
+                                </dt>
+                                <dd>
+                                    <h3 class="title">20160717NTTV新闻</h3>
+                                    <div class="mark_count">
+                                        <time>2016-07-17 19:15:01</time>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                                                <a href="news499070.html">
+                            <dl class="clearfix">
+                                <dt class="j_art_lazy"> 
+                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/vod/xwsph/nttv1/nttv/fold16/small_1468832727_47811500.jpg">
+                                </dt>
+                                <dd>
+                                    <h3 class="title">满足公园绿地10分钟便民服务 今后南通市区10亩以下地块原则上直接收储建绿</h3>
+                                    <div class="mark_count">
+                                        <time>2016-07-18 17:04:07</time>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        
                 </aside>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
@@ -305,7 +319,3 @@ $hot_video_array = NewsManager::getHotVideo();
 </html>
 
 
-<?php
-$flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
-?>

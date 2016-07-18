@@ -58,21 +58,22 @@ $news_list = NewsManager::getNewsList($column_id);
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
                 <a id="nav_item704" href="home704.html">快讯</a>
+                <a id="nav_item3"  href="home3.html">要闻</a>
+                <a id="nav_item7" href="home7.html">国内</a>
+                <a id="nav_item8" href="home8.html">国际</a>
                 <a id="nav_item483" href="home483.html">网罗</a>
                 <a id="nav_item1377" href="home1377.html" >娱乐</a>
-                <a id="nav_item8" href="home8.html">国际</a>
-                <a id="nav_item3"  href="home3.html">要闻</a>
+                <a id="nav_item6" href="home6.html">省内</a>
+                <a id="nav_item9" href="home9.html">市区</a>
                 <!--                <a href="#">点播</a>
                                 <a href="#">直播</a>-->
                 <a id="nav_item4" href="home4.html">社会</a>
-                <a id="nav_item5" href="home5.html">民生</a>
-                <a id="nav_item6" href="home6.html">省内</a>
-                <a id="nav_item7" href="home7.html">国内</a>
 
+                <a id="nav_item5" href="live.php" style="color:#ff0000;font-weight: 600">直播</a>
+                <a id="nav_item5" href="video.php" style="color:#ff0000;font-weight: 600">宽频</a>
 
-                <a id="nav_item9" href="home9.html">市区</a>
-
-                <a id="nav_item10" href="home10.html" >如皋</a>
+                <a id="nav_item5" href="home5.html"  class="hide">民生</a>
+                <a id="nav_item10" href="home10.html"  class="hide">如皋</a>
                 <a id="nav_item11" href="home11.html" class="hide">如东</a>
                 <a id="nav_item12" href="home12.html" class="hide">海安</a>
                 <a id="nav_item13" href="home13.html" class="hide">海门</a>
@@ -146,6 +147,9 @@ $news_list = NewsManager::getNewsList($column_id);
                 <?php
             }
             ?>
+            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
+                <img src="http://www.ntjoy.com/images/xiangmu.jpg" width="100%">
+            </a>
         </section>
         <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
             <span class="loading">小镇加载中.....</span>
