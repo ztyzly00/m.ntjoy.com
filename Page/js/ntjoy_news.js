@@ -23,6 +23,9 @@ function modifyContent() {
     $('#art_main_card_id img').addClass('news_img');
     //让图片延时加载
     $('#art_main_card_id img').addClass('lazy');
+    $('#art_main_card_id img').removeAttr('style');
+    $('#art_main_card_id img').removeAttr('height');
+    $('#art_main_card_id img').removeAttr('width');
     $('#art_main_card_id p').addClass('art_t');
 
 }
@@ -43,10 +46,10 @@ function loadCommentListByUpCount() {
             for (var i = 0; i < comment_list.length; i++) {
                 var add_string = "<div class=\"comment-wrap clearfix\"><div class=\"author clearfix\"><address>" + comment_list[i]['nickname'] + "<\/address><time class=\"cmnt_op_bottom_times\">" + comment_list[i]['time'] + "<\/time><\/div><article class=\"j_cmnt_article\">" + comment_list[i]['comment'] + "<\/article><div class=\"cmnt_op_bottom clearfix\"><span class=\"cmnt_op\" style=\"display:none\"><a href=\"javascript:void(0);\" title=\"赞\" class=\"good on\"><i class=\"icon-page_praise\"><\/i>103<i class=\"fly icon-page_praise\"><\/i><\/a><a href=\"javascript:void(0);\" title=\"评论\" class=\"cmntico\"><i class=\"icon-page_comment_4\"><\/i><\/a><\/span><\/div><\/div>";
                 $(".j_comment_box").append(add_string);
-                $(".th_td").html('最新评论');
+                //$(".th_td").html('最新评论');
             }
         } else {
-            $(".th_td").append("（当前无人评论哦~快来抢沙发吧）");
+            //$(".th_td").append("（当前无人评论哦~快来抢沙发吧）");
         }
     });
 }
@@ -75,7 +78,7 @@ $(window).scroll(function() {
 
 //登录按钮
 $('.hIcon').click(function() {
-    alert('功能开发中~如有问题请联系微信号：ztyzly00');
+    //alert('功能开发中~如有问题请联系微信号：ztyzly00');
 });
 
 //回顶部按钮事件

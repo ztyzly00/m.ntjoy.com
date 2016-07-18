@@ -103,13 +103,13 @@ if ($cid == 1) {
 
         <div style="height: 60px;">
             <div style="background: #80c269;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=1" style="color:#fff;font-size: 25px">一套</a>
+                <a  href="live.php?cid=1" style="color:#fff;font-size: 25px">新闻</a>
             </div>
             <div style="background: #06a7e1;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=2" style="color:#fff;font-size: 25px">二套</a>
+                <a  href="live.php?cid=2" style="color:#fff;font-size: 25px">都市</a>
             </div>
             <div style="background: #7e73b9;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=3" style="color:#fff;font-size: 25px">三套</a>
+                <a  href="live.php?cid=3" style="color:#fff;font-size: 25px">影视</a>
             </div>
             <div style="background: #f76a6f;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
                 <a  href="live.php?cid=4" style="color:#fff;font-size: 25px">休闲</a>
@@ -122,13 +122,6 @@ if ($cid == 1) {
             <p style="font-size:15px">Copyright (C) 2011-2013 ntjoy.com All Rights Reserved 江海明珠网 南通广播电视台 南通新闻网 版权所有</p>
 
         </footer>
-        <!--        <div class="tab_item_list">
-                    <a class="tv_1" href="live.php?cid=1"></a>
-                    <a class="tv_2" href="live.php?cid=2"></a>
-                    <a class="tv_3" href="live.php?cid=3"></a>
-                    <a class="tv_4" href="live.php?cid=4"></a>
-                    <a class="tv_5" href="live.php?cid=5"></a>
-                </div>-->
 
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>       
         <script src="js/ntjoy_live.js"></script>

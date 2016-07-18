@@ -10,6 +10,7 @@ namespace Manager;
 
 use Model\News\NewsList;
 use Model\News\NewsInfo;
+use Model\News;
 
 class NewsManager {
 
@@ -40,6 +41,22 @@ class NewsManager {
      */
     public static function getNewsContent($id) {
         return NewsInfo::getNewsInfoById($id);
+    }
+
+    /**
+     * 获取点击量最高新闻列表
+     * @return type
+     */
+    public static function getHotNews() {
+        return News\NewsRecommend::getHotNews();
+    }
+
+    /**
+     * 获取点击量最高宽频列表
+     * @return type
+     */
+    public static function getHotVideo() {
+        return News\NewsRecommend::getHotVideo();
     }
 
 }

@@ -7,6 +7,9 @@ use Manager\NewsManager;
 $id = $_GET['id'];
 
 $new_content_array = NewsManager::getNewsContent($id);
+
+$hot_news_array = NewsManager::getHotNews();
+$hot_video_array = NewsManager::getHotVideo();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +18,7 @@ $new_content_array = NewsManager::getNewsContent($id);
         <meta charset="UTF-8">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/ntjoy_news.css" rel="stylesheet">
         <script>
             var offset = 0;
             var count = 4;
@@ -126,9 +129,106 @@ $new_content_array = NewsManager::getNewsContent($id);
                 <!--顶踩end-->
             </section>
 
+            <!--滚动显示双按钮-->
+            <section id="pageJumpBtn" style="position: fixed; bottom: 74px; right: 12px; width: 42px; z-index: 999;">
+                <a href="javascript:;" id="goPageTop"
+                   style="width:42px; height:42px; margin-bottom:10px; border-radius:50%; background:url(img/go_top_icon.png) no-repeat 0 0; background-size:42px auto; display: none;"></a>
+                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html" id="goPageHome"
+                   style=" width:42px; height:42px; position: relative; border-radius:50%; background:url(img/go_home_icon.png) no-repeat 0 0; background-size:42px auto;display: none;">
+                    <i style="position: absolute; top: 0px; right: 0px; width: 10px; height: 10px; border: 2px solid rgb(239, 248, 255); border-radius: 50%; background: rgb(255, 71, 67);">
+                    </i>
+                </a>
+            </section>
+
+            <!--底部评论区域-->
+            <section class="foot_comment">
+                <aside class="foot_commentcont">
+                    <div class="foot_cmt_input j_cmt_btn"  id="foot_cmt_id">
+                        <p>说说你的看法</p>
+                    </div>            
+                    <div class="foot_cmt_num j_p_comt">
+                        <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
+                            <span class="cmt_num_t j_article_cmnt_count">0</span>
+                        </a>
+                    </div>
+                    <div class="foot_cmt_share j_shareBtn"></div>
+                </aside>
+            </section>
+
+            <!--推荐阅读区域-->
+            <section class="extend-module j_article_relevent" >
+                <!--支付宝页需要在th_td这个样式上在添加alipaybg样式名-->
+                <aside class="th_td">
+                    推荐新闻
+                    <span>HOT</span>
+                </aside>
+                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+                    <?php
+                    for ($i = 0; $i < count($hot_news_array); $i++) {
+                        ?>
+                        <a href="news<?= $hot_news_array[$i]['id'] ?>.html">
+                            <dl class="clearfix">
+                                <dt class="j_art_lazy"> 
+                                <img src="<?= $hot_news_array[$i]['small_thumbfile_url'] ?>">
+                                </dt>
+                                <dd>
+                                    <h3 class="title"><?= $hot_news_array[$i]['title'] ?></h3>
+                                    <div class="mark_count">
+                                        <time><?= $hot_news_array[$i]['pubdate'] ?></time>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <?php
+                    }
+                    ?>
+                </aside>
+                <aside class="load-more j_load_bar" style="display: none;">
+                    <span class="loading"><i class="icon-page_loading"></i>加载中</span>
+                </aside>
+            </section>
+
+            <!--推荐宽频区域-->
+            <section class="extend-module j_article_relevent">
+                <!--支付宝页需要在th_td这个样式上在添加alipaybg样式名-->
+                <aside class="th_td">
+                    热点宽频
+                    <span>HOT</span>
+                </aside>
+                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+
+                    <?php
+                    for ($i = 0; $i < count($hot_video_array); $i++) {
+                        ?>
+                        <a href="news<?= $hot_video_array[$i]['id'] ?>.html">
+                            <dl class="clearfix">
+                                <dt class="j_art_lazy"> 
+                                <img src="<?= $hot_video_array[$i]['small_thumbfile_url'] ?>">
+                                </dt>
+                                <dd>
+                                    <h3 class="title"><?= $hot_video_array[$i]['title'] ?></h3>
+                                    <div class="mark_count">
+                                        <time><?= $hot_video_array[$i]['pubdate'] ?></time>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <?php
+                    }
+                    ?>
+
+                </aside>
+                <aside class="load-more j_load_bar" style="display: none;">
+                    <span class="loading"><i class="icon-page_loading"></i>加载中</span>
+                </aside>
+            </section>
+
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td">最新评论</aside>
+                <aside class="th_td">
+                    最新评论
+                    <span style="background: #33CC52;">NEW</span>
+                </aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
                         <div class="author clearfix">
@@ -164,36 +264,11 @@ $new_content_array = NewsManager::getNewsContent($id);
                                         class="icon-page_comment_4"></i></a></span></div>
                     </div>
                 </aside>
-                <div class="comment-count">
-                    <a href="http://cmnt.sina.cn/index?vt=4&amp;product=comos&amp;index=fxsenvm0550240&amp;tj_ch=news" alt="全部评论">全部评论</a>
-                </div>
+                <!--                <div class="comment-count">
+                                    <a href="http://cmnt.sina.cn/index?vt=4&amp;product=comos&amp;index=fxsenvm0550240&amp;tj_ch=news" alt="全部评论">全部评论</a>
+                                </div>-->
             </section>
 
-            <!--滚动显示双按钮-->
-            <section id="pageJumpBtn" style="position: fixed; bottom: 74px; right: 12px; width: 42px; z-index: 999;">
-                <a href="javascript:;" id="goPageTop"
-                   style="width:42px; height:42px; margin-bottom:10px; border-radius:50%; background:url(img/go_top_icon.png) no-repeat 0 0; background-size:42px auto; display: none;"></a>
-                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html" id="goPageHome"
-                   style=" width:42px; height:42px; position: relative; border-radius:50%; background:url(img/go_home_icon.png) no-repeat 0 0; background-size:42px auto;display: none;">
-                    <i style="position: absolute; top: 0px; right: 0px; width: 10px; height: 10px; border: 2px solid rgb(239, 248, 255); border-radius: 50%; background: rgb(255, 71, 67);">
-                    </i>
-                </a>
-            </section>
-
-            <!--底部评论区域-->
-            <section class="foot_comment">
-                <aside class="foot_commentcont">
-                    <div class="foot_cmt_input j_cmt_btn"  id="foot_cmt_id">
-                        <p>说说你的看法</p>
-                    </div>            
-                    <div class="foot_cmt_num j_p_comt">
-                        <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
-                            <span class="cmt_num_t j_article_cmnt_count">0</span>
-                        </a>
-                    </div>
-                    <div class="foot_cmt_share j_shareBtn"></div>
-                </aside>
-            </section>
         </div>
         <!--        <div id="SOHUCS"></div>
                 <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
