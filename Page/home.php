@@ -92,7 +92,7 @@ $news_list = NewsManager::getNewsList($column_id);
                             ?>
                             <div class="item" style="">
                                 <a href="news<?= $news_list[$i]['id'] ?>.html">
-                                    <img src="<?= $news_list[$i]['common_img_url'] ?>">
+                                    <img src="<?= $news_list[$i]['thumbfile2_url'] ?>">
                                     <span class="pic_slide_info">
                                         <i class="pic_slide_t"><?= $news_list[$i]['title_cut'] ?></i>
                                     </span>
@@ -148,7 +148,8 @@ $news_list = NewsManager::getNewsList($column_id);
             }
             ?>
             <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
-                <img src="http://www.ntjoy.com/images/xiangmu.jpg" width="100%">
+                <img src="img/image/xiangmu.jpg" width="100%">
+                <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
             </a>
         </section>
         <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
@@ -177,6 +178,7 @@ $news_list = NewsManager::getNewsList($column_id);
                 $('#nav_item<?= $column_id ?>').css('font-weight', '700');
             });
         </script>
+        <!--<script src="http://apps.bdimg.com/libs/swipe/2.0/swipe.min.js"></script>-->
         <script src="js/swipe.min.js"></script>
         <script src="js/ntjoy_home.js"></script>
 

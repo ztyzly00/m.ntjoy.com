@@ -65,18 +65,18 @@ $hot_video_array = NewsManager::getHotVideo();
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-                var flashvars = {
-                    f: "<?= $new_content_array['video_url'] ?>",
-                    c: 0,
-                    p: 0,
-                    r: "http://www.ntjoy.com/tiaozhuan15.html",
-                    t: 15,
-                    b: 1,
-                    my_url: encodeURIComponent(window.location.href)
-                };
+            var flashvars = {
+                f: "<?= $new_content_array['video_url'] ?>",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
 
-                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }
@@ -85,48 +85,7 @@ $hot_video_array = NewsManager::getHotVideo();
                 <div id="art_main_card_id">
                     <?= $new_content_array['content'] ?>
                 </div>
-                <!--顶踩begin-->
-<!--                <section class="M_attitude" data-pl="attitude" data-sudaclick="attitude">
-                    <aside class="operate" id="j_operate">
-                         顶部区域
-                        <div class="p_act j_pact">
-                            <mark class="hand dig">
-                                <span class="hand_pic j_p_btn">
-                                    <img class="" src="img/up.png">
-                                    <img class=" hide" src="img/up.png">
-                                </span>
-                            </mark>
-                            <mark class="dig_num j_p_num">
-                                <span class="">0</span>
-                                <span class="">0</span>
-                            </mark>
-                        </div>
 
-                        <div class="p_bar j_p_bar" style="width: 153px; margin-left: -76px;">
-                             红线 
-                            <span class="sub_bar dig_bar j_p_upbar"></span>
-                             蓝线 
-                            <span class="sub_bar tread_bar j_p_downbar"></span>
-                        </div>
-
-                         踩部区域
-                        <div class="p_act j_pact">
-                            <mark class="hand tread">
-                                <span class="hand_pic j_p_btn">
-                                    <img class="" src="img/down.png" alt="">
-                                    <img class=" hide" src="img/down.png"
-                                         alt="">
-                                </span>
-                            </mark>
-                            <mark class="tread_num j_p_num">
-                                <span>0</span>
-                                <span>0</span>
-                            </mark>
-                        </div>
-                    </aside>
-
-                </section>-->
-                <!--顶踩end-->
             </section>
 
             <!--滚动显示双按钮-->
@@ -157,7 +116,6 @@ $hot_video_array = NewsManager::getHotVideo();
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <!--支付宝页需要在th_td这个样式上在添加alipaybg样式名-->
                 <aside class="th_td">
                     推荐新闻
                     <span>HOT</span>
@@ -190,7 +148,6 @@ $hot_video_array = NewsManager::getHotVideo();
 
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <!--支付宝页需要在th_td这个样式上在添加alipaybg样式名-->
                 <aside class="th_td">
                     热点宽频
                     <span>HOT</span>
@@ -264,16 +221,11 @@ $hot_video_array = NewsManager::getHotVideo();
                                         class="icon-page_comment_4"></i></a></span></div>
                     </div>
                 </aside>
-                <!--                <div class="comment-count">
-                                    <a href="http://cmnt.sina.cn/index?vt=4&amp;product=comos&amp;index=fxsenvm0550240&amp;tj_ch=news" alt="全部评论">全部评论</a>
-                                </div>-->
+
             </section>
 
         </div>
-        <!--        <div id="SOHUCS"></div>
-                <script id="changyan_mobile_js" charset="utf-8" type="text/javascript" 
-                        src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cys5huSxC&conf=prod_3241f76198064c3df41cf3b818e5fb9b">
-                </script>-->
+
     </body>
 
     <!--评论框弹出-->
