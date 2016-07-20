@@ -15,7 +15,7 @@ $hot_video_array = NewsManager::getHotVideo();
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
         <link href="css/ntjoy_news.min.css" rel="stylesheet">
@@ -31,12 +31,12 @@ $hot_video_array = NewsManager::getHotVideo();
         <div id="main_body">
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home704.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="http://m.ntjoy.com/home704.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
                 <!--<a href="#" class="hIcon h_nav" title=""></a>-->
                 <ul class="h_nav_items">
-                    <li><a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="http://m.ntjoy.com/home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
                 </ul>
             </nav>
 
@@ -48,7 +48,7 @@ $hot_video_array = NewsManager::getHotVideo();
                     <article class="art_title_op">
                         <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
                         <aside>
-                            <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>">
+                            <a href="http://m.ntjoy.com/comment.php?newsid=<?= $new_content_array['id'] ?>">
                                 <i class="comment_num icon-page_comment_2"></i>
                                 <span class="j_article_cmnt_count">0</span>
                             </a>
@@ -65,18 +65,18 @@ $hot_video_array = NewsManager::getHotVideo();
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-            var flashvars = {
-                f: "<?= $new_content_array['video_url'] ?>",
-                c: 0,
-                p: 0,
-                r: "http://www.ntjoy.com/tiaozhuan15.html",
-                t: 15,
-                b: 1,
-                my_url: encodeURIComponent(window.location.href)
-            };
+                var flashvars = {
+                    f: "<?= $new_content_array['video_url'] ?>",
+                    c: 0,
+                    p: 0,
+                    r: "http://www.ntjoy.com/tiaozhuan15.html",
+                    t: 15,
+                    b: 1,
+                    my_url: encodeURIComponent(window.location.href)
+                };
 
-            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }
@@ -92,7 +92,7 @@ $hot_video_array = NewsManager::getHotVideo();
             <section id="pageJumpBtn" style="position: fixed; bottom: 74px; right: 12px; width: 42px; z-index: 999;">
                 <a href="javascript:;" id="goPageTop"
                    style="width:42px; height:42px; margin-bottom:10px; border-radius:50%; background:url(img/go_top_icon.png) no-repeat 0 0; background-size:42px auto; display: none;"></a>
-                <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/static/home<?= $new_content_array['columnid'] ?>.html" id="goPageHome"
+                <a href="http://m.ntjoy.com/home704.html" id="goPageHome"
                    style=" width:42px; height:42px; position: relative; border-radius:50%; background:url(img/go_home_icon.png) no-repeat 0 0; background-size:42px auto;display: none;">
                     <i style="position: absolute; top: 0px; right: 0px; width: 10px; height: 10px; border: 2px solid rgb(239, 248, 255); border-radius: 50%; background: rgb(255, 71, 67);">
                     </i>
@@ -106,7 +106,7 @@ $hot_video_array = NewsManager::getHotVideo();
                         <p>说说你的看法</p>
                     </div>            
                     <div class="foot_cmt_num j_p_comt">
-                        <a href="http://xm.ntwifi.cn/m.ntjoy.com/Page/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
+                        <a href="http://m.ntjoy.com/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
                             <span class="cmt_num_t j_article_cmnt_count">0</span>
                         </a>
                     </div>

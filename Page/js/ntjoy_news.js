@@ -32,14 +32,14 @@ function modifyContent() {
 
 //评论数加载
 function loadCommentCount() {
-    $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentCountAjax.php", {newsid: newsid}, function(result) {
+    $.post("Ajax/CommentCountAjax.php", {newsid: newsid}, function(result) {
         $('.j_article_cmnt_count').html(result);
     });
 }
 
 //加载热门评论
 function loadCommentListByUpCount() {
-    $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
+    $.post("Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
         $(".j_comment_box").html("");
         var comment_list = eval('(' + result + ')');
         if (comment_list.length != 0) {
@@ -109,7 +109,7 @@ $('#j_cmnt_smt').click(function() {
     if (comment.length <= 0 || comment.length > 200) {
         alert("请按照规范填写");
     } else {
-        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
+        $.post("Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
             $('#j_cmnt_pop').css('display', 'none');
             $('#main_body').css('display', 'block');
             $('#j_cmnt_input').val('');

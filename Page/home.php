@@ -16,7 +16,7 @@ $news_list = NewsManager::getNewsList($column_id);
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>江海明珠网</title>
 
         <!--加载css-->
@@ -92,7 +92,7 @@ $news_list = NewsManager::getNewsList($column_id);
                             ?>
                             <div class="item" style="">
                                 <a href="news<?= $news_list[$i]['id'] ?>.html">
-                                    <img src="<?= $news_list[$i]['thumbfile2_url'] ?>">
+                                    <img src="<?= $news_list[$i]['common_img_url'] ?>">
                                     <span class="pic_slide_info">
                                         <i class="pic_slide_t"><?= $news_list[$i]['title_cut'] ?></i>
                                     </span>
@@ -129,7 +129,7 @@ $news_list = NewsManager::getNewsList($column_id);
                 <a href="news<?= $news_list[$i]['id'] ?>.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
-                        <img src="<?= $news_list[$i]['small_thumbfile_url'] ?>">
+                        <img  src="<?= $news_list[$i]['small_thumbfile_url'] ?>">
                         </dt>
                         <dd class="f_card_dd">
                             <h3 class="f_card_h3 ellipsis"><?= $news_list[$i]['title'] ?></h3>

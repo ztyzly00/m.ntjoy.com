@@ -48,7 +48,7 @@ class NewsManager {
      * @return type
      */
     public static function getHotNews() {
-        return News\NewsRecommend::getHotNews();
+        return News\NewsRecommend::getHotNews(3);
     }
 
     /**
@@ -56,7 +56,7 @@ class NewsManager {
      * @return type
      */
     public static function getHotVideo() {
-        return News\NewsRecommend::getHotVideo();
+        return News\NewsRecommend::getHotVideo(3);
     }
 
 }

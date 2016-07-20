@@ -10,4 +10,4 @@ $dir = __DIR__ . "/../../Page/static/";
 $redis = new redis();
 $redis->connect('127.0.0.1', 6379);
 $redis->flushall();
-$fe = exec("rm -f $dir" . "news*", $info);
+$fe = exec("rm -f $dir" . "news*.html", $info);
