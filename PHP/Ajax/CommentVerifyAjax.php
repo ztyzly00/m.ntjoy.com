@@ -6,7 +6,7 @@ use Core\MySql\Mysql_Model\XmMysqlObj;
 
 $xm_mysql_obj = XmMysqlObj::getInstance();
 
-$commentid = $_POST['commentid'];
+$commentid = $_REQUEST['commentid'];
 
 $query = "update m_ntjoy_comment_detail set status=1 where commentid='$commentid'";
 

@@ -8,9 +8,9 @@ require_once __DIR__ . '/../autoload.php';
 
 use Model\News\NewsList;
 
-$column_id = $_POST['columnid'];
-$offset = $_POST['offset'];
-$count = $_POST['count'];
+$column_id = $_REQUEST['columnid'];
+$offset = $_REQUEST['offset'];
+$count = $_REQUEST['count'];
 
 $list = NewsList::getNewsListByColumnId($column_id, $offset, $count);
 

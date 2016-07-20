@@ -4,10 +4,10 @@ require_once __DIR__ . '/../autoload.php';
 
 use Manager\CommentManager;
 
-$comment_array['userid'] = $_POST['userid'];
-$comment_array['newsid'] = $_POST['newsid'];
-$comment_array['tocommentid'] = $_POST['tocommentid'];
-$comment_array['comment'] = $_POST['comment'];
+$comment_array['userid'] = $_REQUEST['userid'];
+$comment_array['newsid'] = $_REQUEST['newsid'];
+$comment_array['tocommentid'] = $_REQUEST['tocommentid'];
+$comment_array['comment'] = $_REQUEST['comment'];
 
 
 if ($comment_array['comment']) {

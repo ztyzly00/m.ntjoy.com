@@ -10,6 +10,6 @@ require_once __DIR__ . '/../autoload.php';
 
 use Model\Comment\CommentOpt;
 
-$commentid = $_POST['commentid'];
+$commentid = $_REQUEST['commentid'];
 
 CommentOpt::addUpCount($commentid);

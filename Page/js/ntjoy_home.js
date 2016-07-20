@@ -55,7 +55,7 @@ $(window).scroll(function() {
     //到底加载
     if (($(window).height() + $(window).scrollTop()) + 2 >= $(document).height()) {
         $('#load_more_id').css('display', 'block');
-        $.post("Ajax/NewsListAjax.php", {columnid: columnid, offset: offset, count: count}, function(result) {
+        $.get("Ajax/NewsListAjax.php", {columnid: columnid, offset: offset, count: count}, function(result) {
             var news_list = eval('(' + result + ')');
             for (var i = 0; i < news_list.length; i++) {
                 var add_string = "<a href=\"news" + news_list[i]['id'] + ".html\"><dl class=\"f_card\"><dt class=\"f_card_dt\"><img src=\"" + news_list[i]['small_thumbfile_url'] + " \"><\/dt><dd class=\"f_card_dd\"><h3 class=\"f_card_h3 ellipsis\">" + news_list[i]['title'] + "<\/h3><p class=\"f_card_p\">" + news_list[i]['brief_cut'] + "<\/p><div class=\"f_card_icon\"><span class=\"comment\">0<em class=\"icon_comment\"><\/em><\/span><\/div><\/dd><\/dl><\/a>";

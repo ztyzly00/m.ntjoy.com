@@ -6,7 +6,7 @@ use Core\MySql\Mysql_Model\XmMysqlObj;
 
 $xm_mysql_obj = XmMysqlObj::getInstance();
 
-$commentid = $_POST['commentid'];
+$commentid = $_REQUEST['commentid'];
 
 $query = "delete from m_ntjoy_comment_detail where commentid='$commentid'";
 

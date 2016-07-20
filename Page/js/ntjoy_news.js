@@ -32,14 +32,14 @@ function modifyContent() {
 
 //评论数加载
 function loadCommentCount() {
-    $.post("Ajax/CommentCountAjax.php", {newsid: newsid}, function(result) {
+    $.get("Ajax/CommentCountAjax.php", {newsid: newsid}, function(result) {
         $('.j_article_cmnt_count').html(result);
     });
 }
 
 //加载热门评论
 function loadCommentListByUpCount() {
-    $.post("Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
+    $.get("Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
         $(".j_comment_box").html("");
         var comment_list = eval('(' + result + ')');
         if (comment_list.length != 0) {
@@ -109,7 +109,7 @@ $('#j_cmnt_smt').click(function() {
     if (comment.length <= 0 || comment.length > 200) {
         alert("请按照规范填写");
     } else {
-        $.post("Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
+        $.get("Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
             $('#j_cmnt_pop').css('display', 'none');
             $('#main_body').css('display', 'block');
             $('#j_cmnt_input').val('');
