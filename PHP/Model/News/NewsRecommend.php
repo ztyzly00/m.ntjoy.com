@@ -126,7 +126,7 @@ class NewsRecommend {
             $col_string = $fetch_array["colchilds"];
             $col_string = '(' . $col_string . ')';
             $crt_time = time();
-            $yst_time = $crt_time - (86400 * 30);
+            $yst_time = $crt_time - (86400 * 4);
 
             $query = "select id from liv_contentmap where pubdate > $yst_time and columnid in $col_string order by pointnum desc limit $count";
             $fetch_list = $mysql_obj->fetch_assoc($query);

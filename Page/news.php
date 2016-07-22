@@ -19,7 +19,7 @@ $hot_img_array = NewsManager::getHotImg();
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/ntjoy_news.css" rel="stylesheet">
+        <link href="css/ntjoy_news.min.css" rel="stylesheet">
         <script>
             var offset = 0;
             var count = 4;
