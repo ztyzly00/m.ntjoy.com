@@ -10,6 +10,7 @@ $new_content_array = NewsManager::getNewsContent($id);
 
 $hot_news_array = NewsManager::getHotNews();
 $hot_video_array = NewsManager::getHotVideo();
+$hot_img_array = NewsManager::getHotImg();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +19,7 @@ $hot_video_array = NewsManager::getHotVideo();
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/ntjoy_news.css" rel="stylesheet">
         <script>
             var offset = 0;
             var count = 4;
@@ -29,6 +30,18 @@ $hot_video_array = NewsManager::getHotVideo();
     </head>
     <body>
         <div id="main_body">
+
+            <section>
+                <section id="_1469148896944" style="padding: 5px 0px; width: 100%; background-image: url(http://www.sinaimg.cn/cj/2015/0824/U10832P31DT20150824180612.jpg);">
+                    <aside style="position: relative; padding: 0px 5px 0px 62px; height: 50px; text-decoration: none; color: rgb(255, 255, 255);">
+                        <img src="img/app-icon.png" style="position: absolute; top: 5px; left: 15px; width: 40px; border-radius: 5px;">
+                        <p style="margin: 0px; font-size: 16px; line-height: 16px; padding: 7px 0px 0px;">掌上南通</p>
+                        <p style="margin: 0px; font-size: 12px; line-height: 10px; opacity: 0.6; padding: 7px 0px 0px;">掌上南通，新闻尽在掌握之中</p>
+                        <a href="http://www.ntwifi.cn" style="right: 12px; position: absolute; top: 11px; width: 55px; height: 28px; color: rgb(255, 255, 255); font-weight: bold; font-size: 15px; line-height: 28px; text-align: center; background-color: #fdaf38" class="open">下载</a>
+                    </aside>
+                </section>
+            </section>
+
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
                 <h2><a class="h_txt" href="http://m.ntjoy.com/home704.html">江海明珠网</a></h2>
@@ -46,7 +59,9 @@ $hot_video_array = NewsManager::getHotVideo();
                 <section class="art_title" data-sudaclick="title_share_cmnt">
                     <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
                     <article class="art_title_op">
-                        <time><?= $new_content_array['pubdate'] ?> 江海明珠网</time>
+                        <time class="news_time"><?= $new_content_array['pubdate'] ?>
+                            <span>江海明珠网</span>
+                        </time>
                         <aside>
                             <a href="http://m.ntjoy.com/comment.php?newsid=<?= $new_content_array['id'] ?>">
                                 <i class="comment_num icon-page_comment_2"></i>
@@ -65,18 +80,18 @@ $hot_video_array = NewsManager::getHotVideo();
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-                var flashvars = {
-                    f: "<?= $new_content_array['video_url'] ?>",
-                    c: 0,
-                    p: 0,
-                    r: "http://www.ntjoy.com/tiaozhuan15.html",
-                    t: 15,
-                    b: 1,
-                    my_url: encodeURIComponent(window.location.href)
-                };
+            var flashvars = {
+                f: "<?= $new_content_array['video_url'] ?>",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
 
-                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }
@@ -116,9 +131,9 @@ $hot_video_array = NewsManager::getHotVideo();
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <aside class="th_td">
+                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;">
                     推荐新闻
-                    <span>HOT</span>
+                    <span >NEWS</span>
                 </aside>
                 <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
                     <?php
@@ -146,11 +161,36 @@ $hot_video_array = NewsManager::getHotVideo();
                 </aside>
             </section>
 
+            <!--精彩图片区域-->
+            <section class="extend-module j_hotpic_box">
+                <aside class="th_td" style=" border-top: 1px solid #129bf0;">
+                    精彩图片
+                    <span  style="background: #129bf0;">IMG</span>
+                </aside>	
+                <ul class="picture_moudule clearfix" data-sudaclick="tab1_content">
+
+                    <?php
+                    for ($i = 0; $i < count($hot_img_array); $i++) {
+                        ?>
+                        <li class="j_hotpic_item">
+                            <a href="news<?= $hot_img_array[$i]['id'] ?>.html">
+                                <div class="fixpic-wrap">
+                                    <img class="lazy" data-original="<?= $hot_img_array[$i]['small_thumbfile_url'] ?>">
+                                    <p><?= $hot_img_array[$i]['title_cut'] ?></p>
+                                </div>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    ?>                 
+                </ul>	
+            </section>
+
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <aside class="th_td">
+                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;">
                     热点宽频
-                    <span>HOT</span>
+                    <span  style="background: #fdaf38;">VOD</span>
                 </aside>
                 <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
 
@@ -182,7 +222,7 @@ $hot_video_array = NewsManager::getHotVideo();
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td">
+                <aside class="th_td"  style=" border-top: 1px solid #33CC52;"> 
                     最新评论
                     <span style="background: #33CC52;">NEW</span>
                 </aside>

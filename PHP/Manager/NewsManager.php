@@ -59,4 +59,12 @@ class NewsManager {
         return News\NewsRecommend::getHotVideo(3);
     }
 
+    /**
+     * 获取点击量最高图片
+     * @return type
+     */
+    public static function getHotImg() {
+        return News\NewsRecommend::getHotImg(4);
+    }
+
 }

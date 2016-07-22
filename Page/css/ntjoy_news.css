@@ -307,6 +307,16 @@ a {
 
 /*正文css*/
 /*正文标题*/
+.news_time span{
+    background: #fa4e46;
+    color: #fff;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    padding: 0 3px;
+    margin: 12px 12px 0 10px;
+}
+
 .art_main_card {
     clear: both;
     text-align: justify;
@@ -1130,5 +1140,59 @@ a.cmnt_smt {
     height: 16px;
     line-height: 16px;
     padding: 0 3px;
-    margin: 12px 12px 0 10px;
+    margin: 12px 12px 0 5px;
+}
+
+/*精彩图片区域*/
+.picture_moudule {
+    padding: 10px 20px 0;
+    display: block;
+    clear: both;
+    background: #fff;
+}
+.picture_moudule li:nth-child(2n) {
+    padding: 0 0 10px 4px;
+}
+.picture_moudule li:nth-child(2n+1) {
+    padding: 0 4px 10px 0;
+}
+.picture_moudule li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+.picture_moudule li a {
+    display: block;
+}
+.picture_moudule .fixpic-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.picture_moudule li img {
+    width: 100%;
+    height: 100%;
+}
+.picture_moudule .fixpic-wrap {
+    position: relative;
+    width: 100%;
+    padding: 75% 0 20px;
+    overflow: hidden;
+}
+.picture_moudule .fixpic-wrap p {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.picture_moudule li p {
+    text-align: center;
+    width: 100%;
+    color: #444;
+    font-size: 12px;
+    line-height: 18px;
+    overflow: hidden;
+    padding-top: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #fff;
 }
