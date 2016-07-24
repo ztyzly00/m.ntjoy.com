@@ -23,7 +23,7 @@ function addUpCount() {
         $(this).html(crt_count + 1);
         $(this).append('<i class=\"fly\" style=\"display: inline-block\"></i>');
         var commentid = $(this).attr('data-commentid');
-        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentAddUpCount.php", {commentid: commentid}, function(result) {
+        $.get("Ajax/CommentAddUpCount.php", {commentid: commentid}, function(result) {
 
         });
     }
@@ -72,7 +72,7 @@ $('.cmnt_smt').click(function() {
         alert("请按照规范填写");
     } else {
         var tocommentid = commentinfo.tocommentid;
-        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
+        $.get("Ajax/CommentInsertAjax.php", {userid: userid, newsid: newsid, tocommentid: tocommentid, comment: comment}, function(result) {
             location.reload();
         });
     }
@@ -84,7 +84,7 @@ var count = 4;
 
 $(window).scroll(function() {
     if (($(window).height() + $(window).scrollTop()) + 1 >= $(document).height()) {
-        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
+        $.get("Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
             var obj = eval('(' + result + ')');
             for (var i = 0; i < obj.length; i++) {
                 var add_string = "<div class=\"cmnt_list\"><div class=\"cmnt_item\"><p class=\"cmnt_top\"><span><img src=\"img\/default_user.gif\"><i class=\"cmnt_nick\">" + obj[i]['nickname'] + "<\/i><\/span><\/p><p class=\"cmnt_text\">                                  " + obj[i]['comment'] + "<\/p><div class=\"cmnt_op_bottom clearfix\"><p class=\"cmnt_op_bottom_times\"> " + obj[i]['time'] + "<\/p><span class=\"cmnt_op\"><a class=\"good j_favor_single\"  data-commentid=\"" + obj[i]['commentid'] + "\">                                           " + obj[i]['upcount'] + "<\/a><a href=\"#\" class=\"cmntico j_cmnt_single\" data-nickname=\"" + obj[i]['nickname'] + "\"                                            data-commentid=\"" + obj[i]['commentid'] + "\"                                            data-userid=\"" + obj[i]['userid'] + "\"><\/a><\/span><\/div><\/div><\/div>";

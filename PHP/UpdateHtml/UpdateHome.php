@@ -28,5 +28,5 @@ for ($i = 0; $i < count($array); $i++) {
     echo $url . "\n";
 }
 
-//刷新每个列表前20新闻静态页面
-exec("php " . __DIR__ . "/UpdateArticle.php");
+//刷新每个列表前20新闻静态页(非必要)
+//exec("php " . __DIR__ . "/UpdateArticle.php");

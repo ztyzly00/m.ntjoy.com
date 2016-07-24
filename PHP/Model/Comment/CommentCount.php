@@ -20,10 +20,11 @@ class CommentCount {
         if (!$comment_count = $redis_obj->get($redis_key)) {
             //未命中缓存
             $xm_mysql_obj = XmMysqlObj::getInstance();
-            $query = "select commentcount from m_ntjoy_news_comment_count where newsid=$newsid limit 1";
+            $query = "select count(*) from m_ntjoy_comment_detail where newsid=$newsid and status=1";
             $fetch_array = $xm_mysql_obj->fetch_assoc($query);
-            $comment_count = $fetch_array[0]['commentcount'];
+            $comment_count = $fetch_array[0]['count(*)'];
             $redis_obj->set($redis_key, $comment_count);
+            $redis_obj->setTimeout($redis_key, 500);
         }
 
         if (!$comment_count) {

@@ -46,6 +46,8 @@ class NewsRecommend {
                     $news_list[] = $id;
                 }
             }
+
+            $redis_obj->setTimeout($redis_key, 500);
         }
 
         /* 获取新闻信息 */
@@ -93,6 +95,8 @@ class NewsRecommend {
                     $video_list[] = $id;
                 }
             }
+
+            $redis_obj->setTimeout($redis_key, 500);
         }
 
         /* 获取新闻信息 */
@@ -139,6 +143,8 @@ class NewsRecommend {
                     $img_list[] = $id;
                 }
             }
+
+            $redis_obj->setTimeout($redis_key, 500);
         }
 
         /* 获取新闻信息 */
