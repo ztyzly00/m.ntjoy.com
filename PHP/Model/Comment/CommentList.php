@@ -12,7 +12,7 @@ use Core\Redis\RedisFactory;
 class CommentList {
 
     /**
-     * 按照赞的数目排序
+     * 按照赞的数目排序(去除redis缓存)
      * @param type $newsid
      * @param type $start
      * @param type $end 注意不能为-1，唯一与redis有冲突的地方    
@@ -60,44 +60,25 @@ class CommentList {
     }
 
     /**
-     * 按照时间排序
+     * 按照時間排序，暂时不用redis缓存
      * @param type $newsid
-     * @param type $start
-     * @param type $end  注意不能为-1，唯一与redis有冲突的地方    
+     * @param type $offset
+     * @param type $count
      * @return type
-     * 
-     * 缓存策略，10000以内用redis读取，10000以外用mysql读取
-     * 0到4  start=0；start=4   但是只有两条数据
      */
-    public static function getCommentListRangeByTime($newsid, $start, $end) {
-        $redis_obj = RedisFactory::createRedisInstance();
-        $redis_key = 'news_comment_range_time_' . $newsid;
-
-        $time_list = array();
+    public static function getCommentListRangeByTime($newsid, $offset, $count) {
         $return_list = array();
+        $xm_mysql_obj = XmMysqlObj::getInstance();
 
-        //启用缓存需要把xx前缀去掉
-        if (!$redis_obj->get('xx_cmt_list_time_flush' . $newsid)) {
-            //缓存未命中
-            $xm_mysql_obj = XmMysqlObj::getInstance();
+        $query = "select commentid,time from m_ntjoy_comment_detail "
+                . "where newsid=$newsid and status=1 "
+                . "order by time desc "
+                . "limit $offset,$count";
 
-            //mysql预取值，预先取10000,后续不足有需求时再做判定
-            $mysql_count = 10000;
-            $query = "select commentid,time from m_ntjoy_comment_detail where newsid=$newsid and status=1 "
-                    . "order by time desc limit $mysql_count";
-            $fetch_array = $xm_mysql_obj->fetch_assoc($query);
+        $fetch_array = $xm_mysql_obj->fetch_assoc($query);
 
-            //redis缓存相应数据
-            for ($i = 0; $i < count($fetch_array); $i++) {
-                $redis_obj->zAdd($redis_key, $fetch_array[$i]['time'], $fetch_array[$i]['commentid']);
-                $time_list[] = $fetch_array[$i]['commentid'];
-            }
-
-            //标记刷新缓存
-            $redis_obj->set('cmt_list_time_flush' . $newsid, 1);
-        } else {
-            //从缓存中提取数据
-            $time_list = $redis_obj->zRevRange($redis_key, $start, $end);
+        for ($i = 0; $i < count($fetch_array); $i++) {
+            $time_list[] = $fetch_array[$i]['commentid'];
         }
 
         for ($i = 0; $i < count($time_list); $i++) {

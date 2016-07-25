@@ -76,6 +76,15 @@ $(window).scroll(function() {
     }
 });
 
+//nav按钮
+$('#h_nav_menu').click(function() {
+    if ($('#topLevelNav').css('display') == 'none') {
+        $('#topLevelNav').css('display', 'block');
+    } else {
+        $('#topLevelNav').css('display', 'none');
+    }
+});
+
 //登录按钮
 $('.hIcon').click(function() {
     //alert('功能开发中~如有问题请联系微信号：ztyzly00');

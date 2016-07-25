@@ -31,6 +31,7 @@ $hot_img_array = NewsManager::getHotImg();
     <body>
         <div id="main_body">
 
+            <!--广告位（掌上南通下载）-->
             <section>
                 <section id="_1469148896944" style="padding: 5px 0px; width: 100%; background-image: url(http://www.sinaimg.cn/cj/2015/0824/U10832P31DT20150824180612.jpg);">
                     <aside style="position: relative; padding: 0px 5px 0px 62px; height: 50px; text-decoration: none; color: rgb(255, 255, 255);">
@@ -46,11 +47,20 @@ $hot_img_array = NewsManager::getHotImg();
             <nav class="newsHead" data-sudaclick="mainNav">
                 <h2><a class="h_txt" href="http://m.ntjoy.com/home704.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
-                <a href="#" class="hIcon h_user" title="" id="loginBox"></a>
-                <!--<a href="#" class="hIcon h_nav" title=""></a>-->
+                <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
+                <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
                 <ul class="h_nav_items">
                     <li><a href="http://m.ntjoy.com/home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
                 </ul>
+                <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
+
+                    <div class="top_level_nav fix">
+                        <a href="home704.html"><i class="i i_zx"></i>资讯</a>  
+                        <a href="live.php"><i class="i i_live"></i>直播</a>
+                        <a href="video.php"><i class="i i_live"></i>宽频</a>
+        <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
+                    </div>
+                </div>
             </nav>
 
             <!--正文部分-->
@@ -80,18 +90,18 @@ $hot_img_array = NewsManager::getHotImg();
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-            var flashvars = {
-                f: "<?= $new_content_array['video_url'] ?>",
-                c: 0,
-                p: 0,
-                r: "http://www.ntjoy.com/tiaozhuan15.html",
-                t: 15,
-                b: 1,
-                my_url: encodeURIComponent(window.location.href)
-            };
+                var flashvars = {
+                    f: "<?= $new_content_array['video_url'] ?>",
+                    c: 0,
+                    p: 0,
+                    r: "http://www.ntjoy.com/tiaozhuan15.html",
+                    t: 15,
+                    b: 1,
+                    my_url: encodeURIComponent(window.location.href)
+                };
 
-            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }

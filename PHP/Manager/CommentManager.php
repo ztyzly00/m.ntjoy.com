@@ -35,7 +35,7 @@ class CommentManager {
     }
 
     public static function getCommentListByTime($newsid, $offset, $count) {
-        return CommentList::getCommentListRangeByTime($newsid, $offset, $offset + $count - 1);
+        return CommentList::getCommentListRangeByTime($newsid, $offset, $count);
     }
 
 }

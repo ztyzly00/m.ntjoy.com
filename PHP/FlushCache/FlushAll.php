@@ -13,4 +13,4 @@ $redis->flushall();
 
 exec("rm -f $static_dir" . "news*.html", $info);
 exec("rm -f $static_dir" . "home*.html", $info);
-exec("php $update_dir" . "UpdateHome.php", $info);
+exec("php $update_dir" . "UpdateHomeWithPage.php", $info);
