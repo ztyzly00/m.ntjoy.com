@@ -68,6 +68,7 @@ class CommentList {
      */
     public static function getCommentListRangeByTime($newsid, $offset, $count) {
         $return_list = array();
+        $time_list = array();
         $xm_mysql_obj = XmMysqlObj::getInstance();
 
         $query = "select commentid,time from m_ntjoy_comment_detail "

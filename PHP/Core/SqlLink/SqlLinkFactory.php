@@ -17,8 +17,8 @@ class SqlLinkFactory {
             self::$tp_instance->setUserName('webuser');
             self::$tp_instance->setPassWord('webuserpassword');
             self::$tp_instance->setDataBase('com_ntjoy_www');
-            return self::$tp_instance;
         }
+        return self::$tp_instance;
     }
 
     public static function createXmDatabase() {
@@ -28,8 +28,8 @@ class SqlLinkFactory {
             self::$xm_instance->setUserName('webuser');
             self::$xm_instance->setPassWord('webuserpassword');
             self::$xm_instance->setDataBase('m_ntjoy_com');
-            return self::$xm_instance;
         }
+        return self::$xm_instance;
     }
 
     public static function createCommonData($server, $username, $password, $database) {
