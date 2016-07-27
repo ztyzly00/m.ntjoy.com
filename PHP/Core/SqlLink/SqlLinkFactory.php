@@ -37,7 +37,7 @@ class SqlLinkFactory {
                 self::$xm_instance->setServer('192.168.20.3');
                 self::$xm_instance->setUserName('webuser');
                 self::$xm_instance->setPassWord('webuserpassword');
-                self::$xm_instance->setDataBase('scraper');
+                self::$xm_instance->setDataBase('m_ntjoy_com');
             }
             return self::$xm_instance;
         } else {
@@ -45,7 +45,7 @@ class SqlLinkFactory {
             $new_instance->setServer('192.168.20.3');
             $new_instance->setUserName('webuser');
             $new_instance->setPassWord('webuserpassword');
-            $new_instance->setDataBase('scraper');
+            $new_instance->setDataBase('m_ntjoy_com');
             return $new_instance;
         }
     }
