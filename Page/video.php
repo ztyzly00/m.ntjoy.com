@@ -26,9 +26,15 @@ $news_list = NewsManager::getNewsList($column_id);
         <link href="css/ntjoy_home.css" rel="stylesheet">
         <style>
             .nav_ntjoy_list a{
-                width:23%;
+                width:33%;
+                padding:0 0.6px;
             }
-
+            .nav_ntjoy_list a:nth-child(3n) {
+                padding-right: 0;
+            }
+            .nav_ntjoy_list a:nth-child(3n+1) {
+                padding-left: 0;
+            }
             .nav_ntjoy{
                 padding:3px 0;
             }
@@ -73,8 +79,12 @@ $news_list = NewsManager::getNewsList($column_id);
                 <a id="nav_item360" href="video.php?columnid=360" >城市日历</a>
                 <a id="nav_item365" href="video.php?columnid=365">总而言之</a>
                 <a id="nav_item362" href="video.php?columnid=362">媒体大放送</a>
-
-                <!--<a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>-->
+                <a id="nav_item1596" href="video.php?columnid=1596">我想有个家</a>
+                <a id="nav_item1113" href="video.php?columnid=1113">今晚在线</a>
+                <a id="nav_item305" href="video.php?columnid=305">日历(整档)</a>
+                <a id="nav_item304" href="video.php?columnid=304">NTTV(整档)</a>
+                <a id="nav_item310" href="video.php?columnid=310">言之(整档)</a>
+                                <!--<a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>-->
             </nav>
         </section>
 

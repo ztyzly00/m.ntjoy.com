@@ -6,6 +6,6 @@
 
 class UpdateColumn {
 
-    public static $column_array = array(3, 704, 4, 5, 6, 7, 8, 483, 9, 1377, 10, 11, 12, 13, 14);
+    public static $column_array = array(704, 3, 7, 8, 483, 1377, 6, 9, 4, 5, 10, 11, 12, 13, 14, 360, 359, 365, 362, 1596, 1113, 229);
 
 }

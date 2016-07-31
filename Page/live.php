@@ -117,9 +117,11 @@ if ($cid == 1) {
         </div>
 
         <footer class="f_module" style="margin-top: 20px;font-size: 20px;line-height: 20px">
-            <aside>m.ntjoy.com (苏新网备2012062号)</aside>
-            <br/>
-            <p style="font-size:15px">Copyright (C) 2011-2013 ntjoy.com All Rights Reserved 江海明珠网 南通广播电视台 南通新闻网 版权所有</p>
+            <!--<aside>m.ntjoy.com (苏新网备2012062号)</aside>-->
+            <!--<br/>-->
+            <p style="font-size:14px">Copyright (C) 2011-2013 ntjoy.com All Rights Reserved
+            </p>
+            <p style="font-size:14px">江海明珠网 南通广播电视台 南通新闻网 版权所有</p>
 
         </footer>
 

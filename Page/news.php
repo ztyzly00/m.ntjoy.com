@@ -37,7 +37,7 @@ $hot_img_array = NewsManager::getHotImg();
                     <aside style="position: relative; padding: 0px 5px 0px 62px; height: 50px; text-decoration: none; color: rgb(255, 255, 255);">
                         <img src="img/app-icon.png" style="position: absolute; top: 5px; left: 15px; width: 40px; border-radius: 5px;">
                         <p style="margin: 0px; font-size: 16px; line-height: 16px; padding: 7px 0px 0px;">掌上南通</p>
-                        <p style="margin: 0px; font-size: 12px; line-height: 10px; opacity: 0.6; padding: 7px 0px 0px;">掌上南通，新闻尽在掌握之中</p>
+                        <p style="margin: 0px; font-size: 12px; line-height: 10px; opacity: 0.6; padding: 7px 0px 0px;">掌上南通，尽在掌握之中</p>
                         <a href="http://www.ntwifi.cn" style="right: 12px; position: absolute; top: 11px; width: 55px; height: 28px; color: rgb(255, 255, 255); font-weight: bold; font-size: 15px; line-height: 28px; text-align: center; background-color: #fdaf38" class="open">下载</a>
                     </aside>
                 </section>
@@ -45,17 +45,17 @@ $hot_img_array = NewsManager::getHotImg();
 
             <!--文章头部-->
             <nav class="newsHead" data-sudaclick="mainNav">
-                <h2><a class="h_txt" href="http://m.ntjoy.com/home704.html">江海明珠网</a></h2>
+                <h2><a class="h_txt" href="home3.html">江海明珠网</a></h2>
                 <!-- //页面加载时只需要加载外部a标签 -->
                 <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
                 <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
                 <ul class="h_nav_items">
-                    <li><a href="http://m.ntjoy.com/home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
+                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
                 </ul>
                 <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
 
                     <div class="top_level_nav fix">
-                        <a href="home704.html"><i class="i i_zx"></i>资讯</a>  
+                        <a href="home3.html"><i class="i i_zx"></i>资讯</a>  
                         <a href="live.php"><i class="i i_live"></i>直播</a>
                         <a href="video.php"><i class="i i_live"></i>宽频</a>
         <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
@@ -73,7 +73,7 @@ $hot_img_array = NewsManager::getHotImg();
                             <span>江海明珠网</span>
                         </time>
                         <aside>
-                            <a href="http://m.ntjoy.com/comment.php?newsid=<?= $new_content_array['id'] ?>">
+                            <a href="comment.php?newsid=<?= $new_content_array['id'] ?>">
                                 <i class="comment_num icon-page_comment_2"></i>
                                 <span class="j_article_cmnt_count">0</span>
                             </a>
@@ -90,18 +90,18 @@ $hot_img_array = NewsManager::getHotImg();
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-                var flashvars = {
-                    f: "<?= $new_content_array['video_url'] ?>",
-                    c: 0,
-                    p: 0,
-                    r: "http://www.ntjoy.com/tiaozhuan15.html",
-                    t: 15,
-                    b: 1,
-                    my_url: encodeURIComponent(window.location.href)
-                };
+            var flashvars = {
+                f: "<?= $new_content_array['video_url'] ?>",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
 
-                var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }
@@ -117,7 +117,7 @@ $hot_img_array = NewsManager::getHotImg();
             <section id="pageJumpBtn" style="position: fixed; bottom: 74px; right: 12px; width: 42px; z-index: 999;">
                 <a href="javascript:;" id="goPageTop"
                    style="width:42px; height:42px; margin-bottom:10px; border-radius:50%; background:url(img/go_top_icon.png) no-repeat 0 0; background-size:42px auto; display: none;"></a>
-                <a href="http://m.ntjoy.com/home704.html" id="goPageHome"
+                <a href="home3.html" id="goPageHome"
                    style=" width:42px; height:42px; position: relative; border-radius:50%; background:url(img/go_home_icon.png) no-repeat 0 0; background-size:42px auto;display: none;">
                     <i style="position: absolute; top: 0px; right: 0px; width: 10px; height: 10px; border: 2px solid rgb(239, 248, 255); border-radius: 50%; background: rgb(255, 71, 67);">
                     </i>
@@ -131,7 +131,7 @@ $hot_img_array = NewsManager::getHotImg();
                         <p>说说你的看法</p>
                     </div>            
                     <div class="foot_cmt_num j_p_comt">
-                        <a href="http://m.ntjoy.com/comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
+                        <a href="comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
                             <span class="cmt_num_t j_article_cmnt_count">0</span>
                         </a>
                     </div>
@@ -273,7 +273,6 @@ $hot_img_array = NewsManager::getHotImg();
                 </aside>
 
             </section>
-
         </div>
 
     </body>
@@ -302,8 +301,20 @@ $hot_img_array = NewsManager::getHotImg();
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <!--<script src="js/jquery.min.js"></script>-->
     <script src="js/Jquery.lazyload.min.js"></script>
+
+
+
+    <script type="text/javascript">
+            var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
+            var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+    </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/ntjoy_news.js"></script>
+
+
+
 </html>
 
 
