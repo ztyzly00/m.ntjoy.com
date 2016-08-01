@@ -58,24 +58,20 @@ $news_list = NewsManager::getNewsList($column_id);
         <!--navi导航栏-->
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
-
+                <!--显示-->
                 <a id="nav_item3"  href="home3.html">要闻</a>
                 <a id="nav_item4" href="home4.html">社会</a>
+                <a id="nav_item5" href="home5.html">民生</a>
                 <a id="nav_item7" href="home7.html">国内</a>
                 <a id="nav_item8" href="home8.html">国际</a>
                 <a id="nav_item483" href="home483.html">网罗</a>
                 <a id="nav_item1377" href="home1377.html" >娱乐</a>
-                <a id="nav_item229" href="home229.html" >组图</a>
                 <a id="nav_item6" href="home6.html">省内</a>
                 <a id="nav_item9" href="home9.html">市区</a>
-                <!--                <a href="#">点播</a>
-                                <a href="#">直播</a>-->
-
-
                 <a id="nav_item5" href="live.php" style="color:#ff0000;font-weight: 600">直播</a>
                 <a id="nav_item5" href="video.php" style="color:#ff0000;font-weight: 600">宽频</a>
-
-                <a id="nav_item5" href="home5.html"  class="hide">民生</a>
+                <!--隐藏-->
+                <a id="nav_item229" href="home229.html" class="hide">组图</a>
                 <a id="nav_item10" href="home10.html"  class="hide">如皋</a>
                 <a id="nav_item11" href="home11.html" class="hide">如东</a>
                 <a id="nav_item12" href="home12.html" class="hide">海安</a>

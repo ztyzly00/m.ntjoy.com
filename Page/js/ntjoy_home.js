@@ -53,7 +53,7 @@ $(window).scroll(function() {
     }
 
     //到底加载
-    if (($(window).height() + $(window).scrollTop()) + 2 >= $(document).height()) {
+    if (($(window).height() + $(window).scrollTop()) + 50 >= $(document).height()) {
         $('#load_more_id').css('display', 'block');
         $.get("Ajax/NewsListAjax.php", {columnid: columnid, offset: offset, count: count}, function(result) {
             var news_list = eval('(' + result + ')');

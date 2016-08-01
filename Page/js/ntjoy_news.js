@@ -72,7 +72,7 @@ function loadWeiXinJs() {
             });
             wx.onMenuShareAppMessage({
                 title: cr_title,
-                desc: "关注【江海南通】微信号，下载【掌上南通】APP，获取更多新闻资讯",
+                desc: cr_brief_cut,
                 link: '',
                 imgUrl: cr_img_url,
                 type: 'link',

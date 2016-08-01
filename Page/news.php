@@ -20,13 +20,6 @@ $hot_img_array = NewsManager::getHotImg();
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
         <link href="css/ntjoy_news.min.css" rel="stylesheet">
-        <script>
-            var offset = 0;
-            var count = 4;
-            var userid = '';
-            var newsid =<?= $id ?>;
-            var tocommentid = '';
-        </script>
     </head>
     <body>
         <div id="main_body">
@@ -90,18 +83,18 @@ $hot_img_array = NewsManager::getHotImg();
                     <div id="player" style="margin-bottom: 20px"></div>
                     <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
                     <script type="text/javascript">
-            var flashvars = {
-                f: "<?= $new_content_array['video_url'] ?>",
-                c: 0,
-                p: 0,
-                r: "http://www.ntjoy.com/tiaozhuan15.html",
-                t: 15,
-                b: 1,
-                my_url: encodeURIComponent(window.location.href)
-            };
+                        var flashvars = {
+                            f: "<?= $new_content_array['video_url'] ?>",
+                            c: 0,
+                            p: 0,
+                            r: "http://www.ntjoy.com/tiaozhuan15.html",
+                            t: 15,
+                            b: 1,
+                            my_url: encodeURIComponent(window.location.href)
+                        };
 
-            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
                     </script>
                     <?php
                 }
@@ -304,11 +297,15 @@ $hot_img_array = NewsManager::getHotImg();
     <!--<script src="js/jquery.min.js"></script>-->
     <script src="js/Jquery.lazyload.min.js"></script>
 
-
-
     <script type="text/javascript">
-            var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
-            var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+                    var offset = 0;
+                    var count = 4;
+                    var userid = '';
+                    var newsid =<?= $id ?>;
+                    var tocommentid = '';
+                    var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
+                    var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+                    var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
     </script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/ntjoy_news.js"></script>
