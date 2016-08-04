@@ -20,10 +20,12 @@ class NewsInfo {
      * @param type $column_id 栏目id
      */
     public static function getNewsInfoById($id) {
-        //初始化redis链接
+
         $redis_obj = RedisFactory::createRedisInstance();
-        //缓存未命中
-        if (!$return_array = $redis_obj->hGetAll('newsinfo_' . $id)) {
+        $redis_key = 'newsinfo_' . $id;
+
+        if (!$return_array = $redis_obj->hGetAll($redis_key)) {
+            /* 缓存未命中 */
             $mysql_obj = Mysql_Model\MysqlObj::getInstance();
             $query = "select "
                     . "lc.*,lac.content,la.*,lm.*,lcol.colname,lc.columnid "
@@ -34,11 +36,14 @@ class NewsInfo {
                     . "left join liv_column lcol on lc.columnid=lcol.columnid "
                     . "WHERE lc.id=$id limit 1";
 
-            //处理文章数据，适应浏览器
+            /* 处理数据 */
             $return_array = NewsModify::processNewsInfo($mysql_obj->fetch_assoc($query));
 
-            //redis缓存数据
-            $redis_obj->hMset('newsinfo_' . $id, $return_array);
+            /* 缓存数据 */
+            $redis_obj->hMset($redis_key, $return_array);
+
+            /* 1小时超时时间 */
+            $redis_obj->setTimeout($redis_key, 3600);
         }
 
         return $return_array;

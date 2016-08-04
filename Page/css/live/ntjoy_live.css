@@ -1,0 +1,437 @@
+/*总样式区*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    clear: both;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: #e8e8e8;
+    font-size: 16px;
+}
+
+html {
+    font-family: Microsoft YaHei, Helvetica Neue, Helvetica, Roboto, STHeiTi, Arial, sans-serif;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+a .f_card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #fff;
+}
+
+ul, ol {
+    list-style: none outside none;
+}
+
+dt {
+    display: block;
+}
+
+h1, h2, h3, strong {
+    font-weight: normal;
+}
+
+/*头部区*/
+.ntjoy_header {
+    color: #ffffff;
+    clear: both;
+    overflow: hidden;
+    background: #129bf0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
+.ntjoy_header img {
+    margin-top: -4px;
+    vertical-align: middle;
+}
+
+.h_nav {
+    float: right;
+}
+
+.h_nav_li {
+    position: relative;
+    float: left;
+    margin: 0 0 0 0px;
+    width: 22px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.h_nav_t {
+    height: 40px;
+    line-height: 40px;
+}
+
+.h_nav_t:before {
+    width: 22px;
+    display: inline-block;
+}
+
+/*live的掌上南通广告*/
+.app-top-bar {
+    position: relative;
+    height: 40px;
+    padding: 14px 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.app-top-bar .icon {
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    background: url(../img/app-icon.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+
+.app-top-bar .describe {
+    font-size: 14px;
+    margin-left: 51px;
+    margin-top: 2px;
+    color: #888;
+}
+
+.app-top-bar .title {
+    font-size: 16px;
+    margin-left: 51px;
+    margin-top: -1px;
+}
+
+.app-top-bar .download-btn {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    height: 36px;
+    padding: 0 1em;
+    font-size: 14px;
+    line-height: 36px;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, right top, from(#26abc9), to(#2359cd));
+    background: -webkit-linear-gradient(left, #26abc9, #2359cd);
+    background: linear-gradient(to right, #26abc9, #2359cd);
+    border-radius: 5px;
+}
+
+/*live的nav*/
+.channel_list {
+    height: 40px;
+    line-height: 40px;
+}
+
+.channel_list_a {
+    background-color: #ffffff;
+    color: #6d6d6d;
+    text-align: center;
+    width: 25%;
+    float: left;
+}
+
+.full_active {
+    font-weight: 600;
+    background-color: #00d796;
+    color: #ffffff;
+}
+
+.active {
+    height: 37px;
+    font-weight: 600;
+    color: #00d796;
+    border-bottom: 3px solid #00d796;
+}
+
+/*互动聊天框，聊天内容框*/
+.autoScroll {
+    /*width: 100%;*/
+    height: 100%;
+    overflow: auto;
+    padding: 0px 15px;
+}
+
+.chat_list {
+    margin-top: 6px;
+    background-color: #ffffff;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 5px 8px;
+    border: 1px solid #ececec;
+}
+
+.chat_list_a_user {
+    color: #00d796;
+}
+
+/*互动聊天框_底部发送框*/
+.bottom {
+    background-color: #ffffff;
+    height: 46px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    border-top: 0px solid #ccc;
+    line-height: 46px;
+}
+
+.chat_input {
+    width: 60%;
+    height: 32px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0px 14px;
+}
+
+.chat_button {
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #00d796;
+    border: 0px solid #ccc;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 9px 14px;
+    margin-left: 10px;
+}
+
+/*小图标表示区域*/
+@font-face {
+    font-family: 'SinaHomeFont';
+    src: url('fonts/SinaHomeFont.eot?v=0.0.12');
+    src: url('fonts/SinaHomeFont.eot?v=0.0.12#iefix') format('embedded-opentype'), url('fonts/SinaHomeFont.woff?v=0.0.12') format('woff'), url('fonts/SinaHomeFont.ttf?v=0.0.12') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
+[class^="icon_"], [class*=" icon_"] {
+    font-family: 'SinaHomeFont';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon_add:before {
+    content: "\e600"
+}
+
+.icon_back:before {
+    content: "\e601"
+}
+
+.icon_check:before {
+    content: "\e602"
+}
+
+.icon_comment:before {
+    content: "\e603"
+}
+
+.icon_download_1:before {
+    content: "\e604"
+}
+
+.icon_download_2:before {
+    content: "\e605"
+}
+
+.icon_hot:before {
+    content: "\e606"
+}
+
+.icon_img:before {
+    content: "\e607"
+}
+
+.icon_interest:before {
+    content: "\e608"
+}
+
+.icon_loading:before {
+    content: "\e609"
+}
+
+.icon_location:before {
+    content: "\e60a"
+}
+
+.icon_menu:before {
+    content: "\e60b"
+}
+
+.icon_open:before {
+    content: "\e60c"
+}
+
+.icon_search:before {
+    content: "\e60d"
+}
+
+.icon_sina_logo:before {
+    content: "\e60e"
+}
+
+.icon_top_1:before {
+    content: "\e60f"
+}
+
+.icon_top_2:before {
+    content: "\e610"
+}
+
+.icon_user:before {
+    content: "\e611"
+}
+
+.icon_video:before {
+    content: "\e612"
+}
+
+.icon_weibo:before {
+    content: "\e613"
+}
+
+.icon_star:before {
+    content: "\e614"
+}
+
+.icon_cai:before {
+    content: "\e615"
+}
+
+.icon_cai_1:before {
+    content: "\e616"
+}
+
+.icon_ding:before {
+    content: "\e617"
+}
+
+.icon_ding_1:before {
+    content: "\e618"
+}
+
+.icon_down_18:before {
+    content: "\e619"
+}
+
+.icon_open_18:before {
+    content: "\e620"
+}
+
+.icon_phone_18:before {
+    content: "\e621"
+}
+
+.icon_tick:before {
+    content: "\e622"
+}
+
+.icon_exclamation:before {
+    content: "\e623"
+}
+
+.icon_camera:before {
+    content: "\e624"
+}
+
+.icon_collection:before {
+    content: "\e625"
+}
+
+.icon_collection_1:before {
+    content: "\e626"
+}
+
+.icon_share:before {
+    content: "\e627"
+}
+
+.icon_play:before {
+    content: "\e628"
+}
+
+.icon_time:before {
+    content: "\e629"
+}
+
+.icon_like:before {
+    content: "\e630"
+}
+
+.icon_stock:before {
+    content: "\e631"
+}
+
+.icon_video2:before {
+    content: "\e632"
+}
+
+.icon_file:before {
+    content: "\e633"
+}
+
+.icon_location2:before {
+    content: "\e634"
+}
+
+/*字体css*/
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'sian_family';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+@font-face {
+    font-family: 'sian_family';
+    src: url('fonts/icomoon.eot?-byj1on');
+    src: url('fonts/icomoon.eot?#iefix-byj1on') format('embedded-opentype'), url('fonts/icomoon.ttf?-byj1on') format('truetype'), url('fonts/icomoon.woff?-byj1on') format('woff'), url('fonts/icomoon.svg?-byj1on#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.icon-page_loading:before {
+    content: "\e606"
+}
+

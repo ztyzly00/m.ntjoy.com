@@ -1,0 +1,1 @@
+/opt/web/xm.ntwifi.cn/m.ntjoy.com/Page/live_new.php
