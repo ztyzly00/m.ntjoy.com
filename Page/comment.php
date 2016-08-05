@@ -19,7 +19,7 @@ $comment_list_by_upcount = CommentManager::getCommentListByUpCount($newsid, 0, 5
         <meta charset="UTF-8">
         <title>评论</title>
         <!--加载css-->
-        <link href="css/ntjoy_comment.css" rel="stylesheet">
+        <link href="css/comment/ntjoy_comment.css" rel="stylesheet">
     </head>
     <body>
         <!--主要评论区域-->
@@ -202,6 +202,6 @@ $comment_list_by_upcount = CommentManager::getCommentListByUpCount($newsid, 0, 5
             var newsid =<?= $newsid ?>;
             var userid = '';
         </script>
-        <script src="js/ntjoy_comment.js"></script>
+        <script src="js/comment/ntjoy_comment.js"></script>
     </body>
 </html>

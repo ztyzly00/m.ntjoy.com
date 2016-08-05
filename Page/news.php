@@ -19,7 +19,7 @@ $hot_img_array = NewsManager::getHotImg();
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -295,7 +295,7 @@ $hot_img_array = NewsManager::getHotImg();
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <!--<script src="js/jquery.min.js"></script>-->
-    <script src="js/Jquery.lazyload.min.js"></script>
+    <script src="js/core/Jquery.lazyload.min.js"></script>
 
     <script type="text/javascript">
                         var offset = 0;
@@ -308,7 +308,7 @@ $hot_img_array = NewsManager::getHotImg();
                         var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
     </script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-    <script src="js/ntjoy_news.js"></script>
+    <script src="js/news/ntjoy_news.js"></script>
 
 
 

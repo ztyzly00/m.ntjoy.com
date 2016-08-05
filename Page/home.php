@@ -21,7 +21,7 @@ $news_list = NewsManager::getNewsList($column_id);
         <title>江海明珠网</title>
 
         <!--加载css-->
-        <link href="css/ntjoy_home.min.css" rel="stylesheet">
+        <link href="css/home/ntjoy_home.min.css" rel="stylesheet">
     </head>
     <body>
         <header class="ntjoy_header">
@@ -179,8 +179,8 @@ $news_list = NewsManager::getNewsList($column_id);
             });
         </script>
         <!--<script src="http://apps.bdimg.com/libs/swipe/2.0/swipe.min.js"></script>-->
-        <script src="js/swipe.min.js"></script>
-        <script src="js/ntjoy_home.js"></script>
+        <script src="js/core/swipe.min.js"></script>
+        <script src="js/home/ntjoy_home.js"></script>
 
     </body>
 </html>
