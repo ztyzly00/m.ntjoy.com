@@ -1,1 +1,1 @@
-../live.php
+/opt/web/xm.ntwifi.cn/m.ntjoy.com/Page/live.php

@@ -298,14 +298,14 @@ $hot_img_array = NewsManager::getHotImg();
     <script src="js/Jquery.lazyload.min.js"></script>
 
     <script type="text/javascript">
-                    var offset = 0;
-                    var count = 4;
-                    var userid = '';
-                    var newsid =<?= $id ?>;
-                    var tocommentid = '';
-                    var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
-                    var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
-                    var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
+                        var offset = 0;
+                        var count = 4;
+                        var userid = '';
+                        var newsid =<?= $id ?>;
+                        var tocommentid = '';
+                        var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
+                        var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+                        var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
     </script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/ntjoy_news.js"></script>

@@ -6,10 +6,6 @@ if (isset($_GET['cid'])) {
 }
 
 
-//if (!$cid) {
-//    $cid = 1; //cid默认情况
-//}
-
 /**
  * 频道播放地址
  */
@@ -29,60 +25,65 @@ if ($cid == 1) {
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title>江海明珠网</title>
+        <title>江海明珠网-直播</title>
 
         <!--加载css-->
-        <link href="css/ntjoy_home.css" rel="stylesheet">
+        <link href="css/live/ntjoy_live.css" rel="stylesheet">
+        <style>
+
+
+        </style>
     </head>
     <body>
+        <div id="player"></div>
 
-        <!--江海明珠网头部-->
-        <header class="ntjoy_header">
-            <div align="center" style="color: #ffffff">
-                <!--<img src="img/ntjoy_logo.png">-->
-                <ul class="h_nav" style="float: left;">
-                    <li class="h_nav_li" id="h_nav_li_login">
-                        <a href="#" id="loginBox" style="color: white"><span
-                                class=" h_nav_t icon_user" style="line-height: 40px">个人中心</span></a>
-                    </li>
-                </ul>
-                <a style="color:white;font-size:24px;line-height: 40px">江海明珠网</a>
-                <ul class="h_nav">
-                    <li class="h_nav_li" id="j_menu">
-                        <a href="#" style="color :white;">
-                            <span class="h_nav_t icon_menu" style="line-height: 40px"></span>
-                        </a>
-                    </li>
-                </ul>
+
+        <!--频道列表-->
+        <div class="channel_list">
+
+            <a id="channel_1" href="live.php?cid=1" class="channel_list_a">新闻</a>
+            <a id="channel_2" href="live.php?cid=2" class="channel_list_a">都市</a>
+            <a id="channel_3" href="live.php?cid=3" class="channel_list_a">影视</a>
+            <a href="http://m.ntjoy.com" class="channel_list_a full_active">主页</a>
+
+        </div>
+
+        <!--聊天列表-->
+        <div class="autoScroll" id="auto_scroll_id">
+            <div>
+                <div class="chat_list" style="background-color:#06a7e1">
+                    <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">公告通知:</a>
+                    <a style="color:#ffffff">哦~在这儿停顿，直播互动功能已经上线！:-)</a>
+
+                </div>
             </div>
-        </header>
+            <div>
+                <div class="chat_list" style="background-color:#f66296">
+                    <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">小编:</a>
+                    <a style="color:#ffffff">快來说两句话吧~</a>
+                </div>
+            </div>
 
-        <!--弹出信息nav-->
-        <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
-            <div class="i_cor"></div>
-            <div class="top_level_nav fix">
-                <a href="home483.html"><i class="i i_zx"></i>资讯</a>
-                <a href="live.php"><i class="i i_live"></i>直播</a>
-                <a href="video.php"><i class="i i_live"></i>宽频</a>
-<!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
+
+
+        </div>
+
+        <!--聊天发送底部框-->
+        <div class="bottom" align="center">
+            <div>
+                <input class="chat_input" type="text" placeholder="请输入内容">
+                <button class="chat_button" type="button">
+                    发送
+                </button>
             </div>
         </div>
 
-        <!--掌上南通下載框-->
-        <div class="app-top-bar">
-            <div class="icon"></div>
-            <div class="title">掌上南通APP</div>
-            <div class="describe">新闻，尽在掌握之中</div>
-            <a href="http://www.ntwifi.cn" class="download-btn"><i class="ico-download"></i>立即下载</a>
-        </div>
-
-        <!--ckplayer播放器-->
-        <div id="player">
-
-        </div>
-
+        <!--js引入-->
+        <script>
+            var cid =<?= $cid ?>;
+        </script>
+        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
         <script type="text/javascript" src="http://media.ntjoy.com/ckplayer/ckplayer.js" charset="utf-8"></script>
-
         <script type="text/javascript">
             var flashvars = {
                 f: "<?= $video_url ?>",
@@ -95,38 +96,9 @@ if ($cid == 1) {
                 my_url: encodeURIComponent(window.location.href)
             };
             var video = ["<?= $video_url ?>->video/m3u8"];
-            CKobject.embed("http://media.ntjoy.com/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "140%", false, flashvars, video);
+            CKobject.embed("http://media.ntjoy.com/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "110%", false, flashvars, video);
         </script>
-
-        <!--流量提醒-->
-        <div class="network_environment_alert" style="margin-top: 5px;margin-bottom: 5px;font-size: 14px; color: #fff;text-align: center;background-color: #FFA928;padding: 5px">温馨提示：视频费流量，建议在WiFi下观看，土豪请随意。</div>
-
-        <div style="height: 60px;">
-            <div style="background: #80c269;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=1" style="color:#fff;font-size: 25px">新闻</a>
-            </div>
-            <div style="background: #06a7e1;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=2" style="color:#fff;font-size: 25px">都市</a>
-            </div>
-            <div style="background: #7e73b9;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=3" style="color:#fff;font-size: 25px">影视</a>
-            </div>
-            <div style="background: #f76a6f;float: left;height: 100%;width: 25%;line-height: 60px;" align="center" >
-                <a  href="live.php?cid=4" style="color:#fff;font-size: 25px">休闲</a>
-            </div>
-        </div>
-
-        <footer class="f_module" style="margin-top: 20px;font-size: 20px;line-height: 20px">
-            <!--<aside>m.ntjoy.com (苏新网备2012062号)</aside>-->
-            <!--<br/>-->
-            <p style="font-size:14px">Copyright (C) 2011-2013 ntjoy.com All Rights Reserved
-            </p>
-            <p style="font-size:14px">江海明珠网 南通广播电视台 南通新闻网 版权所有</p>
-
-        </footer>
-
-        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>       
-        <script src="js/ntjoy_live.js"></script>
+        <script src="js/live/ntjoy_live.js"></script>
 
     </body>
 

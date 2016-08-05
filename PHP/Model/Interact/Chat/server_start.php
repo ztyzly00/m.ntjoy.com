@@ -2,6 +2,9 @@
 
 namespace Model\Interact\Chat;
 
+set_time_limit(0);
+ignore_user_abort(true);
+
 $server = new \swoole_websocket_server("0.0.0.0", 10028);
 
 $server->on('open', function (\swoole_websocket_server $server, $request) {

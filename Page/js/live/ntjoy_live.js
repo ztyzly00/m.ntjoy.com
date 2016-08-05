@@ -12,7 +12,7 @@ ws.onopen = function() {
 };
 
 ws.onmessage = function(e) {
-    $('.autoScroll').append("<div class=\"chat_list\"><a class=\"chat_list_a_user\">匿名用户:<\/a>" + e.data + "<\/div>");
+    $('.autoScroll').append("<div><div class=\"chat_list\"><a class=\"chat_list_a_user\">匿名用户:<\/a>" + e.data + "<\/div><\/div>");
     var boxId = "auto_scroll_id";
     var boxElement = document.getElementById(boxId);
     boxElement.scrollTop = boxElement.scrollHeight - boxElement.clientHeight;
@@ -27,12 +27,15 @@ function cssInit() {
     /* 聊天框的高度正好匹配屏幕 */
     var PLAYER_HEIGHT = $('#player').css('height');
     PLAYER_HEIGHT = PLAYER_HEIGHT.substring(0, PLAYER_HEIGHT.length - 2);
-    var CHATLIST_HEIGHT = PHONE_HEIGHT - (126 + parseInt(PLAYER_HEIGHT));
+    var CHATLIST_HEIGHT = PHONE_HEIGHT - (180 + parseInt(PLAYER_HEIGHT));
     $('.autoScroll').css('height', CHATLIST_HEIGHT + 'px');
+
+    /* 频道颜色匹配 */
+    $('#channel_' + cid).attr('class', 'channel_list_a active');
 }
 
 $('.chat_button').click(function() {
-//    $('.autoScroll').scrollTop = 10000;
     var sd_msg = $('.chat_input').val();
     ws.send(sd_msg);
+    $('.chat_input').val('');
 });
