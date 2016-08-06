@@ -134,7 +134,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     color: #3990e6;
     position: relative;
     padding-left: 38px;
-    background: url(../img/all.png) no-repeat;
+    background: url(../../img/all.png) no-repeat;
     background-size: 100px auto;
     background-position: 0 -336px;
 }
@@ -204,12 +204,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     vertical-align: middle;
     height: 16px;
     line-height: 16px;
-    background: url(../img/all.png) no-repeat;
+    background: url(../../img/all.png) no-repeat;
     background-size: 100px auto;
 }
 
 .cmnt_op a, .cmnt_op_all a {
-    background: url(../img/all.png) no-repeat;
+    background: url(../../img/all.png) no-repeat;
     background-size: 100px auto;
 }
 

@@ -8,6 +8,12 @@ $id = $_GET['id'];
 
 $new_content_array = NewsManager::getNewsContent($id);
 
+/* 文章内容丢失 */
+if (!$new_content_array['content']) {
+    header("Location:http://m.ntjoy.com/404.html");
+    return;
+}
+
 $hot_news_array = NewsManager::getHotNews();
 $hot_video_array = NewsManager::getHotVideo();
 $hot_img_array = NewsManager::getHotImg();

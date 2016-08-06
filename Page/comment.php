@@ -4,7 +4,10 @@ require_once __DIR__ . '/../PHP/autoload.php';
 use Manager\CommentManager;
 
 $newsid = $_GET['newsid'];
+//$newsid=433616;
+
 $comment_count = CommentManager::getCommentCount($newsid);
+
 
 //时间排序列表
 $comment_list_by_time = CommentManager::getCommentListByTime($newsid, 0, 5);

@@ -42,10 +42,11 @@ if ($cid == 1) {
         <div class="channel_list">
 
             <a id="channel_1" href="live.php?cid=1" class="channel_list_a">新闻</a>
-            <a id="channel_2" href="live.php?cid=2" class="channel_list_a">都市</a>
-            <a id="channel_3" href="live.php?cid=3" class="channel_list_a">影视</a>
+            <a id="channel_2" href="live.php?cid=2" class="channel_list_a">教育</a>
+            <a id="channel_3" href="live.php?cid=3" class="channel_list_a">公共</a>
             <a href="http://m.ntjoy.com" class="channel_list_a full_active">主页</a>
 
+            
         </div>
 
         <!--聊天列表-->
@@ -53,7 +54,7 @@ if ($cid == 1) {
             <div>
                 <div class="chat_list" style="background-color:#06a7e1">
                     <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">公告通知:</a>
-                    <a style="color:#ffffff">哦~在这儿停顿，直播互动功能已经上线！:-)</a>
+                    <a style="color:#ffffff">哦~在这儿停顿，直播互动功能上线ing！:-)</a>
 
                 </div>
             </div>

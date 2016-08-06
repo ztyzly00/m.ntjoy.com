@@ -15,6 +15,9 @@ $server->on('open', function (\swoole_websocket_server $server, $request) {
 $server->on('message', function (\swoole_websocket_server $server, $frame) {
 //    echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";
 //    $server->push($frame->fd, "this is server");
+
+    $frame->data = "內容暂不予显示";
+
     foreach ($server->connections as $fd) {
         $server->push($fd, $frame->data);
     }

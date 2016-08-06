@@ -23,7 +23,7 @@ $news_list = NewsManager::getNewsList($column_id);
         <title>江海明珠网</title>
 
         <!--加载css-->
-        <link href="css/ntjoy_home.css" rel="stylesheet">
+        <link href="css/home/ntjoy_home.css" rel="stylesheet">
         <style>
             .nav_ntjoy_list a{
                 width:33%;
@@ -180,8 +180,8 @@ $news_list = NewsManager::getNewsList($column_id);
                 $('#nav_item<?= $column_id ?>').css('font-weight', '700');
             });
         </script>
-        <script src="js/swipe.min.js"></script>
-        <script src="js/ntjoy_home.js"></script>
+        <script src="js/core/swipe.min.js"></script>
+        <script src="js/home/ntjoy_home.js"></script>
 
     </body>
 </html>

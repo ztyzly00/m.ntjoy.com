@@ -37,7 +37,7 @@ class CommentList {
 
             $query = "select mncu.upcount,mncd.commentid from m_ntjoy_comment_detail mncd "
                     . "left join m_ntjoy_comment_upcount mncu on mncu.commentid=mncd.commentid "
-                    . "where mncd.newsid=$newsid and status=1 "
+                    . "where mncd.newsid=$newsid and status=1"
                     . "order by mncu.upcount desc limit $mysql_count";
             $fetch_array = $xm_mysql_obj->fetch_assoc($query);
 

@@ -49,8 +49,10 @@ class XmMysqlObj implements Mysql_Interface\iMySqlObj {
     public function fetch_assoc($query) {
         $result = mysqli_query($this->link, $query);
         $returnString = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $returnString[] = $row;
+        if ($result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $returnString[] = $row;
+            }
         }
         return $returnString;
     }
