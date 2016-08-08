@@ -9,7 +9,6 @@
 namespace Model\Search;
 
 require_once __DIR__ . '/../../Util/xunsearch/sdk/php/lib/XS.php';
-
 use Model\News\NewsInfo;
 
 class SearchModel {
@@ -37,7 +36,7 @@ class SearchModel {
             $return_array[] = NewsInfo::getNewsInfoById($val->pid);
         }
 
-        print_r($return_array);
+        return $return_array;
     }
 
 }

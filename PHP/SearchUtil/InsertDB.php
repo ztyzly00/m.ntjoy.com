@@ -33,9 +33,9 @@ while ($id_start > $loop_count && $array_count == $loop_count) {
     if ($array_count == $loop_count) {
 
         for ($i = 0; $i < $array_count; $i++) {
- 
+
             $data = array(
-                'pid' => $fetch_array[$i]['id'], // 此字段为主键，必须指定
+                'pid' => $fetch_array[$i]['id'],
                 'subject' => $fetch_array[$i]['title'],
                 'chrono' => $fetch_array[$i]['pubdate']
             );

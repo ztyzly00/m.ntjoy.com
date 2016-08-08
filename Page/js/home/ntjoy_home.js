@@ -53,7 +53,7 @@ $(window).scroll(function() {
     }
 
     //到底加载
-    if (($(window).height() + $(window).scrollTop()) + 50 >= $(document).height()) {
+    if (($(window).height() + $(window).scrollTop()) + 0 >= $(document).height()) {
         $('#load_more_id').css('display', 'block');
         $.get("Ajax/NewsListAjax.php", {columnid: columnid, offset: offset, count: count}, function(result) {
             var news_list = eval('(' + result + ')');
@@ -66,17 +66,23 @@ $(window).scroll(function() {
         offset = offset + count;
     }
 });
+
 $('#j_toTop').click(function() {
     window.scrollTo(0, 0);
 });
+
 $('#j_menu').click(function() {
-    if ($('#topLevelNav').css('display') == 'none') {
-        $('#topLevelNav').css('display', 'block');
+    if ($('.ntjoy_menu').css('display') == 'none') {
+        $('.ntjoy_menu').css('display', 'block');
     } else {
-        $('#topLevelNav').css('display', 'none');
+        $('.ntjoy_menu').css('display', 'none');
     }
 });
 
+$('.search_button').click(function() {
+    var key_word = $('.search_input').val();
+    window.location.href = 'search.php?keyword=' + key_word;
+});
 
 function debug(string) {
     $('#test').append(string);

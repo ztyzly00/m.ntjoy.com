@@ -9,7 +9,7 @@ $id = $_GET['id'];
 $new_content_array = NewsManager::getNewsContent($id);
 
 /* 文章内容丢失 */
-if (!$new_content_array['content']) {
+if (!$new_content_array['content'] && !$new_content_array['video_url']) {
     header("Location:http://m.ntjoy.com/404.html");
     return;
 }
@@ -51,6 +51,16 @@ $hot_img_array = NewsManager::getHotImg();
                 <ul class="h_nav_items">
                     <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
                 </ul>
+
+                <div class="ntjoy_menu" style="display:none">
+                    <div>
+                        <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
+                        <button class="search_button" type="button">
+                            搜索
+                        </button>
+                    </div>
+                </div>
+
                 <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
 
                     <div class="top_level_nav fix">
@@ -304,14 +314,14 @@ $hot_img_array = NewsManager::getHotImg();
     <script src="js/core/Jquery.lazyload.min.js"></script>
 
     <script type="text/javascript">
-                        var offset = 0;
-                        var count = 4;
-                        var userid = '';
-                        var newsid =<?= $id ?>;
-                        var tocommentid = '';
-                        var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
-                        var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
-                        var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
+                    var offset = 0;
+                    var count = 4;
+                    var userid = '';
+                    var newsid =<?= $id ?>;
+                    var tocommentid = '';
+                    var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
+                    var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+                    var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
     </script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/news/ntjoy_news.js"></script>

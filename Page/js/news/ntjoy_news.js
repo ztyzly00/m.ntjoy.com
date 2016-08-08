@@ -132,8 +132,10 @@ $(window).scroll(function() {
 $('#h_nav_menu').click(function() {
     if ($('#topLevelNav').css('display') == 'none') {
         $('#topLevelNav').css('display', 'block');
+        $('.ntjoy_menu').css('display', 'block');
     } else {
         $('#topLevelNav').css('display', 'none');
+        $('.ntjoy_menu').css('display', 'none');
     }
 });
 
@@ -162,6 +164,12 @@ $('#j_cmnt_cancel').click(function() {
     $('#main_body').css('display', 'block');
     $('#j_cmnt_pop').css('display', 'none');
     window.scrollTo(0, CUR_HEIGHT);
+});
+
+/* 搜索按钮点击事件 */
+$('.search_button').click(function() {
+    var key_word = $('.search_input').val();
+    window.location.href = 'search.php?keyword=' + key_word;
 });
 
 //评论发送按钮

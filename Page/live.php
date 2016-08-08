@@ -41,12 +41,12 @@ if ($cid == 1) {
         <!--频道列表-->
         <div class="channel_list">
 
-            <a id="channel_1" href="live.php?cid=1" class="channel_list_a">新闻</a>
-            <a id="channel_2" href="live.php?cid=2" class="channel_list_a">教育</a>
-            <a id="channel_3" href="live.php?cid=3" class="channel_list_a">公共</a>
+            <a id="channel_1" href="live.php?cid=1" class="channel_list_a">新闻综合</a>
+            <a id="channel_2" href="live.php?cid=2" class="channel_list_a">教育频道</a>
+            <a id="channel_3" href="live.php?cid=3" class="channel_list_a">公共频道</a>
             <a href="http://m.ntjoy.com" class="channel_list_a full_active">主页</a>
 
-            
+
         </div>
 
         <!--聊天列表-->
@@ -84,7 +84,7 @@ if ($cid == 1) {
             var cid =<?= $cid ?>;
         </script>
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-        <script type="text/javascript" src="http://media.ntjoy.com/ckplayer/ckplayer.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
         <script type="text/javascript">
             var flashvars = {
                 f: "<?= $video_url ?>",
