@@ -1,0 +1,805 @@
+/*总样式区*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    clear: both;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: #e8e8e8;
+    font-size: 16px;
+}
+
+html {
+    font-family: Microsoft YaHei, Helvetica Neue, Helvetica, Roboto, STHeiTi, Arial, sans-serif;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+a .f_card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #fff;
+}
+
+ul, ol {
+    list-style: none outside none;
+}
+
+dt {
+    display: block;
+}
+
+h1, h2, h3, strong {
+    font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+/*搜索框*/
+.ntjoy_menu{
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    border-top:  1px solid #ccc;
+}
+.search_input {
+    width: 60%;
+    height: 32px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0px 14px;
+    margin-left: 0px;
+}
+.ntjoy_menu button{
+    width:25%;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #f66296;
+    border: 0px solid #ccc;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 9px 14px;
+    margin-left: 0px;
+}
+
+
+/*头部区*/
+.hIcon, .h_nav_items li, .f_search_btn, .backPrevPage, .backTop, .footer_t_ico {
+    background: url(../../img/head_foot_ico.png?t=1463380988021) no-repeat 0 0;
+    background-size: 50px auto;
+}
+.newsHead {
+    clear: both;
+    overflow: hidden;
+    background: #f8f8f8;
+    border-bottom: 1px solid #dfdfdf;
+    position: relative;
+    line-height: 42px;
+    min-height: 42px;
+    font-size: 16px;
+    position: relative;
+}
+.h_txt {
+    float: left;
+    text-align: center;
+    position: relative;
+    width: 95px;
+    height: 42px;
+    display: inline-block;
+    background-position: 6px 6px;
+    overflow: hidden;
+    border-right: 1px solid #dfdfdf;
+}
+.h_nav {
+    width: 40px;
+    height: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-position: 8px -44px;
+    text-indent: 999em;
+    overflow: hidden;
+}
+.h_nav_items {
+    overflow: hidden;
+    height: 42px;
+}
+.h_nav_items li {
+    float: left;
+    padding: 0 12px 0 8px;
+    background-position: right -92px;
+}
+.h_user {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-position: 0 -164px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+.top_level_container{
+    height:40px;
+    border-top: 1px solid #dfdfdf;
+}
+.top_level_nav {
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    border-radius: 0;
+}
+.top_level_nav a{
+    text-align: center;
+    float:left;
+    width: 47px;
+    height:40px;
+    border-right:1px solid #dfdfdf;
+}
+
+
+/*live的掌上南通广告*/
+.app-top-bar {
+    position: relative;
+    height: 40px;
+    padding: 14px 12px;
+    background: #fff;
+    overflow: hidden;
+}
+.app-top-bar .icon {
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height: 40px;
+    background: url(../img/app-icon.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.app-top-bar .describe {
+    font-size: 14px;
+    margin-left: 51px;
+    margin-top: 2px;
+    color: #888;
+}
+.app-top-bar .title {
+    font-size: 16px;
+    margin-left: 51px;
+    margin-top: -1px;
+}
+.app-top-bar .download-btn {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    height: 36px;
+    padding: 0 1em;
+    font-size: 14px;
+    line-height: 36px;
+    color: #fff;
+    background: -webkit-gradient(linear,left top,right top,from(#26abc9),to(#2359cd));
+    background: -webkit-linear-gradient(left,#26abc9,#2359cd);
+    background: linear-gradient(to right,#26abc9,#2359cd);
+    border-radius: 5px;
+}
+
+/*live的nav*/
+.tab_item_list {
+    height: 200px;
+    background-color: #fff;
+    padding: 20px 0 20px 20px;
+}
+.tab_item_list a.tv_1 {
+    background-position: 0 0;
+}
+.tab_item_list a.tv_2 {
+    background-position: 0 -60px;
+}
+.tab_item_list a.tv_3 {
+    background-position: 0 -120px;
+}
+.tab_item_list a.tv_4 {
+    background-position: 0 -180px;
+}
+.tab_item_list a.tv_5 {
+    background-position: 0 -240px;
+}
+.tab_item_list a {
+    width: 60px;
+    height:60px;
+    margin-right: 10px;    
+    background: url(../img/live_cell_mid.png);
+    float: left;
+}
+
+/*顶部的menu*/
+.ntjoy_menu{
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+}
+.search_input {
+    width: 60%;
+    height: 32px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0px 14px;
+    margin-left: 0px;
+}
+.ntjoy_menu button{
+    width:25%;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #f66296;
+    border: 0px solid #ccc;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 9px 14px;
+    margin-left: 0px;
+}
+/*导航栏区域*/
+.nav_ntjoy {
+    font-size: 18px;
+    clear: both;
+    overflow: hidden;
+    background: #fff;
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav_ntjoy_list {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.nav_ntjoy_list a:nth-child(6n+1) {
+    padding-left: 0px;
+}
+
+.nav_ntjoy_list a:nth-child(6n) {
+    padding-right: 0px;
+}
+
+.nav_ntjoy_list a {
+    float: left;
+    width: 15%;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 32px;
+    padding: 0 1%;
+    color: #2d2d2d;
+}
+
+.nav_ntjoy_list .toggle_btn_up {
+    background: #fff;
+    width: 15%;
+    padding-right: 0;
+}
+
+.nav_ntjoy_list .toggle_btn_down {
+    background: #fff;
+    width: 15%;
+    padding-right: 0;
+    -moz-transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+}
+
+.icon_open:before {
+    content: "\e60c";
+}
+/*图片滑动区*/
+.pic_slide {
+    clear: both;
+    position: relative;
+    margin-bottom: 8px;
+    z-index: 999;
+}
+
+.pic_slide_list {
+    position: relative;
+    overflow: hidden;
+    visibility: visible;
+    /*height: 187 px;*/
+}
+
+.pic_slide_list img {
+    font-size: 0;
+    vertical-align: top;
+    height: 200px;
+    width: 100%;
+}
+
+.pic_slide_info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .6) 100%);
+    color: #fff;
+    padding: 16px 10px 0;
+    font-size: 16px;
+    height: 50px;
+    overflow: hidden;
+    line-height: 28px;
+}
+
+.pic_slide_num {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    line-height: 36px;
+    text-align: right;
+    font-family: Arial;
+    color: #fff;
+    font-size: 11px;
+}
+
+.pic_slide_num .curNum {
+    font-weight: 600;
+    font-size: 18px;
+    padding-right: 3px;
+}
+
+.pic_slide_num .j_slide_sum {
+    font-style: normal;
+    padding-left: 3px;
+}
+
+.top_slide_wrap .item {
+    float: left;
+    position: relative;
+}
+
+/*HOT区域*/
+.card_module {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.recommend_items {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.recommend_items li:first-child {
+    z-index: 10;
+}
+
+.recommend_items li span {
+    float: left;
+    background: #fa4e46;
+    color: #fff;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    padding: 0 3px;
+    margin: 12px 12px 0 10px;
+}
+
+.recommend_items li a {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/*要闻区域*/
+.card_module {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+.f_card {
+    padding: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.f_card_dt img {
+    width: 100%;
+    height: 100%;
+}
+
+.f_card .f_card_dt {
+    width: 90px;
+    height: 67px;
+    margin-right: 12px;
+    position: relative;
+    background-color: #f6f6f6;
+}
+
+.f_card .f_card_dd {
+    width: 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
+    display: -webkit-box;
+}
+
+.f_card .f_card_dd:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #dfdfdf;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.f_card .f_card_h3 {
+    font-size: 17px;
+    color: #000;
+    height: 25px;
+    line-height: 25px;
+}
+
+.f_card .f_card_p {
+    font-size: 13px;
+    color: #888;
+    height: 36px;
+    line-height: 18px;
+    padding-top: 6px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.f_card .f_card_icon {
+    height: 17px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 10px;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 10%);
+}
+
+.f_card_icon span:last-child {
+    margin: 0;
+}
+
+.f_card .comment .icon_comment {
+    font-size: 12px;
+    line-height: 16px;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: -2px;
+    color: #888;
+}
+
+.f_card .comment {
+    float: right;
+    height: 16px;
+    font-size: 10px;
+    color: #555;
+    margin-left: 10px;
+    font-family: Arial;
+    line-height: 16px;
+}
+
+.icon_comment:before {
+    content: "\e603";
+}
+
+.card_module a:visited .f_card .f_card_p {
+    color: #9e9e9e;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.load-more {
+    padding:12px 0 20px;
+    text-align:center;
+    background:#f9f9f9;
+    border-top:1px solid #dcdcdc;
+    margin-top: -8px;
+}
+.load-more .loading {
+    color:#616161;
+    display:inline-block;
+    font-size:14px;
+    height:24px;
+    line-height:24px;
+    padding:0 0 0 30px;
+    position:relative
+}
+.load-more .loading i {
+    position:absolute;
+    top:0x;
+    left:0;
+    font-size:24px;
+    color:#3990e6;
+    -webkit-animation:loading 1.1s linear infinite
+}
+
+/*回顶部按钮*/
+.topbtn {
+    position: fixed;
+    right: 10px;
+    bottom: 80px;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+    z-index: 500;
+    border-radius: 50%;
+    display: none;
+}
+
+/*尾部css*/
+.f_module {
+    clear: both;
+    overflow: hidden;
+    background: #fff;
+    padding: 14px 0 20px;
+    background-color: #129bf0;
+    font-size: 11px;
+    color: #e8f5fd;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/*小图标表示区域*/
+@font-face {
+    font-family: 'SinaHomeFont';
+    src: url('../fonts/SinaHomeFont.eot?v=0.0.12');
+    src: url('../fonts/SinaHomeFont.eot?v=0.0.12#iefix') format('embedded-opentype'), url('../fonts/SinaHomeFont.woff?v=0.0.12') format('woff'), url('../fonts/SinaHomeFont.ttf?v=0.0.12') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
+[class^="icon_"], [class*=" icon_"] {
+    font-family: 'SinaHomeFont';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon_add:before {
+    content: "\e600"
+}
+
+.icon_back:before {
+    content: "\e601"
+}
+
+.icon_check:before {
+    content: "\e602"
+}
+
+.icon_comment:before {
+    content: "\e603"
+}
+
+.icon_download_1:before {
+    content: "\e604"
+}
+
+.icon_download_2:before {
+    content: "\e605"
+}
+
+.icon_hot:before {
+    content: "\e606"
+}
+
+.icon_img:before {
+    content: "\e607"
+}
+
+.icon_interest:before {
+    content: "\e608"
+}
+
+.icon_loading:before {
+    content: "\e609"
+}
+
+.icon_location:before {
+    content: "\e60a"
+}
+
+.icon_menu:before {
+    content: "\e60b"
+}
+
+.icon_open:before {
+    content: "\e60c"
+}
+
+.icon_search:before {
+    content: "\e60d"
+}
+
+.icon_sina_logo:before {
+    content: "\e60e"
+}
+
+.icon_top_1:before {
+    content: "\e60f"
+}
+
+.icon_top_2:before {
+    content: "\e610"
+}
+
+.icon_user:before {
+    content: "\e611"
+}
+
+.icon_video:before {
+    content: "\e612"
+}
+
+.icon_weibo:before {
+    content: "\e613"
+}
+
+.icon_star:before {
+    content: "\e614"
+}
+
+.icon_cai:before {
+    content: "\e615"
+}
+
+.icon_cai_1:before {
+    content: "\e616"
+}
+
+.icon_ding:before {
+    content: "\e617"
+}
+
+.icon_ding_1:before {
+    content: "\e618"
+}
+
+.icon_down_18:before {
+    content: "\e619"
+}
+
+.icon_open_18:before {
+    content: "\e620"
+}
+
+.icon_phone_18:before {
+    content: "\e621"
+}
+
+.icon_tick:before {
+    content: "\e622"
+}
+
+.icon_exclamation:before {
+    content: "\e623"
+}
+
+.icon_camera:before {
+    content: "\e624"
+}
+
+.icon_collection:before {
+    content: "\e625"
+}
+
+.icon_collection_1:before {
+    content: "\e626"
+}
+
+.icon_share:before {
+    content: "\e627"
+}
+
+.icon_play:before {
+    content: "\e628"
+}
+
+.icon_time:before {
+    content: "\e629"
+}
+
+.icon_like:before {
+    content: "\e630"
+}
+
+.icon_stock:before {
+    content: "\e631"
+}
+
+.icon_video2:before {
+    content: "\e632"
+}
+
+.icon_file:before {
+    content: "\e633"
+}
+
+.icon_location2:before {
+    content: "\e634"
+}
+
+/*字体css*/
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'sian_family';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+@font-face {
+    font-family: 'sian_family';
+    src: url('fonts/icomoon.eot?-byj1on');
+    src: url('fonts/icomoon.eot?#iefix-byj1on') format('embedded-opentype'), url('fonts/icomoon.ttf?-byj1on') format('truetype'), url('fonts/icomoon.woff?-byj1on') format('woff'), url('fonts/icomoon.svg?-byj1on#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+.icon-page_loading:before {
+    content: "\e606"
+}
+

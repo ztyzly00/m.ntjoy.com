@@ -64,7 +64,7 @@ $hot_img_array = NewsManager::getHotImg();
                 <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
 
                     <div class="top_level_nav fix">
-                        <a href="home3.html"><i class="i i_zx"></i>资讯</a>  
+                        <a href="home3.html"><i class="i i_zx"></i>主页</a>  
                         <a href="live.php"><i class="i i_live"></i>直播</a>
                         <a href="video.php"><i class="i i_live"></i>宽频</a>
         <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
@@ -299,7 +299,7 @@ $hot_img_array = NewsManager::getHotImg();
             </div>
             <div class="cmnt_login">
                 <span class="fl">
-                    匿名用户
+                    匿名用户 <font color="#eb4f38">( 评论审核通过才能显示 )</font>
                 </span>
             </div><div class="cmntarea">
                 <textarea id="j_cmnt_input" class="newarea" name="" placeholder="说说你的看法（字数不要超过200字,评论需要审核通过才会显示）"></textarea>
@@ -310,7 +310,6 @@ $hot_img_array = NewsManager::getHotImg();
 
     <!--加载必要js-->
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <!--<script src="js/jquery.min.js"></script>-->
     <script src="js/core/Jquery.lazyload.min.js"></script>
 
     <script type="text/javascript">

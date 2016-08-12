@@ -1,0 +1,246 @@
+Array
+(
+    [0] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503451
+                    [subject] => 新闻特写：南通项目建设一线的“移动会场”
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 255
+                    [rank] => 11
+                    [ccount] => 0
+                    [percent] => 88
+                    [weight] => 2.3178079128265
+                )
+
+        )
+
+    [1] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503459
+                    [subject] => 南通楼市淡季不淡 市区商品住房销售2095套
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 239
+                    [rank] => 12
+                    [ccount] => 0
+                    [percent] => 88
+                    [weight] => 2.3004536628723
+                )
+
+        )
+
+    [2] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503456
+                    [subject] => 先调解再判决 引导情感修复 南通创新家事审判
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 245
+                    [rank] => 13
+                    [ccount] => 0
+                    [percent] => 88
+                    [weight] => 2.3004536628723
+                )
+
+        )
+
+    [3] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503454
+                    [subject] => 南通市记协换届 选举产生新一届领导机构
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 249
+                    [rank] => 14
+                    [ccount] => 0
+                    [percent] => 86
+                    [weight] => 2.2499163150787
+                )
+
+        )
+
+    [4] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503458
+                    [subject] => 南通在全国首发“一带一路”企业集合债券26亿 助推沿海经济增长
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 241
+                    [rank] => 15
+                    [ccount] => 0
+                    [percent] => 85
+                    [weight] => 2.2335603237152
+                )
+
+        )
+
+)
+Array
+(
+    [0] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503451
+                    [subject] => 新闻特写：南通项目建设一线的“移动会场”
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 255
+                    [rank] => 11
+                    [ccount] => 0
+                    [percent] => 88
+                    [weight] => 2.3178079128265
+                )
+
+        )
+
+    [1] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503459
+                    [subject] => 南通楼市淡季不淡 市区商品住房销售2095套
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 239
+                    [rank] => 12
+                    [ccount] => 0
+                    [percent] => 88
+                    [weight] => 2.3004536628723
+                )
+
+        )
+
+    [2] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503456
+                    [subject] => 先调解再判决 引导情感修复 南通创新家事审判
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 245
+                    [rank] => 13
+                    [ccount] => 0
+                    [percent] => 88
+                    [weight] => 2.3004536628723
+                )
+
+        )
+
+    [3] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503454
+                    [subject] => 南通市记协换届 选举产生新一届领导机构
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 249
+                    [rank] => 14
+                    [ccount] => 0
+                    [percent] => 86
+                    [weight] => 2.2499163150787
+                )
+
+        )
+
+    [4] => XSDocument Object
+        (
+            [_data:XSDocument:private] => Array
+                (
+                    [pid] => 503458
+                    [subject] => 南通在全国首发“一带一路”企业集合债券26亿 助推沿海经济增长
+                    [chrono] => 1470652679
+                    [255] => 
+                )
+
+            [_terms:XSDocument:private] => 
+            [_texts:XSDocument:private] => 
+            [_charset:XSDocument:private] => UTF-8
+            [_meta:XSDocument:private] => Array
+                (
+                    [docid] => 241
+                    [rank] => 15
+                    [ccount] => 0
+                    [percent] => 85
+                    [weight] => 2.2335603237152
+                )
+
+        )
+
+)

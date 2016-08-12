@@ -1,0 +1,21 @@
+     <?php
+            for ($i = 0; $i < count($list); $i++) {
+                ?>      
+                <a href="news<?= $list[$i]['id'] ?>.html">
+                    <div class="search_div">
+                        <div class="j_art_lazy">
+                            <img class="search_img"
+                                 src="<?= $list[$i]['small_thumbfile_url'] ?>"
+                                 style="display: block;">
+                        </div>
+                        <div>
+                            <h3 class="search_title"><?= $list[$i]['title'] ?></h3>
+                            <div class="search_time">
+                                <time><?= $list[$i]['pubdate'] ?></time>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <?php
+            }
+            ?>

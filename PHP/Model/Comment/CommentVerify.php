@@ -30,7 +30,7 @@ class CommentVerify {
             $list = $mysql_obj->fetch_assoc_one($query);
             $cmt_list[$i]['title'] = $list['title'];
         }
-//        print_r($cmt_list);
+
         return $cmt_list;
     }
 

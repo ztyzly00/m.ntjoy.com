@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../PHP/autoload.php';
 
-use Model\Search;
+
 
 if (!isset($_GET['keyword'])) {
     $key_word = '南通';
@@ -13,14 +13,14 @@ if (!$key_word) {
     $key_word = '南通';
 }
 
-$list = Search\SearchModel::getSearchByWord($key_word, 10, 0);
+//$list = Search\SearchModel::getSearchByWord($key_word, 10, 0);
 ?>
 
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>404</title>
+        <title>內容搜索</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <link href="css/search/ntjoy_search.css" rel="stylesheet">
@@ -39,34 +39,32 @@ $list = Search\SearchModel::getSearchByWord($key_word, 10, 0);
             </div>
         </div>
 
+
+        <div class="search_loading" style="margin-top:100px;display: none">
+
+            <div class="sk-folding-cube" >
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+
+            </div>
+        </div>
+
+
+
         <div class="search_panel">
 
-            <?php
-            for ($i = 0; $i < count($list); $i++) {
-                ?>      
-                <a href="news<?= $list[$i]['id'] ?>.html">
-                    <div class="search_div">
-                        <div class="j_art_lazy">
-                            <img class="search_img"
-                                 src="<?= $list[$i]['small_thumbfile_url'] ?>"
-                                 style="display: block;">
-                        </div>
-                        <div>
-                            <h3 class="search_title"><?= $list[$i]['title'] ?></h3>
-                            <div class="search_time">
-                                <time><?= $list[$i]['pubdate'] ?></time>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <?php
-            }
-            ?>
 
-            <aside class="search_load_more" style="display: none;">
-                <span class="loading">努力搜索中....</span>
-            </aside>
         </div>
+
+        <aside class="search_load_more" style="display: none;">
+            <span class="loading">努力搜索中....</span>
+        </aside>
+
+        <footer class="f_module">
+            <aside>m.ntjoy.com (苏新网备2012062号)</aside>
+        </footer>
 
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
         <script>

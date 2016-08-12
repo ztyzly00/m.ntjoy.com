@@ -22,8 +22,9 @@ $news_list = NewsManager::getNewsList($column_id);
         <meta charset="UTF-8">
         <title>江海明珠网</title>
 
+
         <!--加载css-->
-        <link href="css/home/ntjoy_home.css" rel="stylesheet">
+        <link href="css/video/ntjoy_video.css" rel="stylesheet">
         <style>
             .nav_ntjoy_list a{
                 width:33%;
@@ -41,36 +42,48 @@ $news_list = NewsManager::getNewsList($column_id);
         </style>
     </head>
     <body>
-        <header class="ntjoy_header">
-            <div align="center" style="color: #ffffff">
-                <!--<img src="img/ntjoy_logo.png">-->
-                <ul class="h_nav" style="float: left;">
-                    <li class="h_nav_li" id="h_nav_li_login">
-                        <a href="#" id="loginBox" style="color: white"><span
-                                class=" h_nav_t icon_user" style="line-height: 40px">个人中心</span></a>
-                    </li>
-                </ul>
-                <a style="color:white;font-size:24px;line-height: 40px">江海明珠网</a>
-                <ul class="h_nav">
-                    <li class="h_nav_li" id="j_menu">
-                        <a href="#" style="color :white;">
-                            <span class="h_nav_t icon_menu" style="line-height: 40px"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </header>
 
+        <!--广告位（掌上南通下载）-->
+        <section>
+            <section id="_1469148896944" style="padding: 5px 0px; width: 100%; background-image: url(http://www.sinaimg.cn/cj/2015/0824/U10832P31DT20150824180612.jpg);">
+                <aside style="position: relative; padding: 0px 5px 0px 62px; height: 50px; text-decoration: none; color: rgb(255, 255, 255);">
+                    <img src="img/app-icon.png" style="position: absolute; top: 5px; left: 15px; width: 40px; border-radius: 5px;">
+                    <p style="margin: 0px; font-size: 16px; line-height: 16px; padding: 7px 0px 0px;">掌上南通</p>
+                    <p style="margin: 0px; font-size: 12px; line-height: 10px; opacity: 0.6; padding: 7px 0px 0px;">掌上南通，尽在掌握之中</p>
+                    <a href="http://www.ntwifi.cn" style="right: 12px; position: absolute; top: 11px; width: 55px; height: 28px; color: rgb(255, 255, 255); font-weight: bold; font-size: 15px; line-height: 28px; text-align: center; background-color: #fdaf38" class="open">下载</a>
+                </aside>
+            </section>
+        </section>
 
-        <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
-            <div class="i_cor"></div>
-            <div class="top_level_nav fix">
-                <a href="home483.html"><i class="i i_zx"></i>资讯</a>  
-                <a href="live.php"><i class="i i_live"></i>直播</a>
-                <a href="video.php"><i class="i i_live"></i>宽频</a>
-<!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
+        <nav class="newsHead" data-sudaclick="mainNav">
+            <h2><a class="h_txt" href="home3.html">江海明珠网</a></h2>
+            <!-- //页面加载时只需要加载外部a标签 -->
+            <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
+            <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
+            <ul class="h_nav_items">
+                <li><a>宽频</a></li>
+            </ul>
+
+            <div class="ntjoy_menu" style="display:none">
+                <div>
+                    <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
+                    <button class="search_button" type="button">
+                        搜索
+                    </button>
+                </div>
             </div>
-        </div>
+
+            <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
+
+                <div class="top_level_nav fix">
+                    <a href="home3.html"><i class="i i_zx"></i>主页</a>  
+                    <a href="live.php"><i class="i i_live"></i>直播</a>
+                    <a href="video.php"><i class="i i_live"></i>宽频</a>
+    <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
+                </div>
+            </div>
+        </nav>
+
 
         <!--navi导航栏-->
         <section class="nav_ntjoy">
@@ -80,11 +93,7 @@ $news_list = NewsManager::getNewsList($column_id);
                 <a id="nav_item365" href="video.php?columnid=365">总而言之</a>
                 <a id="nav_item362" href="video.php?columnid=362">媒体大放送</a>
                 <a id="nav_item1596" href="video.php?columnid=1596">我想有个家</a>
-                <a id="nav_item1113" href="video.php?columnid=1113">今晚在线</a>
-<!--                <a id="nav_item305" href="video.php?columnid=305">日历(整档)</a>
-                <a id="nav_item304" href="video.php?columnid=304">NTTV(整档)</a>
-                <a id="nav_item310" href="video.php?columnid=310">言之(整档)</a>-->
-                                <!--<a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>-->
+                <a id="nav_item1113" href="video.php?columnid=1113">今晚在线</a>                
             </nav>
         </section>
 
@@ -181,7 +190,7 @@ $news_list = NewsManager::getNewsList($column_id);
             });
         </script>
         <script src="js/core/swipe.min.js"></script>
-        <script src="js/home/ntjoy_home.js"></script>
+        <script src="js/video/ntjoy_video.js"></script>
 
     </body>
 </html>

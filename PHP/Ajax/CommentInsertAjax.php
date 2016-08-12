@@ -17,3 +17,4 @@ if ($comment_array['comment']) {
 } else {
     echo '评论失败';
 }
+

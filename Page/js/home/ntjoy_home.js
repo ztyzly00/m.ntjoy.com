@@ -45,6 +45,9 @@ $('#j_toggle_nav').click(function() {
     }
 
 });
+
+/* 滚动锁 */
+var scroll_mutex = 0;
 $(window).scroll(function() {
     if ($(window).scrollTop() > 400) {
         $('#j_toTop').css('display', 'block');
@@ -52,8 +55,8 @@ $(window).scroll(function() {
         $('#j_toTop').css('display', 'none');
     }
 
-    //到底加载
-    if (($(window).height() + $(window).scrollTop()) + 0 >= $(document).height()) {
+    if (($(window).height() + $(window).scrollTop()) + 0 >= $(document).height() && scroll_mutex == 0) {
+        scroll_mutex = 1;
         $('#load_more_id').css('display', 'block');
         $.get("Ajax/NewsListAjax.php", {columnid: columnid, offset: offset, count: count}, function(result) {
             var news_list = eval('(' + result + ')');
@@ -62,6 +65,7 @@ $(window).scroll(function() {
                 $("#main_news").append(add_string);
             }
             $('#load_more_id').css('display', 'none');
+            scroll_mutex = 0;
         });
         offset = offset + count;
     }

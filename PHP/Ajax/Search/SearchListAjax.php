@@ -13,5 +13,3 @@ $list = SearchModel::getSearchByWord($key_word, $count, $offset);
 $return_json = json_encode($list);
 
 echo $return_json;
-
-

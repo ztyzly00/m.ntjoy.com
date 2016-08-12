@@ -1,21 +1,21 @@
 /**
- * Created by Zanuck on 2016/5/18.
- * 小镇
+ * Created by zanuck on 2016/5/18.
+ * For ntjoy
  */
 
-//浏览器的高度
+/* The height of the browser */
 var BROWSER_HEIGHT = document.documentElement.clientHeight;
 
 var CUR_HEIGHT;
 
-/* dom加载完毕执行 */
+/* dom done */
 $(function() {
     cssInit();
     /* lazyload */
     $("img.lazy").lazyload();
 });
 
-/* 初始化css */
+/* init css */
 function cssInit() {
     modifyContent();
     loadWeiXinJs();
@@ -23,10 +23,11 @@ function cssInit() {
     loadCommentListByUpCount();
 }
 
-/* 修改正文样式 */
+/* Modify content for better render */
 function modifyContent() {
     $('#art_main_card_id img').addClass('news_img');
-    /* LazyLoad */
+
+    /* Modify for lazyLoad */
     $('#art_main_card_id img').addClass('lazy');
     $('#art_main_card_id img').removeAttr('style');
     $('#art_main_card_id img').removeAttr('height');
@@ -35,7 +36,7 @@ function modifyContent() {
 
 }
 
-/* 加载微信分享模块 */
+/* Load WX module */
 function loadWeiXinJs() {
 
     var cr_link = window.location.href;
@@ -90,14 +91,14 @@ function loadWeiXinJs() {
     });
 }
 
-/* 评论数加载 */
+/* Load Comment Count */
 function loadCommentCount() {
     $.get("Ajax/CommentCountAjax.php", {newsid: newsid}, function(result) {
         $('.j_article_cmnt_count').html(result);
     });
 }
 
-/* 加载热门评论 */
+/* Load hot comment */
 function loadCommentListByUpCount() {
     $.get("Ajax/CommentListAjax.php", {newsid: newsid, offset: offset, count: count}, function(result) {
         $(".j_comment_box").html("");
@@ -111,15 +112,15 @@ function loadCommentListByUpCount() {
     });
 }
 
-/* 加载到页面的最低端 */
+/* get bottom of the browser */
 function getBottom() {
     window.scrollTo(0, BROWSER_HEIGHT);
 }
 
 
 
-/*事件列表*/
-//滚动事件
+
+/* scroll event */
 $(window).scroll(function() {
     if ($(window).scrollTop() > 400) {
         $('#pageJumpBtn >a').css('display', 'block');
@@ -128,7 +129,7 @@ $(window).scroll(function() {
     }
 });
 
-//nav按钮
+/* h_nav_menu click event */
 $('#h_nav_menu').click(function() {
     if ($('#topLevelNav').css('display') == 'none') {
         $('#topLevelNav').css('display', 'block');
@@ -139,19 +140,15 @@ $('#h_nav_menu').click(function() {
     }
 });
 
-//登录按钮
-$('.hIcon').click(function() {
-    //alert('功能开发中~如有问题请联系微信号：ztyzly00');
-});
 
-//回顶部按钮事件
+/* get top */
 $('#goPageTop').click(function() {
     window.scrollTo(0, 0);
 });
 
-//评论框弹出事件
+/* comment click start */
 $('#foot_cmt_id').click(function() {
-    //记住用户当前高度
+    /* Remember the height of the user browser */
     CUR_HEIGHT = $(window).scrollTop();
     $('#main_body').css('display', 'none');
     $('#j_cmnt_pop').css('display', 'block');
@@ -159,20 +156,20 @@ $('#foot_cmt_id').click(function() {
     window.scrollTo(0, BROWSER_HEIGHT);
 });
 
-//评论框取消事件
+/* comment click cancel */
 $('#j_cmnt_cancel').click(function() {
     $('#main_body').css('display', 'block');
     $('#j_cmnt_pop').css('display', 'none');
     window.scrollTo(0, CUR_HEIGHT);
 });
 
-/* 搜索按钮点击事件 */
+/* search click start */
 $('.search_button').click(function() {
     var key_word = $('.search_input').val();
     window.location.href = 'search.php?keyword=' + key_word;
 });
 
-//评论发送按钮
+/* comment send click */
 $('#j_cmnt_smt').click(function() {
     var comment = $('#j_cmnt_input').val();
     if (comment.length <= 0 || comment.length > 200) {
@@ -182,11 +179,8 @@ $('#j_cmnt_smt').click(function() {
             $('#j_cmnt_pop').css('display', 'none');
             $('#main_body').css('display', 'block');
             $('#j_cmnt_input').val('');
-            //评论数加载
             loadCommentCount();
-            //加载热门评论
             loadCommentListByUpCount();
-            //滚动到最底部，让用户直接看到自己的评论
             window.scrollTo(0, $(document).height() + 100);
         });
     }
