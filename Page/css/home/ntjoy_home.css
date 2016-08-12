@@ -203,28 +203,29 @@ h1, h2, h3, strong {
 }
 
 /*顶部的menu*/
-.ntjoy_menu{
+.ntjoy_search_menu{
+    background-color: #f6f6f6;
     height:50px;
     line-height: 50px;
     text-align: center;
+
 }
 .search_input {
     width: 60%;
     height: 32px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     padding: 0px 14px;
     margin-left: 0px;
 }
-.ntjoy_menu button{
+
+.ntjoy_search_menu button{
     width:25%;
     font-weight: 600;
     color: #ffffff;
     background-color: #f66296;
     border: 0px solid #ccc;
     font-size: 14px;
-    border-radius: 4px;
     padding: 9px 14px;
     margin-left: 0px;
 }

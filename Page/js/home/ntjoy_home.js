@@ -76,10 +76,10 @@ $('#j_toTop').click(function() {
 });
 
 $('#j_menu').click(function() {
-    if ($('.ntjoy_menu').css('display') == 'none') {
-        $('.ntjoy_menu').css('display', 'block');
+    if ($('.ntjoy_search_menu').css('display') == 'none') {
+        $('.ntjoy_search_menu').css('display', 'block');
     } else {
-        $('.ntjoy_menu').css('display', 'none');
+        $('.ntjoy_search_menu').css('display', 'none');
     }
 });
 

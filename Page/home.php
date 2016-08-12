@@ -28,16 +28,16 @@ $news_list = NewsManager::getNewsList($column_id);
             <div align="center" style="color: #ffffff">
                 <!--<img src="img/ntjoy_logo.png">-->
                 <ul class="h_nav" style="float: left;">
-                    <li class="h_nav_li" id="h_nav_li_login">
+                    <li class="h_nav_li" id="h_nav_li_menu">
                         <a href="#" id="loginBox" style="color: white"><span
-                                class=" h_nav_t icon_user" style="line-height: 40px">个人中心</span></a>
+                                class=" h_nav_t icon_menu" style="line-height: 40px">个人中心</span></a>
                     </li>
                 </ul>
                 <a style="color:white;font-size:24px;line-height: 40px">江海明珠网</a>
                 <ul class="h_nav">
                     <li class="h_nav_li" id="j_menu">
                         <a href="#" style="color :white;">
-                            <span class="h_nav_t icon_menu" style="line-height: 40px"></span>
+                            <span class="h_nav_t icon_search" style="line-height: 40px"></span>
                         </a>
                     </li>
                 </ul>
@@ -45,17 +45,7 @@ $news_list = NewsManager::getNewsList($column_id);
         </header>
 
 
-        <!--        <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
-                    <div class="i_cor"></div>
-                    <div class="top_level_nav fix">
-                        <a href="home704.html"><i class="i i_zx"></i>资讯</a>  
-                        <a href="live.php"><i class="i i_live"></i>直播</a>
-                        <a href="video.php"><i class="i i_live"></i>宽频</a>
-                        <a href="dianbo.php"><i class="i i_watch"></i>点播</a>
-                    </div>
-                </div>-->
-
-        <div class="ntjoy_menu" style="display:none">
+        <div class="ntjoy_search_menu" style="display:none">
             <div>
                 <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
                 <button class="search_button" type="button">
