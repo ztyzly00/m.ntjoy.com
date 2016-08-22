@@ -18,6 +18,9 @@ $news_list = NewsManager::getNewsList($column_id);
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>江海明珠网</title>
 
         <!--加载css-->

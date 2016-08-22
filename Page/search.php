@@ -1,8 +1,6 @@
 <?php
 require_once __DIR__ . '/../PHP/autoload.php';
 
-
-
 if (!isset($_GET['keyword'])) {
     $key_word = '南通';
 } else {
@@ -12,8 +10,6 @@ if (!isset($_GET['keyword'])) {
 if (!$key_word) {
     $key_word = '南通';
 }
-
-//$list = Search\SearchModel::getSearchByWord($key_word, 10, 0);
 ?>
 
 <!DOCTYPE html>

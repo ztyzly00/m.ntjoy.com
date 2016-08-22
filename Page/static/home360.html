@@ -3,81 +3,69 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>江海明珠网</title>
 
-
         <!--加载css-->
-        <link href="css/video/ntjoy_video.css" rel="stylesheet">
-        <style>
-            .nav_ntjoy_list a{
-                width:33%;
-                padding:0 0.6px;
-            }
-            .nav_ntjoy_list a:nth-child(3n) {
-                padding-right: 0;
-            }
-            .nav_ntjoy_list a:nth-child(3n+1) {
-                padding-left: 0;
-            }
-            .nav_ntjoy{
-                padding:3px 0;
-            }
-        </style>
+        <link href="css/home/ntjoy_home.min.css" rel="stylesheet">
     </head>
     <body>
-
-        <!--广告位（掌上南通下载）-->
-        <section>
-            <section id="_1469148896944" style="padding: 5px 0px; width: 100%; background-image: url(http://www.sinaimg.cn/cj/2015/0824/U10832P31DT20150824180612.jpg);">
-                <aside style="position: relative; padding: 0px 5px 0px 62px; height: 50px; text-decoration: none; color: rgb(255, 255, 255);">
-                    <img src="img/app-icon.png" style="position: absolute; top: 5px; left: 15px; width: 40px; border-radius: 5px;">
-                    <p style="margin: 0px; font-size: 16px; line-height: 16px; padding: 7px 0px 0px;">掌上南通</p>
-                    <p style="margin: 0px; font-size: 12px; line-height: 10px; opacity: 0.6; padding: 7px 0px 0px;">掌上南通，尽在掌握之中</p>
-                    <a href="http://www.ntwifi.cn" style="right: 12px; position: absolute; top: 11px; width: 55px; height: 28px; color: rgb(255, 255, 255); font-weight: bold; font-size: 15px; line-height: 28px; text-align: center; background-color: #fdaf38" class="open">下载</a>
-                </aside>
-            </section>
-        </section>
-
-        <nav class="newsHead" data-sudaclick="mainNav">
-            <h2><a class="h_txt" href="home3.html">江海明珠网</a></h2>
-            <!-- //页面加载时只需要加载外部a标签 -->
-            <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
-            <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
-            <ul class="h_nav_items">
-                <li><a>宽频</a></li>
-            </ul>
-
-            <div class="ntjoy_menu" style="display:none">
-                <div>
-                    <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
-                    <button class="search_button" type="button">
-                        搜索
-                    </button>
-                </div>
+        <header class="ntjoy_header">
+            <div align="center" style="color: #ffffff">
+                <!--<img src="img/ntjoy_logo.png">-->
+                <ul class="h_nav" style="float: left;">
+                    <li class="h_nav_li" id="h_nav_li_menu">
+                        <a href="#" id="loginBox" style="color: white"><span
+                                class=" h_nav_t icon_menu" style="line-height: 40px">个人中心</span></a>
+                    </li>
+                </ul>
+                <a style="color:white;font-size:24px;line-height: 40px">江海明珠网</a>
+                <ul class="h_nav">
+                    <li class="h_nav_li" id="j_menu">
+                        <a href="#" style="color :white;">
+                            <span class="h_nav_t icon_search" style="line-height: 40px"></span>
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </header>
 
-            <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
 
-                <div class="top_level_nav fix">
-                    <a href="home3.html"><i class="i i_zx"></i>主页</a>  
-                    <a href="live.php"><i class="i i_live"></i>直播</a>
-                    <a href="video.php"><i class="i i_live"></i>宽频</a>
-    <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
-                </div>
+        <div class="ntjoy_search_menu" style="display:none">
+            <div>
+                <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
+                <button class="search_button" type="button">
+                    搜索
+                </button>
             </div>
-        </nav>
-
+        </div>
 
         <!--navi导航栏-->
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
-                <a id="nav_item359" href="video.php?columnid=359">NTTV新闻</a>
-                <a id="nav_item360" href="video.php?columnid=360" >城市日历</a>
-                <a id="nav_item365" href="video.php?columnid=365">总而言之</a>
-                <a id="nav_item362" href="video.php?columnid=362">媒体大放送</a>
-                <a id="nav_item1596" href="video.php?columnid=1596">我想有个家</a>
-                <a id="nav_item1113" href="video.php?columnid=1113">今晚在线</a>                
+                <!--显示-->
+                <a id="nav_item3"  href="home3.html">要闻</a>
+                <a id="nav_item4" href="home4.html">社会</a>
+                <a id="nav_item5" href="home5.html">民生</a>
+                <a id="nav_item7" href="home7.html">国内</a>
+                <a id="nav_item8" href="home8.html">国际</a>
+                <a id="nav_item483" href="home483.html">网罗</a>
+                <a id="nav_item1377" href="home1377.html" >娱乐</a>
+                <a id="nav_item6" href="home6.html">省内</a>
+                <a id="nav_item9" href="home9.html">市区</a>
+                <a id="nav_item5" href="live.php" style="color:#ff0000;font-weight: 600">直播</a>
+                <a id="nav_item5" href="video.php" style="color:#ff0000;font-weight: 600">宽频</a>
+                <!--隐藏-->
+                <a id="nav_item229" href="home229.html" class="hide">组图</a>
+                <a id="nav_item10" href="home10.html"  class="hide">如皋</a>
+                <a id="nav_item11" href="home11.html" class="hide">如东</a>
+                <a id="nav_item12" href="home12.html" class="hide">海安</a>
+                <a id="nav_item13" href="home13.html" class="hide">海门</a>
+                <a id="nav_item14" href="home14.html" class="hide">启东</a>
+                <a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>
             </nav>
         </section>
 
@@ -87,18 +75,18 @@
                 <div class="top_slide_wrap" id="top_slide_wrap_id" style="">
                     <div class="swipe-wrap">
                                                     <div class="item" style="">
-                                <a href="news504175.html">
-                                    <img src="http://www.ntjoy.com/liv_loadfile/61/119844.jpg">
+                                <a href="news506240.html">
+                                    <img src="http://www.ntjoy.com/liv_loadfile/62/120372.jpg">
                                     <span class="pic_slide_info">
-                                        <i class="pic_slide_t">奥运第五日：向艳梅惊险夺魁 丁宁实现大..</i>
+                                        <i class="pic_slide_t">里约奥运第15日：中国获4金 女排成就..</i>
                                     </span>
                                 </a>
                             </div>
                                                         <div class="item" style="">
-                                <a href="news504174.html">
-                                    <img src="http://www.ntjoy.com/liv_loadfile/61/119843.jpg">
+                                <a href="news506239.html">
+                                    <img src="http://www.ntjoy.com/liv_loadfile/62/120375.jpg">
                                     <span class="pic_slide_info">
-                                        <i class="pic_slide_t">国际学校迎新日：培养国际视野 南通18..</i>
+                                        <i class="pic_slide_t">南通八旬老人走丢了：家住怡园北村 随身..</i>
                                     </span>
                                 </a>
                             </div>
@@ -118,21 +106,21 @@
             <ul class="recommend_items j_roll" id="j_news_scroll" data-sudaclick="ls_live">
                 <li>
                     <span>HOT</span>
-                    <a href="news504173.html" title="">南通起凤街：配电间突然起火 消防二十分钟成功救援</a>
+                    <a href="news506238.html" title="">南通首届整装节：房屋装修很累人“整装”市场受青睐</a>
                 </li>
             </ul>
         </section>
 
         <!--新闻区域-->
         <section class="card_module j_normal_card " id="main_news">            
-                            <a href="news504172.html">
+                            <a href="news506237.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/61/119841.jpg">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/120373.jpg">
                         </dt>
                         <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">南通新建新村：接线板烧毁 差点引燃天然气管道</h3>
-                            <p class="f_card_p">　　昨天早上8点左右，市区新建新村75幢一楼的住户陈先生被吓了一跳。自...</p>
+                            <h3 class="f_card_h3 ellipsis">“父亲倒下了我来扛” 南通如皋小伙儿发奋读书</h3>
+                            <p class="f_card_p">　　今年高考，如皋中学的张松虎同学以358分高出本一分数线，被南京信息...</p>
                             <div class="f_card_icon">
                                 <span class="comment">
                                     0
@@ -143,14 +131,14 @@
                         </dd>
                     </dl>
                 </a>
-                                <a href="news504171.html">
+                                <a href="news506236.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/61/119845.jpg">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/120368.jpg">
                         </dt>
                         <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">南通启东：女子骑车百公里迷路 三天未进食后获救助</h3>
-                            <p class="f_card_p">　　8月7号晚上九点多，启东协兴港边防派出所民警在夜巡时，得知一名女子...</p>
+                            <h3 class="f_card_h3 ellipsis">如皋法院：“重金求子”诈骗七万多“富婆”夫妻获刑</h3>
+                            <p class="f_card_p">　　重金求子骗局是众多电信诈骗手段的一种。它以高额酬金为诱饵，以传宗接...</p>
                             <div class="f_card_icon">
                                 <span class="comment">
                                     0
@@ -161,14 +149,14 @@
                         </dd>
                     </dl>
                 </a>
-                                <a href="news504170.html">
+                                <a href="news506235.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/61/119846.jpg">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/120371.jpg">
                         </dt>
                         <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">张家港退休教师再伸援手 南通学医小伙儿感恩社会</h3>
-                            <p class="f_card_p">　　上周，我们栏目报道了如皋搬经中学的章正，以378的高分考取了南京医...</p>
+                            <h3 class="f_card_h3 ellipsis">南通15岁女孩离家会网友 走投无路民警伸援手</h3>
+                            <p class="f_card_p">　　前几天，一名年仅15岁的女孩独自离家去见网友，谁知道，网友没见着，...</p>
                             <div class="f_card_icon">
                                 <span class="comment">
                                     0
@@ -179,14 +167,14 @@
                         </dd>
                     </dl>
                 </a>
-                                <a href="news504169.html">
+                                <a href="news506234.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/news/vod/xwsph/nttv1/csrl/fold23/small_1470918914_75846400.jpg">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/120376.jpg">
                         </dt>
                         <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">酷热高温强势回归 未来几天南通最高气温达35℃</h3>
-                            <p class="f_card_p">　　今天，高温将在通城重启，大早，南通气象台发布高温报告，预计未来几天...</p>
+                            <h3 class="f_card_h3 ellipsis">第21期《我想有个家》：奥运项目猜猜看 配合默契成功牵手</h3>
+                            <p class="f_card_p">　　今晚九点，最新一期的《我想有个家》将在新闻综合频道播出。本期，共有...</p>
                             <div class="f_card_icon">
                                 <span class="comment">
                                     0
@@ -197,7 +185,11 @@
                         </dd>
                     </dl>
                 </a>
-                        </section>
+                            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
+                <img src="img/image/xiangmu.jpg" width="100%">
+                <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
+            </a>
+        </section>
         <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
             <span class="loading">小镇加载中.....</span>
         </aside>
@@ -214,6 +206,7 @@
 
         <!--加载js-->
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <!--<script src="js/jquery.min.js"></script>-->
         <script>
             var columnid =360;
             var offset = 9;
@@ -224,8 +217,9 @@
                 $('#nav_item360').css('font-weight', '700');
             });
         </script>
+        <!--<script src="http://apps.bdimg.com/libs/swipe/2.0/swipe.min.js"></script>-->
         <script src="js/core/swipe.min.js"></script>
-        <script src="js/video/ntjoy_video.js"></script>
+        <script src="js/home/ntjoy_home.js"></script>
 
     </body>
 </html>

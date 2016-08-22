@@ -73,7 +73,6 @@ h1, h2, h3, strong {
     height: 32px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     padding: 0px 14px;
     margin-left: 0px;
 }
@@ -84,7 +83,6 @@ h1, h2, h3, strong {
     background-color: #06a7e1;
     border: 0px solid #ccc;
     font-size: 14px;
-    border-radius: 4px;
     padding: 9px 14px;
     margin-left: 0px;
 }

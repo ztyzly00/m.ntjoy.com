@@ -9,7 +9,6 @@
 namespace Model\Search;
 
 require_once __DIR__ . '/../../Util/xunsearch/sdk/php/lib/XS.php';
-use Model\News\NewsInfo;
 
 class SearchModel {
 
@@ -32,8 +31,14 @@ class SearchModel {
         $search_list = $search->search($word);
 
         $return_array = array();
+
         foreach ($search_list as $val) {
-            $return_array[] = NewsInfo::getNewsInfoById($val->pid);
+            $temp['id'] = $val->pid;
+            $temp['title'] = $val->subject;
+            $temp['pubdate'] = $val->chrono;
+            $temp['pubdate'] = date("Y-m-d H:i:s", $temp['pubdate']);
+            $temp['small_thumbfile_url'] = 'img/dianshitai.jpg';
+            $return_array[] = $temp;
         }
 
         return $return_array;

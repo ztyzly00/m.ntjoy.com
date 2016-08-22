@@ -21,11 +21,14 @@ $hot_img_array = NewsManager::getHotImg();
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no"/>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -96,22 +99,7 @@ $hot_img_array = NewsManager::getHotImg();
                 <?php
                 if ($new_content_array['video_url']) {
                     ?>
-                    <div id="player" style="margin-bottom: 20px"></div>
-                    <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
-                    <script type="text/javascript">
-                        var flashvars = {
-                            f: "<?= $new_content_array['video_url'] ?>",
-                            c: 0,
-                            p: 0,
-                            r: "http://www.ntjoy.com/tiaozhuan15.html",
-                            t: 15,
-                            b: 1,
-                            my_url: encodeURIComponent(window.location.href)
-                        };
-
-                        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-                        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
-                    </script>
+                    <div id="player" style="margin-bottom: 20px"></div>                   
                     <?php
                 }
                 ?>
@@ -309,22 +297,42 @@ $hot_img_array = NewsManager::getHotImg();
 
 
     <!--加载必要js-->
+    <script type="text/javascript">
+        var offset = 0;
+        var count = 4;
+        var userid = '';
+        var newsid =<?= $id ?>;
+        var tocommentid = '';
+        var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
+        var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+        var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
+    </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
-
-    <script type="text/javascript">
-                    var offset = 0;
-                    var count = 4;
-                    var userid = '';
-                    var newsid =<?= $id ?>;
-                    var tocommentid = '';
-                    var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
-                    var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
-                    var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
-    </script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
+    <?php
+    if ($new_content_array['video_url']) {
+        ?>       
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "<?= $new_content_array['video_url'] ?>",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+        <?php
+    }
+    ?>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 
 </html>

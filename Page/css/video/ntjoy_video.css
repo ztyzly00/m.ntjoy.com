@@ -71,7 +71,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 32px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     padding: 0px 14px;
     margin-left: 0px;
 }
@@ -82,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #f66296;
     border: 0px solid #ccc;
     font-size: 14px;
-    border-radius: 4px;
     padding: 9px 14px;
     margin-left: 0px;
 }
@@ -249,7 +247,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 32px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 4px;
     padding: 0px 14px;
     margin-left: 0px;
 }
@@ -260,7 +257,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #f66296;
     border: 0px solid #ccc;
     font-size: 14px;
-    border-radius: 4px;
     padding: 9px 14px;
     margin-left: 0px;
 }
