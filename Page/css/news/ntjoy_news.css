@@ -1150,11 +1150,13 @@ a.cmnt_smt {
     padding: 0 20px;
     background: #fff;
 }
+
 .recommend_moudule dl {
     clear: both;
     padding: 12px 0;
     border-bottom: 1px solid #ececec;
 }
+
 .recommend_moudule img {
     height: 60px;
     width: 80px;

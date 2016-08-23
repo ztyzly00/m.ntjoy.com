@@ -316,18 +316,18 @@ $hot_img_array = NewsManager::getHotImg();
         ?>       
         <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
         <script type="text/javascript">
-            var flashvars = {
-                f: "<?= $new_content_array['video_url'] ?>",
-                c: 0,
-                p: 0,
-                r: "http://www.ntjoy.com/tiaozhuan15.html",
-                t: 15,
-                b: 1,
-                my_url: encodeURIComponent(window.location.href)
-            };
+        var flashvars = {
+            f: "<?= $new_content_array['video_url'] ?>",
+            c: 0,
+            p: 0,
+            r: "http://www.ntjoy.com/tiaozhuan15.html",
+            t: 15,
+            b: 1,
+            my_url: encodeURIComponent(window.location.href)
+        };
 
-            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
         </script>
         <?php
     }
