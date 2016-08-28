@@ -75,13 +75,23 @@ $('#j_toTop').click(function() {
     window.scrollTo(0, 0);
 });
 
-$('#j_menu').click(function() {
+$('#j_search').click(function() {
     if ($('.ntjoy_search_menu').css('display') == 'none') {
         $('.ntjoy_search_menu').css('display', 'block');
     } else {
         $('.ntjoy_search_menu').css('display', 'none');
     }
 });
+
+$('#j_menu').click(function() {
+    if ($('.head_tc_nav_new').css('display') == 'none') {
+        $('.head_tc_nav_new').css('display', 'block');
+    } else {
+        $('.head_tc_nav_new').css('display', 'none');
+    }
+//    alert('ff');
+});
+
 
 $('.search_button').click(function() {
     var key_word = $('.search_input').val();

@@ -11,4 +11,3 @@ $commentid = $_REQUEST['commentid'];
 $query = "delete from m_ntjoy_comment_detail where commentid='$commentid'";
 
 $xm_mysql_obj->exec_query($query);
-

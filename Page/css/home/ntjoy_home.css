@@ -203,6 +203,77 @@ h1, h2, h3, strong {
 }
 
 /*顶部的menu*/
+.head_tc_nav_new {    
+    position: absolute;
+    top: 40px;
+    background: rgba(0,0,0,.8);    
+    z-index: 99999;
+    box-shadow: 0 3px 5px rgba(0,0,0,-.2);
+    width:100%;
+}
+.head_tc_nav_new .search_dor {        
+    padding: 20px 20px 20px;
+    color: #fff;
+}
+.head_tc_nav_new .search_dor a {
+    display: inline-block;
+    width: 48.5%;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+}
+.head_tc_nav_new .search_dor .zhibo {
+    float: left;    
+    font-size: 16px;    
+    background-color: #00b4f0;
+}
+.head_tc_nav_new .search_dor .kuanpin {
+    float: right;    
+    font-size: 16px;
+    background-color: #ff6464;    
+}
+.head_tc_nav_new .three_btn{
+    margin-top: 16px;
+    text-align: center;
+    padding: 15px 15px 15px;
+}
+.head_tc_nav_new .three_btn a{    
+    float: left;
+    display: inline-block;
+    width: 33.3%;
+    color: #ffffff;
+}
+.head_tc_nav_new .battom_waitao {
+    height: 38px;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    bottom: -38px;
+}
+.head_tc_nav_new .bottom_bac {
+    width: 120%;
+    margin-left: -10%;
+    height: 80px;
+    border-radius: 180%;
+    margin-top: -50px;
+    background: rgba(0,0,0,.8);
+}
+.head_tc_nav_new .arrow {
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 7px 8px;
+    border-style: solid;
+    border-color: transparent transparent #000;
+    position: absolute;
+    top: -8px;
+    left: 4%;
+    opacity: .7;
+}
+
+/*顶部的search*/
 .ntjoy_search_menu{
     background-color: #f6f6f6;
     height:50px;
