@@ -10,11 +10,11 @@ if (isset($_GET['cid'])) {
  * 频道播放地址
  */
 if ($cid == 1) {
-    $video_url = "http://m2.ntjoy.com/channels/nttv/NEWS/m3u8:SD"; //南通新闻综合频道
+    $video_url = "http://media.ntjoy.com/channels/nttv/NEWS/m3u8:500k"; //南通新闻综合频道
 } elseif ($cid == 2) {
-    $video_url = "http://m2.ntjoy.com/channels/nttv/SOCIETY/m3u8:SD"; //南通都市生活频道
+    $video_url = "http://media.ntjoy.com/channels/nttv/SOCIETY/m3u8:SD"; //南通都市生活频道
 } elseif ($cid == 3) {
-    $video_url = "http://m2.ntjoy.com/channels/nttv/LIFE/m3u8:SD"; //南通影视频道
+    $video_url = "http://media.ntjoy.com/channels/nttv/LIFE/m3u8:SD"; //南通影视频道
 } elseif ($cid == 4) {
     $video_url = "http://media.ntjoy.com/channels/nttv/INFO/m3u8:SD"; //南通都市休闲频道
 }

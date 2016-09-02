@@ -49,7 +49,7 @@ $news_list = NewsManager::getNewsList($column_id);
         </header>
 
         <!--菜单区域-->
-        <div class="head_tc_nav_new" style="display: none;">
+        <div class="head_tc_nav_new" id="head_menu" style="display: none;">
             <div class="search_dor clearfix">
                 <a href="live.php" class="zhibo" id="">直播</a>
                 <a href="video.php" class="kuanpin" id="">宽频</a>
@@ -64,7 +64,6 @@ $news_list = NewsManager::getNewsList($column_id);
             <div class="battom_waitao"><div class="bottom_bac"></div></div>
             <div class="arrow"></div>
         </div>
-
 
         <!--搜索区域-->
         <div class="ntjoy_search_menu" style="display:none">
@@ -167,6 +166,10 @@ $news_list = NewsManager::getNewsList($column_id);
                 <?php
             }
             ?>
+            <a href="http://world.people.com.cn/GB/8212/191816/402465/index.html">
+                <img src="http://www.ntjoy.com/res/sy201308/images/G20l.jpg" width="100%">
+                <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
+            </a>
             <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
                 <img src="img/image/xiangmu.jpg" width="100%">
                 <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->

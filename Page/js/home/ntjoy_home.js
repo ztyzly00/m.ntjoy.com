@@ -89,8 +89,9 @@ $('#j_menu').click(function() {
     } else {
         $('.head_tc_nav_new').css('display', 'none');
     }
-//    alert('ff');
 });
+
+
 
 
 $('.search_button').click(function() {

@@ -85,6 +85,8 @@ class NewsModify {
             $array['common_img_url'] = $array['video_img_url'];
         }
         //时间转换
+        $array['timeraw'] = $array['pubdate'];
+
         $array['pubdate'] = date("Y-m-d H:i:s", $array['pubdate']);
 
         //文章图片地址替换

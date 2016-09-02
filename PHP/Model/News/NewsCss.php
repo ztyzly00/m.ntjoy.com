@@ -16,4 +16,14 @@ class NewsCss {
         return $array;
     }
 
+    /**
+     * 改变文章css属性，使lazyload失效
+     * @param array $array
+     * @return type
+     */
+    public static function CancelContentImgCss(&$array) {
+        $array['content'] = str_replace("data-original", "src", $array['content']);
+        return $array;
+    }
+
 }

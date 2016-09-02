@@ -1,0 +1,330 @@
+/*必要*/
+html { overflow-x:hidden; }
+
+body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 100%;
+    font-family: Arial, Microsoft Yahei;
+    /*line-height: 24px;*/
+}
+
+/*滚动条样式*/
+
+.roll-bar .roll-bar-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 2.5625rem;
+    line-height: 2.5625rem;
+    display: block;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.roll-bar {
+    _zoom: 1;
+    padding: 0;
+    margin: 0 auto;
+    height: 2.8125rem;
+    width: 100%;
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.roll-bar .roll-bar-in li {    
+    text-align: center;
+    height: 2.8125rem;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.roll-bar .roll-bar-in li a {
+    color: #999;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.roll-bar .roll-bar-in li.on {
+    height: 2.625rem;
+}
+
+.roll-bar .roll-bar-in li.on a {
+    color: #de698c;
+    border-bottom: 4px solid #de698c;
+}
+
+/*头部图片标题*/
+.hot_articles {
+    clear: both;
+    margin: 0px 0 15px;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-linear-gradient(180deg, rgba(0, 35, 65, .25) 5%, rgba(0, 35, 65, .75) 100%);
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+}
+
+.articles_img, .focus_item {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.articles_inner {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    max-width: 75pc;
+}
+
+.post-head {
+    position: absolute;
+    right: 15px;
+    bottom: 30%;
+    left: 15px;
+    color: #fff;
+}
+
+.post-head h1 {
+    margin-bottom: 5px;
+    padding-right: 15px;
+    font-size: 36px;
+    line-height: 1.4;
+}
+
+.post-meta {
+    position: absolute;
+    bottom: 20%;
+    left: 20px;
+    border: none;
+}
+
+.post-meta .autor-meta {
+    color: #fff;
+    color: hsla(0, 0%, 100%, .7);
+}
+
+.post-meta span {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/*正文样式*/
+.articles_con, .page_bottom {
+    text-align: justify;
+    padding: 0 18px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.articles_con p {
+    margin-bottom: 9pt;
+    color: #525252;
+    word-wrap: break-word;
+    font: 400 110% Helvetica, Arial, sans-serif;
+    line-height: 28px;
+    word-break: normal;
+}
+
+.articles_con img {
+    padding: 5px 0;
+    max-width: 20pc;
+}
+
+/*响应式媒体选择*/
+@media (min-width: 640px) {
+    .logo img {
+        width: 123px;
+        height: 23px
+    }
+
+    .articles_con {
+        padding: 0 30px 33px
+    }
+
+    .focus_item .post-head {
+        bottom: 40%
+    }
+
+    .focus_tabs {
+        bottom: 10%;
+        left: 10%
+    }
+
+    .focus_tabs li {
+        margin: 0 20px 0 0;
+        width: 20px;
+        height: 20px
+    }
+
+    .focus_item, .focus_item .articles_img {
+        height: 450px
+    }
+
+    .hot_item .hotem-con .hotem-img, .hot_item .hotem-con .hotem-img img {
+        max-width: 90pt
+    }
+
+    .hot_item .hotem-con .hotem-thumb {
+        font-size: 20px;
+        line-height: 1.6
+    }
+}
+
+@media (max-width: 480px) {
+    .navitems li {
+        padding: 8px 0;
+        font-weight: 700;
+        font-size: 1pc;
+        line-height: 22px
+    }
+
+    .articles_img, .focus_item {
+        height: 300px
+    }
+
+    .post-head {
+        bottom: 75pt
+    }
+
+    .focus_item .post-head {
+        bottom: 60px
+    }
+
+    .post-meta {
+        position: absolute;
+        bottom: 43px !important
+    }
+
+    .post-head h1 {
+        font-size: 2pc
+    }
+
+    .head-index h1 {
+        font-size: 26px;
+        line-height: 1.6
+    }
+
+    .focus_tabs {
+        bottom: 6%
+    }
+
+    .news_list .news_item .thumb-img {
+        max-width: 90pt
+    }
+
+    .item-con h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        line-height: 1.4
+    }
+
+    .item-con .autor-meta span {
+        font-size: 14px
+    }
+
+    .articles_simple .post-head h1.title {
+        font-size: 26px;
+        line-height: 1.6
+    }
+
+    .articles_simple {
+        height: 190px
+    }
+
+    .hot_item .hotem-con .hotem-thumb {
+        font-size: 1pc;
+        line-height: 1.6
+    }
+}
+
+@media (max-width: 320px) {
+    .articles_img, .focus_item {
+        height: 15pc
+    }
+
+    .post-head {
+        bottom: 5pc
+    }
+
+    .focus_item .post-head {
+        bottom: 50px
+    }
+
+    .post-meta {
+        position: absolute;
+        bottom: 33px !important
+    }
+
+    .post-head h1 {
+        font-size: 26px
+    }
+
+    .articles_simple .post-head h1.title, .head-index h1 {
+        font-size: 20px;
+        line-height: 1.6
+    }
+
+    .news_list .news_item .thumb-img {
+        max-width: 90pt
+    }
+
+    .item-con h2 {
+        margin-bottom: 5px;
+        font-size: 1pc;
+        line-height: 1.4
+    }
+
+    .item-con .autor-meta span {
+        font-size: 13px
+    }
+
+    .articles_simple .post-meta {
+        position: absolute;
+        top: 70%;
+        right: 20px;
+        left: 20px;
+        border: none
+    }
+
+    .articles_simple {
+        height: 10pc
+    }
+
+    .sharebox .cloesd {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 101
+    }
+
+    .hot_item .hotem-con .hotem-thumb {
+        font-size: 14px;
+        line-height: 1.6
+    }
+
+    .focus_tabs {
+        bottom: 5.2%
+    }
+}
