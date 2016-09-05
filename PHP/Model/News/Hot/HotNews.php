@@ -7,9 +7,14 @@ use Model\News\NewsInfo;
 
 class HotNews {
 
-    public static function getHotNews($column_id) {
+    /**
+     * 获取每日的热门新闻
+     * @param type $column_id
+     * @param type $date_string 当天0点的时间戳 !!
+     * @return type
+     */
+    public static function getHotNews($column_id, $date_string) {
 
-        $date_string = 1473004800;
         $tom_date_string = $date_string + 86400;
 
         $mysql_obj = MysqlObj::getInstance();
