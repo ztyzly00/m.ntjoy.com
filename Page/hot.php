@@ -27,7 +27,7 @@ $hot_news = HotNews::getHotNews(704);
             <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
             <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
             <ul class="h_nav_items">
-                <li><a href="home<?= $new_content_array['columnid'] ?>.html">每日推荐</a></li>
+                <li><a>每日推荐</a></li>
             </ul>
 
             <div class="ntjoy_menu" style="display:none">
@@ -86,7 +86,7 @@ $hot_news = HotNews::getHotNews(704);
                         <div class="post-meta">
                             <div class="autor-meta">
                                 <span class="post-time"><?= $value['pubdate'] ?></span>
-                                <span class="post-name">某编辑</span>
+                                <span class="post-name"><?= $value['name'] ?></span>
                                 <span class="post-category">江海明珠网</span>
                             </div>
                         </div>

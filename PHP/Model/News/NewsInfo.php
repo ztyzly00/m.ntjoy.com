@@ -28,12 +28,13 @@ class NewsInfo {
             /* 缓存未命中 */
             $mysql_obj = Mysql_Model\MysqlObj::getInstance();
             $query = "select "
-                    . "lc.*,lac.content,la.*,lm.*,lcol.colname,lc.columnid "
+                    . "lc.*,lac.content,la.*,lm.*,lcol.colname,lc.columnid,lv.name "
                     . "from liv_contentmap lc "
                     . "left join liv_article_contentbody lac on lac.articleid=lc.contentid "
                     . "LEFT JOIN liv_article la on lc.contentid=la.articleid "
                     . "left join liv_material lm on la.loadfile=lm.materialid "
                     . "left join liv_column lcol on lc.columnid=lcol.columnid "
+                    . "left join liv_user lv on lv.userid=lc.userid "
                     . "WHERE lc.id=$id limit 1";
 
             /* 处理数据 */
