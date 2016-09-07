@@ -166,10 +166,10 @@ $news_list = NewsManager::getNewsList($column_id);
                 <?php
             }
             ?>
-            <a href="http://world.people.com.cn/GB/8212/191816/402465/index.html">
+<!--            <a href="http://world.people.com.cn/GB/8212/191816/402465/index.html">
                 <img src="http://www.ntjoy.com/res/sy201308/images/G20l.jpg" width="100%">
-                <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
-            </a>
+                <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
+            </a>-->
             <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
                 <img src="img/image/xiangmu.jpg" width="100%">
                 <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
