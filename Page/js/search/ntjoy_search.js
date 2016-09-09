@@ -14,11 +14,9 @@ function checkLoading() {
 /* 加载搜索列表 */
 function loadSearchList() {
     $('.search_loading').css('display', 'block');
-
     $.get("Ajax/Search/SearchListAjax.php", {keyword: key_word, offset: offset, count: count}, function(result) {
         $(".search_panel").empty();
         var search_list = eval('(' + result + ')');
-
         if (search_list.length == 0) {
             $(".search_panel").append('无搜索结果');
         } else {

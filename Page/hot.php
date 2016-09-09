@@ -3,13 +3,14 @@ require_once __DIR__ . '/../PHP/autoload.php';
 
 use Model\News\Hot\HotNews;
 
-$column_id = 704;
+$column_id = 3;
 
 $date_string = time();
 $date_now = date('Y-m-d', $date_string);
 $date_string = strtotime($date_now);
 
 $hot_news = HotNews::getHotNews($column_id, $date_string);
+
 
 /* 获取日期数组 */
 $date_array = array();
@@ -140,6 +141,7 @@ for ($i = 0; $i < 30; $i++) {
         <script src="js/core/Jquery.lazyload.min.js"></script>
         <script>
             window.column_id = <?= $column_id ?>;
+            window.hot_news =<?= count($hot_news) ?>;
         </script>
         <script src="js/hot/hot.js"></script>
     </body>

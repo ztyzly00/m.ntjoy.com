@@ -26,6 +26,9 @@
     }
 
     function cssInit() {
+        if (!window.hot_news) {
+            $('.main_panel').append('无内容');
+        }
         modifyContent();
     }
 
@@ -37,6 +40,7 @@
         $('.main_panel').empty();
         $.get("Ajax/Hot/HotNewsAjax.php", {columnid: window.column_id, datestring: date_string}, function(result) {
             var hot_list = eval('(' + result + ')');
+            window.hot_news = hot_list.length;
             if (hot_list.length == 0) {
                 $('.main_panel').append('无内容');
             } else {
@@ -72,6 +76,11 @@
             $('.ntjoy_menu').css('display', 'none');
         }
     });
-
+    
+    /* search click start */
+    $('.search_button').click(function() {
+        var key_word = $('.search_input').val();
+        window.location.href = 'search.php?keyword=' + key_word;
+    });
 }());
 

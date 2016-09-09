@@ -33,6 +33,10 @@ class XmMysqlObj implements Mysql_Interface\iMySqlObj {
         }
     }
 
+    public function get_link() {
+        return $this->link;
+    }
+
     public function exec_query($query) {
         mysqli_query($this->link, $query);
     }
@@ -40,8 +44,10 @@ class XmMysqlObj implements Mysql_Interface\iMySqlObj {
     public function fetch_array($query) {
         $result = mysqli_query($this->link, $query);
         $returnString = array();
-        while ($row = mysqli_fetch_array($result)) {
-            $returnString[] = $row;
+        if ($result) {
+            while ($row = mysqli_fetch_array($result)) {
+                $returnString[] = $row;
+            }
         }
         return $returnString;
     }
