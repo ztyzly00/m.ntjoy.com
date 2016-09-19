@@ -745,9 +745,10 @@ a {
     margin-bottom: 47px;
 }
 .extend-module .th_td {
+    font-weight:600;
     font-size: 16px;
     height: 35px;
-    color: #444;
+    color:#ffffff;
     line-height: 35px;
     background-color: #f9f9f9;
     padding: 0 20px;
@@ -1179,20 +1180,32 @@ a.cmnt_smt {
     line-height: 22px;
     margin-top: 2px;
 }
-
-
-.th_td span{
+.recommend_moudule .mark_count a{
+    color: #888;
+}
+.recommend_moudule .mark_count span{
     float: right;
-    border: 1px solid #ffffff;
-    border-radius:3px;
-    background:#fa4e46;
+    border: 1px solid #fdaf38;
+    border-radius: 3px;
     color: #fff;
     font-size: 12px;
     height: 16px;
     line-height: 16px;
     padding: 0 5px;
-    margin: 8px 0px 0 5px;
 }
+
+.th_td span{
+    float: right;
+    border-radius:3px;
+    font-weight: 600;
+    color: #fff;
+    font-size: 15px;
+    height: 16px;
+    line-height: 16px;
+    padding: 0 5px;
+    margin: 10px 0px 0 5px;
+}
+
 
 /*精彩图片区域*/
 .picture_moudule {

@@ -88,6 +88,7 @@ class NewsModify {
         $array['timeraw'] = $array['pubdate'];
 
         $array['pubdate'] = date("Y-m-d H:i:s", $array['pubdate']);
+        $array['pubdate_without_year'] = date("m-d H:i:s", $array['timeraw']);
 
         //文章图片地址替换
         $array['content'] = self::transferUrl($array['content']);

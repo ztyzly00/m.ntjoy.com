@@ -1,3 +1,23 @@
+<?php
+ob_start();
+require_once __DIR__ . '/../PHP/autoload.php';
+
+use Manager\NewsManager;
+
+$id = $_GET['id'];
+
+$new_content_array = NewsManager::getNewsContent($id);
+
+/* 文章内容丢失 */
+if (!$new_content_array['content'] && !$new_content_array['video_url']) {
+    header("Location:http://m.ntjoy.com/404.html");
+    return;
+}
+
+$hot_news_array = NewsManager::getHotNews();
+$hot_video_array = NewsManager::getHotVideo();
+$hot_img_array = NewsManager::getHotImg();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,9 +26,9 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>【江海明珠网】伊朗童婚陋习 13岁男子成最年轻父亲</title>
+        <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -32,7 +52,7 @@
                 <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
                 <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
                 <ul class="h_nav_items">
-                    <li><a href="home8.html">国际</a></li>
+                    <li><a href="home<?= $new_content_array['columnid'] ?>.html"><?= $new_content_array['colname'] ?></a></li>
                 </ul>
 
                 <div class="ntjoy_menu" style="display:none">
@@ -59,12 +79,13 @@
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1">伊朗童婚陋习 13岁男子成最年轻父亲</h1>
+                    <h1 class="art_title_h1"><?= $new_content_array['title'] ?></h1>
                     <article class="art_title_op">
-                        <time class="news_time">2016-08-19 10:11:36                            <span>江海明珠网</span>
+                        <time class="news_time"><?= $new_content_array['pubdate'] ?>
+                            <span>江海明珠网</span>
                         </time>
                         <aside>
-                            <a href="comment.php?newsid=505840">
+                            <a href="comment.php?newsid=<?= $new_content_array['id'] ?>">
                                 <i class="comment_num icon-page_comment_2"></i>
                                 <span class="j_article_cmnt_count">0</span>
                             </a>
@@ -75,18 +96,17 @@
                 </section>
 
                 <!--视频-->
-                
+                <?php
+                if ($new_content_array['video_url']) {
+                    ?>
+                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    <?php
+                }
+                ?>
+
                 <div id="art_main_card_id">
-                    <P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471572722_77992500.jpg" width=500 /></P>
-<P>　　当Behzad与他17岁的表姐Zeinab结婚时，Behzad只有12岁。现在他们有了一个1个月大的儿子，13岁的Behzad成了伊朗最年轻的父亲。视觉中国</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471572744_69312900.jpg" width=500 /></P>
-<P align=left>　　在Behzad两岁时，他的母亲离开了他，此后，Behzad跟随继母、继兄弟姐妹们长大。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471572772_63706400.jpg" width=500 /></P>
-<P align=left>　　Behzad从来没有上过学，是个文盲，在童年时期受了很多苦。大清早Behzad便去镇上的广场，坐在比他年龄大的工人旁边，等待有人雇佣他，但他太年轻虚弱，雇主更喜欢强壮的男子。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471572803_55986800.jpg" width=500 /></P>
-<P>　　当Behzad与他17岁的表姐Zeinab结婚时，Behzad只有12岁。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471572824_76856200.jpg" width=500 /></P>
-<P>　　现在他们有了一个1个月大的儿子，13岁的Behzad成了伊朗最年轻的父亲。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471572840_05192800.jpg" width=500 /></P>
-<P align=left>　　Behzad的妻子Zeinab几乎不会读写，有时她会去成人学校，儿子睡着时，她也会学习片刻。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471573137_65468600.jpg" width=500 /></P>
-<P>　　Behzad一家和妻子Zeinab的母亲及兄弟姐妹们一起生活在很差的条件下。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471573150_57942300.jpg" width=500 /></P>
-<P align=left>　　像很多其他童年时期结婚的夫妻一样，Behzad和Zeinab遭受了很多，面临贫困、缺乏教育、身心健康、缺乏设施、缺乏社会尊严类似的问题，前途暗淡。</P><P align=center><IMG border=0 alt="" data-original="http://www.ntjoy.com/liv_loadfile/news/gj/fold406/1471573171_40742000.jpg" width=500 /></P>
-<P align=left>　　童婚是一个切实的、全球性的问题，从中东到拉丁美洲、南亚、甚至是欧洲都存在。如果不能设法解决童婚问题，国际社会就无法减弱全球贫困。</P>                </div>
+                    <?= $new_content_array['content'] ?>
+                </div>
 
             </section>
 
@@ -108,7 +128,7 @@
                         <p>说说你的看法</p>
                     </div>            
                     <div class="foot_cmt_num j_p_comt">
-                        <a href="comment.php?newsid=505840" data-sudaclick="article_new_cms_comt">
+                        <a href="comment.php?newsid=<?= $new_content_array['id'] ?>" data-sudaclick="article_new_cms_comt">
                             <span class="cmt_num_t j_article_cmnt_count">0</span>
                         </a>
                     </div>
@@ -118,51 +138,34 @@
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;">
+                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;background: #fa4e46">
                     推荐新闻
-                    <span >NEWS</span>
+                    <span id="recommend_span">换一批看看</span>
                 </aside>
                 <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-                                            <a href="news512523.html">
+                    <?php
+                    for ($i = 0; $i < count($hot_news_array); $i++) {
+                        ?>
+                        <a href="news<?= $hot_news_array[$i]['id'] ?>.html">
                             <dl class="clearfix">
                                 <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/wltx/fold468/small_1474247033_24329000.jpg">
+                                <img class="lazy" data-original="<?= $hot_news_array[$i]['small_thumbfile_url'] ?>">
                                 </dt>
                                 <dd>
-                                    <h3 class="title">冷战时期美国富豪地下防空洞别墅曝光 景观奢华</h3>
+                                    <h3 class="title"><?= $hot_news_array[$i]['title'] ?></h3>
                                     <div class="mark_count">
-                                        <time>2016-09-19 08:54:36</time>
+                                        <a><?= $hot_news_array[$i]['pubdate_without_year'] ?></a>
+                                        <span style="border: 1px solid #fa4e46;">
+                                            <a style="float:right;color: #fa4e46"><?= $hot_news_array[$i]['colname'] ?></a>
+                                        </span>
                                     </div>
                                 </dd>
                             </dl>
                         </a>
-                                                <a href="news512530.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/sh/fold89/small_1474247979_58489000.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">南通游客殴打导游进“黑名单” 或被限制出境</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-19 09:14:56</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news512598.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/tckx/fold323/small_1474261880_13506300.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">9月26日起南通市北科技城内部道路禁止货车通行</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-19 13:01:01</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                        </aside>
+                        <?php
+                    }
+                    ?>
+                </aside>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -170,96 +173,60 @@
 
             <!--精彩图片区域-->
             <section class="extend-module j_hotpic_box">
-                <aside class="th_td" style=" border-top: 1px solid #129bf0;">
+                <aside class="th_td" style=" border-top: 1px solid #129bf0;background:#129bf0 ">
                     精彩图片
-                    <span  style="background: #129bf0;">IMG</span>
-                </aside>	
+                    <span id="img_span">换一批看看</span>
+                </aside>
                 <ul class="picture_moudule clearfix" data-sudaclick="tab1_content">
 
-                                            <li class="j_hotpic_item">
-                            <a href="news510530.html">
+                    <?php
+                    for ($i = 0; $i < count($hot_img_array); $i++) {
+                        ?>
+                        <li class="j_hotpic_item">
+                            <a href="news<?= $hot_img_array[$i]['id'] ?>.html">
                                 <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473406653_98026600.jpg">
-                                    <p>徐婷宋汶霏潘星谊王贝白静 认识她们竟是..</p>
+                                    <img class="lazy" data-original="<?= $hot_img_array[$i]['small_thumbfile_url'] ?>">
+                                    <p><?= $hot_img_array[$i]['title_cut'] ?></p>
                                 </div>
                             </a>
                         </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510278.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473320710_26301800.jpg">
-                                    <p>霍建华婚后首秀亮相《快乐大本营》 张艺..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news511520.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold799/small_1473819139_14571500.jpg">
-                                    <p>史上最美军训宿舍爆红 空乘六姐妹军训图..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510449.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473386335_09078700.jpg">
-                                    <p>中国十大顶级土豪庄园 真正的大户人家！..</p>
-                                </div>
-                            </a>
-                        </li>
-                                         
+                        <?php
+                    }
+                    ?>                 
                 </ul>	
             </section>
 
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;">
-                    热点宽频
-                    <span  style="background: #fdaf38;">VOD</span>
+                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;background: #fdaf38">
+                    <font color="#ffffff"><strong>热点宽频</strong></font>
+                    <span id="video_span" style="background: #fdaf38;">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+                <aside id="video_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
 
-                                            <a href="news512439.html">
+                    <?php
+                    for ($i = 0; $i < count($hot_video_array); $i++) {
+                        ?>
+                        <a href="news<?= $hot_video_array[$i]['id'] ?>.html">
                             <dl class="clearfix">
                                 <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/vod/xwsph/nttv1/csrl/fold24/small_1474201976_05655500.jpg">
+                                <img class="lazy" data-original="<?= $hot_video_array[$i]['small_thumbfile_url'] ?>">
                                 </dt>
                                 <dd>
-                                    <h3 class="title">启东南苑新村12岁女孩坠楼身亡 是买手机惹的祸？</h3>
+                                    <h3 class="title"><?= $hot_video_array[$i]['title'] ?></h3>
                                     <div class="mark_count">
-                                        <time>2016-09-18 20:01:01</time>
+                                        <a><?= $hot_video_array[$i]['pubdate_without_year'] ?></a>
+                                        <span style="border: 1px solid #fdaf38;">
+                                            <a style="float:right;color: #fdaf38"><?= $hot_video_array[$i]['colname'] ?></a>
+                                        </span>
                                     </div>
                                 </dd>
                             </dl>
                         </a>
-                                                <a href="news512447.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/59/122057.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">20160918城市日历</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-18 20:30:01</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news512407.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/63/122053.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">“叠石桥”创建中国驰名商标助推南通家纺产业升级</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-18 18:45:32</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                        
+                        <?php
+                    }
+                    ?>
+
                 </aside>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
@@ -268,9 +235,8 @@
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td"  style=" border-top: 1px solid #33CC52;"> 
-                    最新评论
-                    <span style="background: #33CC52;">NEW</span>
+                <aside class="th_td"  style=" border-top: 1px solid #33CC52;background: #33CC52">
+                    <font color="#ffffff"><strong>最新评论</strong></font>
                 </aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
@@ -340,19 +306,44 @@
         var offset = 0;
         var count = 4;
         var userid = '';
-        var newsid =505840;
+        var newsid =<?= $id ?>;
         var tocommentid = '';
-        var cr_title = '【江海明珠网】伊朗童婚陋习 13岁男子成最年轻父亲';
-        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/news/gj/fold406/small_1471572722_77992500.jpg';
-        var cr_brief_cut = '　　当Behzad与他17岁的表姐Zeinab结婚时，Behzad只有...';
+        var cr_title = '【江海明珠网】<?= $new_content_array['title'] ?>';
+        var cr_img_url = '<?= $new_content_array['small_thumbfile_url'] ?>';
+        var cr_brief_cut = '<?= $new_content_array['brief_cut'] ?>';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <?php
+    if ($new_content_array['video_url']) {
+        ?>       
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "<?= $new_content_array['video_url'] ?>",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+        <?php
+    }
+    ?>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 
 </html>
 
 
+<?php
+$flush = ob_get_contents();
+file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
+?>
