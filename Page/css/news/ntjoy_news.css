@@ -738,7 +738,7 @@ a {
 /*评论css*/
 .extend-module {
     background: #fff;
-    border-bottom: 1px solid #dcdcdc;
+    /*border-bottom: 1px solid #dcdcdc;*/
     margin-bottom: 10px
 }
 .j_article_hotcmnt{
@@ -1179,14 +1179,19 @@ a.cmnt_smt {
     line-height: 22px;
     margin-top: 2px;
 }
+
+
 .th_td span{
-    background: #fa4e46;
+    float: right;
+    border: 1px solid #ffffff;
+    border-radius:3px;
+    background:#fa4e46;
     color: #fff;
     font-size: 12px;
     height: 16px;
     line-height: 16px;
-    padding: 0 3px;
-    margin: 12px 12px 0 5px;
+    padding: 0 5px;
+    margin: 8px 0px 0 5px;
 }
 
 /*精彩图片区域*/

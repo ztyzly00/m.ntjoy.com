@@ -1,9 +1,8 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 管理类，之所以设置管理类，保证管理类对外的API绝对不会变动
+ * 方便后期model方法参数的更改
  */
 
 namespace Manager;
@@ -48,7 +47,7 @@ class NewsManager {
      * @return type
      */
     public static function getHotNews() {
-        return News\NewsRecommend::getHotNews(3);
+        return News\NewsRecommend::getRecommend(3, 'news');
     }
 
     /**
@@ -56,7 +55,7 @@ class NewsManager {
      * @return type
      */
     public static function getHotVideo() {
-        return News\NewsRecommend::getHotVideo(3);
+        return News\NewsRecommend::getRecommend(3, 'video');
     }
 
     /**
@@ -64,7 +63,7 @@ class NewsManager {
      * @return type
      */
     public static function getHotImg() {
-        return News\NewsRecommend::getHotImg(4);
+        return News\NewsRecommend::getRecommend(4, 'img');
     }
 
 }

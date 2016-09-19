@@ -9,6 +9,6 @@ require_once __DIR__ . '/NewsRecommend.php';
 
 
 
-$news_list = Model\News\Hot\HotNews::getHotNews(704);
+$news_list = Model\News\NewsRecommend::getRecommend(3, 'img');
 
 print_r($news_list);

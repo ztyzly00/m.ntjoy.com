@@ -1,0 +1,1 @@
+../news_new.php
