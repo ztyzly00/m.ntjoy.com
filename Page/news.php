@@ -28,7 +28,7 @@ $hot_img_array = NewsManager::getHotImg();
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -138,31 +138,16 @@ $hot_img_array = NewsManager::getHotImg();
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;">
+                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;background: #fa4e46">
                     推荐新闻
-                    <span >NEWS</span>
+                    <span id="recommend_span">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-                    <?php
-                    for ($i = 0; $i < count($hot_news_array); $i++) {
-                        ?>
-                        <a href="news<?= $hot_news_array[$i]['id'] ?>.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="<?= $hot_news_array[$i]['small_thumbfile_url'] ?>">
-                                </dt>
-                                <dd>
-                                    <h3 class="title"><?= $hot_news_array[$i]['title'] ?></h3>
-                                    <div class="mark_count">
-                                        <time><?= $hot_news_array[$i]['pubdate'] ?></time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                        <?php
-                    }
-                    ?>
+                <aside id="news_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+
                 </aside>
+                <div id="news_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -170,58 +155,29 @@ $hot_img_array = NewsManager::getHotImg();
 
             <!--精彩图片区域-->
             <section class="extend-module j_hotpic_box">
-                <aside class="th_td" style=" border-top: 1px solid #129bf0;">
+                <aside class="th_td" style=" border-top: 1px solid #129bf0;background:#129bf0 ">
                     精彩图片
-                    <span  style="background: #129bf0;">IMG</span>
-                </aside>	
+                    <span id="img_span">换一批看看</span>
+                </aside>
                 <ul class="picture_moudule clearfix" data-sudaclick="tab1_content">
 
-                    <?php
-                    for ($i = 0; $i < count($hot_img_array); $i++) {
-                        ?>
-                        <li class="j_hotpic_item">
-                            <a href="news<?= $hot_img_array[$i]['id'] ?>.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="<?= $hot_img_array[$i]['small_thumbfile_url'] ?>">
-                                    <p><?= $hot_img_array[$i]['title_cut'] ?></p>
-                                </div>
-                            </a>
-                        </li>
-                        <?php
-                    }
-                    ?>                 
                 </ul>	
+                <div id="picture_module_wait" style="height:274px;line-height: 274px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
             </section>
 
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;">
-                    热点宽频
-                    <span  style="background: #fdaf38;">VOD</span>
+                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;background: #fdaf38">
+                    <font color="#ffffff"><strong>热点宽频</strong></font>
+                    <span id="video_span" style="background: #fdaf38;">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-
-                    <?php
-                    for ($i = 0; $i < count($hot_video_array); $i++) {
-                        ?>
-                        <a href="news<?= $hot_video_array[$i]['id'] ?>.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="<?= $hot_video_array[$i]['small_thumbfile_url'] ?>">
-                                </dt>
-                                <dd>
-                                    <h3 class="title"><?= $hot_video_array[$i]['title'] ?></h3>
-                                    <div class="mark_count">
-                                        <time><?= $hot_video_array[$i]['pubdate'] ?></time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                        <?php
-                    }
-                    ?>
-
+                <aside id="video_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
                 </aside>
+                <div id="video_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -229,9 +185,8 @@ $hot_img_array = NewsManager::getHotImg();
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td"  style=" border-top: 1px solid #33CC52;"> 
-                    最新评论
-                    <span style="background: #33CC52;">NEW</span>
+                <aside class="th_td"  style=" border-top: 1px solid #33CC52;background: #33CC52">
+                    <font color="#ffffff"><strong>最新评论</strong></font>
                 </aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
@@ -316,24 +271,23 @@ $hot_img_array = NewsManager::getHotImg();
         ?>       
         <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
         <script type="text/javascript">
-        var flashvars = {
-            f: "<?= $new_content_array['video_url'] ?>",
-            c: 0,
-            p: 0,
-            r: "http://www.ntjoy.com/tiaozhuan15.html",
-            t: 15,
-            b: 1,
-            my_url: encodeURIComponent(window.location.href)
-        };
+            var flashvars = {
+                f: "<?= $new_content_array['video_url'] ?>",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
 
-        var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
-        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+            var video = ["<?= $new_content_array['video_url'] ?>->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
         </script>
         <?php
     }
     ?>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
 
 </html>
 

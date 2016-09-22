@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>【江海明珠网】里约奥运会江苏籍运动健儿载誉归来 以翻篇归零心态迎接新挑战 延续南通“冠军之乡”新辉煌</title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -115,51 +115,16 @@
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;">
+                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;background: #fa4e46">
                     推荐新闻
-                    <span >NEWS</span>
+                    <span id="recommend_span">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-                                            <a href="news510826.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/wltx/fold467/small_1473578442_86653200.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">4S店请模特当画板 “大叔”作画笑得合不拢嘴</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-11 15:20:18</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510803.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473559954_25358000.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">颜值担当 2016香港先生四强出炉！</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-11 10:00:04</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510782.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/tckx/fold322/small_1473556478_84165300.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">串联市区7大景点 南通汽车东站开通市区观光巴士和最美乡村游直通车</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-11 09:11:25</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                        </aside>
+                <aside id="news_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+
+                </aside>
+                <div id="news_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -167,97 +132,29 @@
 
             <!--精彩图片区域-->
             <section class="extend-module j_hotpic_box">
-                <aside class="th_td" style=" border-top: 1px solid #129bf0;">
+                <aside class="th_td" style=" border-top: 1px solid #129bf0;background:#129bf0 ">
                     精彩图片
-                    <span  style="background: #129bf0;">IMG</span>
-                </aside>	
+                    <span id="img_span">换一批看看</span>
+                </aside>
                 <ul class="picture_moudule clearfix" data-sudaclick="tab1_content">
 
-                                            <li class="j_hotpic_item">
-                            <a href="news510680.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473497310_97715000.jpg">
-                                    <p>上戏大一新生军训 麻花辫女孩神似赵薇..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510530.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473406653_98026600.jpg">
-                                    <p>徐婷宋汶霏潘星谊王贝白静 认识她们竟是..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510278.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473320710_26301800.jpg">
-                                    <p>霍建华婚后首秀亮相《快乐大本营》 张艺..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510449.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473386335_09078700.jpg">
-                                    <p>中国十大顶级土豪庄园 真正的大户人家！..</p>
-                                </div>
-                            </a>
-                        </li>
-                                         
                 </ul>	
+                <div id="picture_module_wait" style="height:274px;line-height: 274px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
             </section>
 
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;">
-                    热点宽频
-                    <span  style="background: #fdaf38;">VOD</span>
+                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;background: #fdaf38">
+                    <font color="#ffffff"><strong>热点宽频</strong></font>
+                    <span id="video_span" style="background: #fdaf38;">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-
-                                            <a href="news510739.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121547.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">南通西亭中学女老师不惧脏臭 义救掉落厕所老人</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-10 19:26:18</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510698.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121526.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">便捷支付 服务小微 南通工行业内首推二维码支付</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-10 18:32:50</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510697.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/vod/xwsph/nttv1/nttv/fold17/small_1473508106_98253200.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">又是一年花期至 周末去南通市北新城看向日葵花海</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-10 18:33:50</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                        
+                <aside id="video_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
                 </aside>
+                <div id="video_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -265,9 +162,8 @@
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td"  style=" border-top: 1px solid #33CC52;"> 
-                    最新评论
-                    <span style="background: #33CC52;">NEW</span>
+                <aside class="th_td"  style=" border-top: 1px solid #33CC52;background: #33CC52">
+                    <font color="#ffffff"><strong>最新评论</strong></font>
                 </aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
@@ -350,21 +246,20 @@
            
         <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
         <script type="text/javascript">
-        var flashvars = {
-            f: "http://media.ntjoy.com/vod/vol1/2016-09-08/121430/20564.mp4",
-            c: 0,
-            p: 0,
-            r: "http://www.ntjoy.com/tiaozhuan15.html",
-            t: 15,
-            b: 1,
-            my_url: encodeURIComponent(window.location.href)
-        };
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-08/121430/20564.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
 
-        var video = ["http://media.ntjoy.com/vod/vol1/2016-09-08/121430/20564.mp4->video/mp4"];
-        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-08/121430/20564.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
         </script>
             <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
 
 </html>
 

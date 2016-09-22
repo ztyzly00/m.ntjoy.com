@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>【江海明珠网】沈阳现20元一串鳄鱼肉烤串 商家抱真鳄鱼</title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -112,51 +112,16 @@
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;">
+                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;background: #fa4e46">
                     推荐新闻
-                    <span >NEWS</span>
+                    <span id="recommend_span">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-                                            <a href="news510530.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473406653_98026600.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">徐婷宋汶霏潘星谊王贝白静 认识她们竟是因为死讯</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-09 15:23:34</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510538.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/news/yl/fold94/small_1473409314_73267900.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">Sunshine登《男人装》 大秀美腿展示蜕变</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-09 16:19:17</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510478.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/wltx/fold466/small_1473389970_24304200.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">四川90后情侣同年同月同日生 恋爱8年修成正果</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-09 10:50:59</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                        </aside>
+                <aside id="news_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+
+                </aside>
+                <div id="news_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -164,97 +129,29 @@
 
             <!--精彩图片区域-->
             <section class="extend-module j_hotpic_box">
-                <aside class="th_td" style=" border-top: 1px solid #129bf0;">
+                <aside class="th_td" style=" border-top: 1px solid #129bf0;background:#129bf0 ">
                     精彩图片
-                    <span  style="background: #129bf0;">IMG</span>
-                </aside>	
+                    <span id="img_span">换一批看看</span>
+                </aside>
                 <ul class="picture_moudule clearfix" data-sudaclick="tab1_content">
 
-                                            <li class="j_hotpic_item">
-                            <a href="news510530.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473406653_98026600.jpg">
-                                    <p>徐婷宋汶霏潘星谊王贝白静 认识她们竟是..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news509971.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold797/small_1473214721_31143900.jpg">
-                                    <p>2016香港小姐十强正面照曝光 哪位是..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510278.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473320710_26301800.jpg">
-                                    <p>霍建华婚后首秀亮相《快乐大本营》 张艺..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news509713.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold797/small_1473125455_73558000.jpg">
-                                    <p>霸道总裁何以琛肖奈封腾狂宠妻 顾漫式高..</p>
-                                </div>
-                            </a>
-                        </li>
-                                         
                 </ul>	
+                <div id="picture_module_wait" style="height:274px;line-height: 274px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
             </section>
 
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;">
-                    热点宽频
-                    <span  style="background: #fdaf38;">VOD</span>
+                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;background: #fdaf38">
+                    <font color="#ffffff"><strong>热点宽频</strong></font>
+                    <span id="video_span" style="background: #fdaf38;">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-
-                                            <a href="news510546.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121482.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">锡通过江通道公路南北接线工程正式启动 计划2019年与沪通大桥同步完工</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-09 18:13:17</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510545.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121481.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">奥运冠军回到家乡 南通市领导会见陈若琳</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-09 18:11:59</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news510602.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121508.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">教师节最温暖礼物 是孩子的快乐成长</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-09 18:38:23</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                        
+                <aside id="video_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
                 </aside>
+                <div id="video_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -262,9 +159,8 @@
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td"  style=" border-top: 1px solid #33CC52;"> 
-                    最新评论
-                    <span style="background: #33CC52;">NEW</span>
+                <aside class="th_td"  style=" border-top: 1px solid #33CC52;background: #33CC52">
+                    <font color="#ffffff"><strong>最新评论</strong></font>
                 </aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
@@ -345,7 +241,6 @@
     <script src="js/news/ntjoy_news.js"></script>
 
         <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
 
 </html>
 

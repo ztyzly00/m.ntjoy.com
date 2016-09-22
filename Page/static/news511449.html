@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>【江海明珠网】20160913城市日历</title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">
@@ -110,51 +110,16 @@
 
             <!--推荐阅读区域-->
             <section class="extend-module j_article_relevent" >
-                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;">
+                <aside class="th_td"  style=" border-top: 1px solid #fa4e46;background: #fa4e46">
                     推荐新闻
-                    <span >NEWS</span>
+                    <span id="recommend_span">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-                                            <a href="news511520.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold799/small_1473819139_14571500.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">史上最美军训宿舍爆红 空乘六姐妹军训图迷倒网友</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-14 10:05:45</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news511561.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/wltx/fold467/small_1473820833_81752400.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">中国佳丽角逐地球小姐 旗袍短裤热舞不惧走光</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-14 10:34:13</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news511601.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold799/small_1473838627_96295400.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">赵薇没PS图残成这样？！她的P图师太厉害，必须加鸡腿！</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-14 14:59:14</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                        </aside>
+                <aside id="news_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
+
+                </aside>
+                <div id="news_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -162,97 +127,29 @@
 
             <!--精彩图片区域-->
             <section class="extend-module j_hotpic_box">
-                <aside class="th_td" style=" border-top: 1px solid #129bf0;">
+                <aside class="th_td" style=" border-top: 1px solid #129bf0;background:#129bf0 ">
                     精彩图片
-                    <span  style="background: #129bf0;">IMG</span>
-                </aside>	
+                    <span id="img_span">换一批看看</span>
+                </aside>
                 <ul class="picture_moudule clearfix" data-sudaclick="tab1_content">
 
-                                            <li class="j_hotpic_item">
-                            <a href="news510803.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473559954_25358000.jpg">
-                                    <p>颜值担当 2016香港先生四强出炉！..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510983.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold798/small_1473647848_25230300.jpg">
-                                    <p>2016港姐冠军花落冯盈盈 翻版古天乐..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news510996.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold799/small_1473649210_55900600.jpg">
-                                    <p>浪费颜值，大牌身边的他们比明星还耀眼！..</p>
-                                </div>
-                            </a>
-                        </li>
-                                                <li class="j_hotpic_item">
-                            <a href="news511520.html">
-                                <div class="fixpic-wrap">
-                                    <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/pics/ztgs/fold799/small_1473819139_14571500.jpg">
-                                    <p>史上最美军训宿舍爆红 空乘六姐妹军训图..</p>
-                                </div>
-                            </a>
-                        </li>
-                                         
                 </ul>	
+                <div id="picture_module_wait" style="height:274px;line-height: 274px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
             </section>
 
             <!--推荐宽频区域-->
             <section class="extend-module j_article_relevent">
-                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;">
-                    热点宽频
-                    <span  style="background: #fdaf38;">VOD</span>
+                <aside class="th_td"  style=" border-top: 1px solid #fdaf38;background: #fdaf38">
+                    <font color="#ffffff"><strong>热点宽频</strong></font>
+                    <span id="video_span" style="background: #fdaf38;">换一批看看</span>
                 </aside>
-                <aside class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
-
-                                            <a href="news511449.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/59/121727.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">20160913城市日历</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-13 20:35:01</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news511480.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121749.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">南通通州十总：家里突然停水 水表哪去了？</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-14 08:32:59</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                                                <a href="news511478.html">
-                            <dl class="clearfix">
-                                <dt class="j_art_lazy"> 
-                                <img class="lazy" data-original="http://www.ntjoy.com/liv_loadfile/62/121747.jpg">
-                                </dt>
-                                <dd>
-                                    <h3 class="title">海安城区：小区墙体有裂缝 业主拒交物业费</h3>
-                                    <div class="mark_count">
-                                        <time>2016-09-14 08:28:38</time>
-                                    </div>
-                                </dd>
-                            </dl>
-                        </a>
-                        
+                <aside id="video_module" class="recommend_moudule j_relevent_box" data-sudaclick="recommend_news">
                 </aside>
+                <div id="video_module_wait" style="height:255px;line-height: 255px;display:none" align="center">
+                    <div>加载中......</div>
+                </div>
                 <aside class="load-more j_load_bar" style="display: none;">
                     <span class="loading"><i class="icon-page_loading"></i>加载中</span>
                 </aside>
@@ -260,9 +157,8 @@
 
             <!--评论部分-->
             <section class="extend-module j_article_hotcmnt" >
-                <aside class="th_td"  style=" border-top: 1px solid #33CC52;"> 
-                    最新评论
-                    <span style="background: #33CC52;">NEW</span>
+                <aside class="th_td"  style=" border-top: 1px solid #33CC52;background: #33CC52">
+                    <font color="#ffffff"><strong>最新评论</strong></font>
                 </aside>
                 <aside class="comment_moudule j_comment_box">
                     <div class="comment-wrap clearfix">
@@ -345,21 +241,20 @@
            
         <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
         <script type="text/javascript">
-        var flashvars = {
-            f: "http://media.ntjoy.com/vod/vol1/2016-09-13/121728/20862.mp4",
-            c: 0,
-            p: 0,
-            r: "http://www.ntjoy.com/tiaozhuan15.html",
-            t: 15,
-            b: 1,
-            my_url: encodeURIComponent(window.location.href)
-        };
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-13/121728/20862.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
 
-        var video = ["http://media.ntjoy.com/vod/vol1/2016-09-13/121728/20862.mp4->video/mp4"];
-        CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-13/121728/20862.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
         </script>
             <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-
 
 </html>
 

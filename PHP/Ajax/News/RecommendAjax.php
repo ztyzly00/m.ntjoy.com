@@ -16,6 +16,7 @@ if ($classify == 'news') {
 
 $return_list = array();
 
+/* 返回要用的数据，避免不必要的网络传输 */
 for ($i = 0; $i < count($recommend_list); $i++) {
     $return_list[$i]['id'] = $recommend_list[$i]['id'];
     $return_list[$i]['small_thumbfile_url'] = $recommend_list[$i]['small_thumbfile_url'];

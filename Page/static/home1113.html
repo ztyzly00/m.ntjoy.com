@@ -3,81 +3,87 @@
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>江海明珠网</title>
 
-
         <!--加载css-->
-        <link href="css/video/ntjoy_video.css" rel="stylesheet">
-        <style>
-            .nav_ntjoy_list a{
-                width:33%;
-                padding:0 0.6px;
-            }
-            .nav_ntjoy_list a:nth-child(3n) {
-                padding-right: 0;
-            }
-            .nav_ntjoy_list a:nth-child(3n+1) {
-                padding-left: 0;
-            }
-            .nav_ntjoy{
-                padding:3px 0;
-            }
-        </style>
+        <link href="css/home/ntjoy_home.min.css" rel="stylesheet">
     </head>
     <body>
 
-        <!--广告位（掌上南通下载）-->
-        <section>
-            <section id="_1469148896944" style="padding: 5px 0px; width: 100%; background-image: url(http://www.sinaimg.cn/cj/2015/0824/U10832P31DT20150824180612.jpg);">
-                <aside style="position: relative; padding: 0px 5px 0px 62px; height: 50px; text-decoration: none; color: rgb(255, 255, 255);">
-                    <img src="img/app-icon.png" style="position: absolute; top: 5px; left: 15px; width: 40px; border-radius: 5px;">
-                    <p style="margin: 0px; font-size: 16px; line-height: 16px; padding: 7px 0px 0px;">掌上南通</p>
-                    <p style="margin: 0px; font-size: 12px; line-height: 10px; opacity: 0.6; padding: 7px 0px 0px;">掌上南通，尽在掌握之中</p>
-                    <a href="http://www.ntwifi.cn" style="right: 12px; position: absolute; top: 11px; width: 55px; height: 28px; color: rgb(255, 255, 255); font-weight: bold; font-size: 15px; line-height: 28px; text-align: center; background-color: #fdaf38" class="open">下载</a>
-                </aside>
-            </section>
-        </section>
+        <!-- 顶部区域 -->
+        <header class="ntjoy_header">
+            <div align="center" style="color: #ffffff">                
+                <ul class="h_nav" style="float: left;">
+                    <li class="h_nav_li" id="j_menu">
+                        <a href="#" id="loginBox" style="color: white"><span
+                                class=" h_nav_t icon_menu" style="line-height: 40px"></span></a>
+                    </li>
+                </ul>
+                <a style="color:white;font-size:24px;line-height: 40px">江海明珠网</a>
+                <ul class="h_nav">
+                    <li class="h_nav_li" id="j_search">
+                        <a href="#" style="color :white;">
+                            <span class="h_nav_t icon_search" style="line-height: 40px"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
-        <nav class="newsHead" data-sudaclick="mainNav">
-            <h2><a class="h_txt" href="home3.html">江海明珠网</a></h2>
-            <!-- //页面加载时只需要加载外部a标签 -->
-            <!--<a href="#" class="hIcon h_user" title="" id="loginBox"></a>-->
-            <a href="#" id="h_nav_menu" class="hIcon h_nav" title=""></a>
-            <ul class="h_nav_items">
-                <li><a>宽频</a></li>
-            </ul>
-
-            <div class="ntjoy_menu" style="display:none">
-                <div>
-                    <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
-                    <button class="search_button" type="button">
-                        搜索
-                    </button>
-                </div>
+        <!--菜单区域-->
+        <div class="head_tc_nav_new" id="head_menu" style="display: none;">
+            <div class="search_dor clearfix">
+                <a href="live.php" class="zhibo" id="">直播</a>
+                <a href="video.php" class="kuanpin" id="">宽频</a>
             </div>
 
-            <div id="topLevelNav" class="top_level_container" style="display: none; opacity: 1;">
-
-                <div class="top_level_nav fix">
-                    <a href="home3.html"><i class="i i_zx"></i>主页</a>  
-                    <a href="live.php"><i class="i i_live"></i>直播</a>
-                    <a href="video.php"><i class="i i_live"></i>宽频</a>
-    <!--                <a href="dianbo.php"><i class="i i_watch"></i>点播</a>-->
-                </div>
+            <div class="three_btn">
+                <a href="#" >首页</a>
+                <a href="http://www.ntwifi.cn" >客户端</a>
+                <a href="search.php?keyword=" >搜索</a>
             </div>
-        </nav>
 
+            <div class="battom_waitao"><div class="bottom_bac"></div></div>
+            <div class="arrow"></div>
+        </div>
+
+        <!--搜索区域-->
+        <div class="ntjoy_search_menu" style="display:none">
+            <div>
+                <input class="search_input" type="text" placeholder="搜索自己想看的内容！">
+                <button class="search_button" type="button">
+                    搜索
+                </button>
+            </div>
+        </div>
 
         <!--navi导航栏-->
         <section class="nav_ntjoy">
             <nav class="nav_ntjoy_list" id="nav_ntjoy_list_id">
-                <a id="nav_item359" href="video.php?columnid=359">NTTV新闻</a>
-                <a id="nav_item360" href="video.php?columnid=360" >城市日历</a>
-                <a id="nav_item365" href="video.php?columnid=365">总而言之</a>
-                <a id="nav_item362" href="video.php?columnid=362">媒体大放送</a>
-                <a id="nav_item1596" href="video.php?columnid=1596">我想有个家</a>
-                <a id="nav_item1113" href="video.php?columnid=1113">今晚在线</a>                
+                <!--显示-->
+                <a id="nav_item3"  href="home3.html">要闻</a>
+                <a id="nav_item4" href="home4.html">社会</a>
+                <a id="nav_item5" href="home5.html">民生</a>
+                <a id="nav_item7" href="home7.html">国内</a>
+                <a id="nav_item8" href="home8.html">国际</a>
+                <a id="nav_item483" href="home483.html">网罗</a>
+                <a id="nav_item1377" href="home1377.html" >娱乐</a>
+                <a id="nav_item6" href="home6.html">省内</a>
+                <a id="nav_item9" href="home9.html">市区</a>
+                <a id="nav_item5" href="live.php" style="color:#ff0000;font-weight: 600">直播</a>
+                <a id="nav_item5" href="video.php" style="color:#ff0000;font-weight: 600">宽频</a>
+                <!--隐藏-->
+                <a id="nav_item229" href="home229.html" class="hide">组图</a>
+                <a id="nav_item10" href="home10.html"  class="hide">如皋</a>
+                <a id="nav_item11" href="home11.html" class="hide">如东</a>
+                <a id="nav_item12" href="home12.html" class="hide">海安</a>
+                <a id="nav_item13" href="home13.html" class="hide">海门</a>
+                <a id="nav_item14" href="home14.html" class="hide">启东</a>
+                <a  href="javascript:;" class="toggle_btn_up" id="j_toggle_nav" title="点击展开"><span class="icon_open"></span></a>
             </nav>
         </section>
 
@@ -87,18 +93,18 @@
                 <div class="top_slide_wrap" id="top_slide_wrap_id" style="">
                     <div class="swipe-wrap">
                                                     <div class="item" style="">
-                                <a href="news512340.html">
-                                    <img src="http://www.ntjoy.com/liv_loadfile/63/122030.jpg">
+                                <a href="news513346.html">
+                                    <img src="http://www.ntjoy.com/liv_loadfile/63/122317.jpg">
                                     <span class="pic_slide_info">
-                                        <i class="pic_slide_t">20160917今晚在线..</i>
+                                        <i class="pic_slide_t">20160921今晚在线..</i>
                                     </span>
                                 </a>
                             </div>
                                                         <div class="item" style="">
-                                <a href="news512141.html">
-                                    <img src="http://www.ntjoy.com/liv_loadfile/62/121937.jpg">
+                                <a href="news513058.html">
+                                    <img src="http://www.ntjoy.com/liv_loadfile/63/122243.jpg">
                                     <span class="pic_slide_info">
-                                        <i class="pic_slide_t">20160916今晚在线..</i>
+                                        <i class="pic_slide_t">20160920今晚在线..</i>
                                     </span>
                                 </a>
                             </div>
@@ -118,17 +124,71 @@
             <ul class="recommend_items j_roll" id="j_news_scroll" data-sudaclick="ls_live">
                 <li>
                     <span>HOT</span>
-                    <a href="news511976.html" title="">20160915今晚在线</a>
+                    <a href="news512816.html" title="">20160919今晚在线</a>
                 </li>
             </ul>
         </section>
 
         <!--新闻区域-->
         <section class="card_module j_normal_card " id="main_news">            
-                            <a href="news511787.html">
+                            <a href="news512340.html">
                     <dl class="f_card">
                         <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/62/121825.jpg">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/63/122030.jpg">
+                        </dt>
+                        <dd class="f_card_dd">
+                            <h3 class="f_card_h3 ellipsis">20160917今晚在线</h3>
+                            <p class="f_card_p">...</p>
+                            <div class="f_card_icon">
+                                <span class="comment">
+                                    0
+                                    <em class="icon_comment">
+                                    </em>
+                                </span>
+                            </div>
+                        </dd>
+                    </dl>
+                </a>
+                                <a href="news512141.html">
+                    <dl class="f_card">
+                        <dt class="f_card_dt">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/121937.jpg">
+                        </dt>
+                        <dd class="f_card_dd">
+                            <h3 class="f_card_h3 ellipsis">20160916今晚在线</h3>
+                            <p class="f_card_p">...</p>
+                            <div class="f_card_icon">
+                                <span class="comment">
+                                    0
+                                    <em class="icon_comment">
+                                    </em>
+                                </span>
+                            </div>
+                        </dd>
+                    </dl>
+                </a>
+                                <a href="news511976.html">
+                    <dl class="f_card">
+                        <dt class="f_card_dt">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/121877.jpg">
+                        </dt>
+                        <dd class="f_card_dd">
+                            <h3 class="f_card_h3 ellipsis">20160915今晚在线</h3>
+                            <p class="f_card_p">...</p>
+                            <div class="f_card_icon">
+                                <span class="comment">
+                                    0
+                                    <em class="icon_comment">
+                                    </em>
+                                </span>
+                            </div>
+                        </dd>
+                    </dl>
+                </a>
+                                <a href="news511787.html">
+                    <dl class="f_card">
+                        <dt class="f_card_dt">
+                        <img  src="http://www.ntjoy.com/liv_loadfile/62/121825.jpg">
                         </dt>
                         <dd class="f_card_dd">
                             <h3 class="f_card_h3 ellipsis">20160914今晚在线</h3>
@@ -143,61 +203,15 @@
                         </dd>
                     </dl>
                 </a>
-                                <a href="news511474.html">
-                    <dl class="f_card">
-                        <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/62/121744.jpg">
-                        </dt>
-                        <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">20160913今晚在线</h3>
-                            <p class="f_card_p">...</p>
-                            <div class="f_card_icon">
-                                <span class="comment">
-                                    0
-                                    <em class="icon_comment">
-                                    </em>
-                                </span>
-                            </div>
-                        </dd>
-                    </dl>
-                </a>
-                                <a href="news511210.html">
-                    <dl class="f_card">
-                        <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/62/121675.jpg">
-                        </dt>
-                        <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">20160912今晚在线</h3>
-                            <p class="f_card_p">...</p>
-                            <div class="f_card_icon">
-                                <span class="comment">
-                                    0
-                                    <em class="icon_comment">
-                                    </em>
-                                </span>
-                            </div>
-                        </dd>
-                    </dl>
-                </a>
-                                <a href="news510816.html">
-                    <dl class="f_card">
-                        <dt class="f_card_dt">
-                        <img src="http://www.ntjoy.com/liv_loadfile/62/121560.jpg">
-                        </dt>
-                        <dd class="f_card_dd">
-                            <h3 class="f_card_h3 ellipsis">20160910今晚在线</h3>
-                            <p class="f_card_p">...</p>
-                            <div class="f_card_icon">
-                                <span class="comment">
-                                    0
-                                    <em class="icon_comment">
-                                    </em>
-                                </span>
-                            </div>
-                        </dd>
-                    </dl>
-                </a>
-                        </section>
+                <!--            <a href="http://world.people.com.cn/GB/8212/191816/402465/index.html">
+                <img src="http://www.ntjoy.com/res/sy201308/images/G20l.jpg" width="100%">
+                <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
+            </a>-->
+            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
+                <img src="img/image/xiangmu.jpg" width="100%">
+                <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
+            </a>
+        </section>
         <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
             <span class="loading">小镇加载中.....</span>
         </aside>
@@ -214,6 +228,7 @@
 
         <!--加载js-->
         <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <!--<script src="js/jquery.min.js"></script>-->
         <script>
             var columnid =1113;
             var offset = 9;
@@ -224,8 +239,9 @@
                 $('#nav_item1113').css('font-weight', '700');
             });
         </script>
+        <!--<script src="http://apps.bdimg.com/libs/swipe/2.0/swipe.min.js"></script>-->
         <script src="js/core/swipe.min.js"></script>
-        <script src="js/video/ntjoy_video.js"></script>
+        <script src="js/home/ntjoy_home.js"></script>
 
     </body>
 </html>
