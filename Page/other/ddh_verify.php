@@ -42,13 +42,15 @@ $content_array = DdhVerify::getContent();
                     };
 
                     function verify(id) {
+
+
+
                         var data = $('#content' + id).html();
                         var send_string = '{"header":"message","content":{"classify":"ddh","data":"' + data + '","password":"zhentianyu28"}}';
                         ws.send(send_string);
-                        alert(send_string);
-//                        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentVerifyAjax.php", {commentid: id}, function(result) {
-//                            location.reload();
-//                        });
+                        $.get("/Ajax/Other/Ddh/DdhAjax.php", {opt: 'pass', id: id}, function(result) {
+
+                        });
                     }
 
                     function deleteComment(id) {

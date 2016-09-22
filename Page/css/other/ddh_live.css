@@ -232,11 +232,11 @@ h1, h2, h3, strong {
 
 /*编辑发送的实事内容*/
 .calendar {
-    border: 1px solid #CCC;
-    height: 350px;
+    border: 1px solid #CCC;    
     overflow: hidden;
     background: #f1f4f9;
     padding:0  15px;
+    margin-bottom: 40px;
 }
 .calendar-item {
     padding:  12px;

@@ -1,4 +1,8 @@
 <?php
+require_once __DIR__ . '/../../PHP/autoload.php';
+
+use Model\Other\Ddh\DdhForm;
+
 if (isset($_GET['cid'])) {
     $cid = $_GET['cid'];
 } else {
@@ -18,6 +22,8 @@ if ($cid == 1) {
 } elseif ($cid == 4) {
     $video_url = "http://media.ntjoy.com/channels/nttv/INFO/m3u8:SD"; //南通都市休闲频道
 }
+
+$content_array = DdhForm::getContent(10);
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +80,22 @@ if ($cid == 1) {
             <div style="padding:10px">
                 <h2 style="margin-bottom: 10px"><img src="/img/image/other/icon-calendar.png">实时报道</h2>
                 <div class="calendar js-same-height" data-related-selector=".js-left-video" tabindex="0" style="overflow: hidden; outline: none; ">
+
+                    <?php
+                    for ($i = 0; $i < count($content_array); $i++) {
+                        ?>
+                        <div class="calendar-item">
+                            <div class="calendar-item-title">
+                                <p>
+                                    <img src="img/image/other/connectLive-img-013.jpg" class="timelist">
+                                    <span><?= $content_array[$i]['time'] ?></span>
+                                </p>
+                                <h4><?= $content_array[$i]['content'] ?></h4>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
 
                     <div class="calendar-item">
                         <div class="calendar-item-title">

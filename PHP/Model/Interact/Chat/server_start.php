@@ -18,11 +18,6 @@ $server->on('message', function (\swoole_websocket_server $server, $frame) {
 //    echo "receive from {$frame->fd}:{$frame->data},opcode:{$frame->opcode},fin:{$frame->finish}\n";
 //    $server->push($frame->fd, "this is server");
     //$server->fd_list = array();
-//    $data = $frame->data;
-//
-//    foreach ($server->connections as $fd) {
-//        $server->push($fd, $data);
-//    }
 
     DataProcess::pushData($server, $frame);
 });

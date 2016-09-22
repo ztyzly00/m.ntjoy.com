@@ -19,5 +19,24 @@ class DdhVerify {
         return $mysql_obj->fetch_assoc($query);
     }
 
-    
+    /**
+     * 改变数据显示状态
+     * @param type $id
+     */
+    public static function chageShow($id) {
+        $mysql_obj = XmMysqlObj::getInstance();
+        $query = "update ddh_chat set is_show=1 where id=$id";
+        $mysql_obj->exec_query($query);        
+    }
+
+    /**
+     * 删除相应id的数据
+     * @param type $id
+     */
+    public static function deleteContent($id) {
+        $mysql_obj = XmMysqlObj::getInstance();
+        $query = "delete from ddh_chat where id=$id";
+        $mysql_obj->exec_query($query);
+    }
+
 }
