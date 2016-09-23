@@ -16,9 +16,9 @@ interface IStragety {
      * 处理数据
      */
     public static function message($content);
-
+    
     /**
-     * 结束时处理fd
+     * 获取fd的数组
      */
-    public static function close($fd, $content);
+    public static function getFdArray($content);
 }

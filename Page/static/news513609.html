@@ -75,9 +75,14 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    
                 <div id="art_main_card_id">
-                    <p>　　既要行有车，又要空气好，每逢9月22日世界无车日，一个关于效率和质量的两难命题，就会又摆在我们面前。今天又是世界无车日，在南通，现实生活中绿色出行的普及情况又是如何呢？</p><p>　　绿色出行，好处人人知道，但除了不太赶时间的老年人，多数人要认真实行起来，更多还是考虑出行效率。</p><p>　　统计显示，2011年，南通只有45万多辆私家车，而到了2015年，这一数字达到已超百万，4年翻了一番多。目前全市机动车中超过一半是私家车，并且还在以每年15万辆左右的速度增加。来自车管所的最新数据是，目前全市有116万辆私家车，平均每7人就有一辆。</p><p>　　更快的生活节奏、更大的生活半径，让人们很难再回到“行无车”的年代。唯有公共交通更加便捷，人们的出行选择更加丰富，才可能让绿色出行从“可能”变成“可行”。</p><p></p>                </div>
+                    <P>　　既要行有车，又要空气好，每逢9月22日世界无车日，一个关于效率和质量的两难命题，就会又摆在我们面前。今天又是世界无车日，在南通，现实生活中绿色出行的普及情况又是如何呢？ </P>
+<P>　　绿色出行，好处人人知道，但除了不太赶时间的老年人，多数人要认真实行起来，更多还是考虑出行效率。 </P>
+<P>　　统计显示，2011年，南通只有45万多辆私家车，而到了2015年，这一数字达到已超百万，4年翻了一番多。目前全市机动车中超过一半是私家车，并且还在以每年15万辆左右的速度增加。来自车管所的最新数据是，目前全市有116万辆私家车，平均每7人就有一辆。 </P>
+<P>　　更快的生活节奏、更大的生活半径，让人们很难再回到“行无车”的年代。唯有公共交通更加便捷，人们的出行选择更加丰富，才可能让绿色出行从“可能”变成“可行”。 </P>
+<P></P>                </div>
 
             </section>
 
@@ -230,14 +235,30 @@
         var newsid =513609;
         var tocommentid = '';
         var cr_title = '【江海明珠网】世界无车日调查：让绿色出行更可行';
-        var cr_img_url = 'img/dianshitai.jpg';
+        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/63/122334.jpg';
         var cr_brief_cut = '　　既要行有车，又要空气好，每逢9月22日世界无车日，一个关于效率和质...';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+           
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-22/122335/21469.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-22/122335/21469.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+            <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </html>
 

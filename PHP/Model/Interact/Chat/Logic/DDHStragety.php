@@ -42,10 +42,11 @@ class DDHStragety implements IStragety {
         return $return_data;
     }
 
-    public static function close($fd, $content) {
+    public static function getFdArray($content) {
         $redis_obj = RedisFactory::createRedisInstance();
         $redis_key = DataProcess::GetRedisKey($content);
-        $redis_obj->hDel($redis_key, $fd);
+        $return_array = $redis_obj->hGetAll($redis_key);
+        return $return_array;
     }
 
 }

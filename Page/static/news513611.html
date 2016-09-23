@@ -75,9 +75,13 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    
                 <div id="art_main_card_id">
-                    <p>　　今天迎来二十四节气的“秋分”，但是从南通目前的气温看，尚未进入气象意义上的秋天。</p><p>　　气象资料显示，从秋分这一天起，北半球昼短夜长将越来越明显，昼夜温差将逐渐加大，气温逐日下降。南通最早入秋在9月初，最晚在10月初，常年入秋在9月19日左右。立秋以后，连续五天平均气温低于22度，则其首日为气象入秋日。最近这个星期由于台风、冷空气的影响，大家明显感觉到了凉意。但入秋的进程却一拖再拖。</p><p>　　秋分后，气候渐凉，是胃病多发与复发的时节。中医认为，南瓜性温味甘，是这个时候的暖胃护胃的佳品。另外要重点做好头部、肚脐和脚部保暖，防止寒气入体，埋下健康隐患。</p><p></p>                </div>
+                    <P>　　今天迎来二十四节气的“秋分”，但是从南通目前的气温看，尚未进入气象意义上的秋天。 </P>
+<P>　　气象资料显示，从秋分这一天起，北半球昼短夜长将越来越明显，昼夜温差将逐渐加大，气温逐日下降。南通最早入秋在9月初，最晚在10月初，常年入秋在9月19日左右。立秋以后，连续五天平均气温低于22度，则其首日为气象入秋日。最近这个星期由于台风、冷空气的影响，大家明显感觉到了凉意。但入秋的进程却一拖再拖。 </P>
+<P>　　秋分后，气候渐凉，是胃病多发与复发的时节。中医认为，南瓜性温味甘，是这个时候的暖胃护胃的佳品。另外要重点做好头部、肚脐和脚部保暖，防止寒气入体，埋下健康隐患。 </P>
+<P></P>                </div>
 
             </section>
 
@@ -230,14 +234,30 @@
         var newsid =513611;
         var tocommentid = '';
         var cr_title = '【江海明珠网】今日秋分夜凉如水  南通气象入秋尚需时日';
-        var cr_img_url = 'img/dianshitai.jpg';
+        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/news/vod/xwsph/nttv1/nttv/fold17/small_1474543848_09238300.png';
         var cr_brief_cut = '　　今天迎来二十四节气的“秋分”，但是从南通目前的气温看，尚未进入气象...';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+           
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-22/122331/21465.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-22/122331/21465.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+            <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </html>
 

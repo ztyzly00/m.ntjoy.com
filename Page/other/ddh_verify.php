@@ -32,32 +32,22 @@ $content_array = DdhVerify::getContent();
                     ws = new WebSocket("ws://xm.ntwifi.cn:10028");
 
                     ws.onopen = function() {
-                        //var send_string = '{"header":"confirm","content":{"classify":"ddh"}}';
-                        //send_string = $.parseJSON(send_string);
-                        //ws.send(send_string);
+
                     };
 
                     ws.onmessage = function(e) {
-
+                        
                     };
 
                     function verify(id) {
-
-
-
                         var data = $('#content' + id).html();
                         var send_string = '{"header":"message","content":{"classify":"ddh","data":"' + data + '","password":"zhentianyu28"}}';
                         ws.send(send_string);
                         $.get("/Ajax/Other/Ddh/DdhAjax.php", {opt: 'pass', id: id}, function(result) {
-
-                        });
-                    }
-
-                    function deleteComment(id) {
-                        $.post("http://xm.ntwifi.cn/m.ntjoy.com/PHP/Ajax/CommentDelete.php", {commentid: id}, function(result) {
                             location.reload();
                         });
                     }
+
         </script>
 
     </body>

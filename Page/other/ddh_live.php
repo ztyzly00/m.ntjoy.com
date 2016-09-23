@@ -23,7 +23,8 @@ if ($cid == 1) {
     $video_url = "http://media.ntjoy.com/channels/nttv/INFO/m3u8:SD"; //南通都市休闲频道
 }
 
-$content_array = DdhForm::getContent(10);
+//$content_array = DdhForm::getContent(10);
+$content_array = DdhForm::getContentByNtjoy(10);
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +61,7 @@ $content_array = DdhForm::getContent(10);
             <div style="padding:10px 10px 0px 10px">
                 <h2 style="margin-bottom: 10px">
                     <img src="/img/image/other/connectLive-img-016.png">
-                    在线聊天
+                    在线互动
                 </h2>
                 <div class="autoScroll" id="auto_scroll_id">
                     <div>
@@ -95,26 +96,7 @@ $content_array = DdhForm::getContent(10);
                         </div>
                         <?php
                     }
-                    ?>
-
-                    <div class="calendar-item">
-                        <div class="calendar-item-title">
-                            <p>
-                                <img src="img/image/other/connectLive-img-013.jpg" class="timelist">
-                                <span>8月31日</span>
-                            </p>
-                            <h4>主题演讲:塑造云时代，testtest开启智慧新商道testtest开启智慧新商道testtest开启智慧新商道testtest开启智慧新商道</h4>
-
-                        </div>
-                    </div>
-
-                    <div class="calendar-item">
-                        <div class="calendar-item-title"><p><img src="img/image/other/connectLive-img-013.jpg" class="timelist">
-                                <span>9月1日</span>
-                            </p>
-                            <h4>主题演讲: 塑造云时代，成为数字化企业</h4>                    
-                        </div>                
-                    </div>
+                    ?>               
                 </div>
             </div>
 
@@ -146,7 +128,7 @@ $content_array = DdhForm::getContent(10);
                 my_url: encodeURIComponent(window.location.href)
             };
             var video = ["<?= $video_url ?>->video/m3u8"];
-            CKobject.embed("http://media.ntjoy.com/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "110%", false, flashvars, video);
+            CKobject.embed("http://media.ntjoy.com/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "95%", false, flashvars, video);
         </script>
         <!--<script src="js/live/ntjoy_live.js"></script>-->
         <script src="js/other/ddh_live.js"></script>

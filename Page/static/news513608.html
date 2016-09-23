@@ -6,7 +6,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>【江海明珠网】今年1至8月全市新增养老床位3572张  每千名老人拥有床位数近33张</title>
+        <title>【江海明珠网】今年1至8月南通全市新增养老床位3572张</title>
         <!--加载css-->
         <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -59,7 +59,7 @@
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1">今年1至8月全市新增养老床位3572张  每千名老人拥有床位数近33张</h1>
+                    <h1 class="art_title_h1">今年1至8月南通全市新增养老床位3572张</h1>
                     <article class="art_title_op">
                         <time class="news_time">2016-09-22 18:38:06                            <span>江海明珠网</span>
                         </time>
@@ -75,9 +75,13 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    
                 <div id="art_main_card_id">
-                    <p>　　记者从昨天召开的全市养老服务业工作推进会上了解到，今年1至8月，全市共新建改扩建养老服务项目15个，新增养老床位3572张。</p><p>　　会前，副市长赵闻斌率队，察看了海门工业园区敬老院、海门市养老中心、海门市龙信乐颐荟老年公寓等项目。随后海门、海安、如皋、崇川等地先后作了交流发言。</p><p>　　今年，全市计划新建改扩建养老服务项目23个，截止目前已开工建设15家。五件养老实事项目中，全市新增养老床位4800张：已完成3572张，完成年度目标任务的74%，每千名老人拥有床位数达到32.95张；为农村敬老院配置1000张护理床：目前共有260张发放到位；为农村敬老院配置1000台空调：目前共有710台配置到位；全市新增8家护理型养老机构：截止目前，已全部建设完工，其中3家对外正式运营；培训养老护理员500名：截至8月底已培训共计560人。</p><p></p>                </div>
+                    <P>　　记者从昨天召开的全市养老服务业工作推进会上了解到，今年1至8月，全市共新建改扩建养老服务项目15个，新增养老床位3572张。 </P>
+<P>　　会前，副市长赵闻斌率队，察看了海门工业园区敬老院、海门市养老中心、海门市龙信乐颐荟老年公寓等项目。随后海门、海安、如皋、崇川等地先后作了交流发言。 </P>
+<P>　　今年，全市计划新建改扩建养老服务项目23个，截止目前已开工建设15家。五件养老实事项目中，全市新增养老床位4800张：已完成3572张，完成年度目标任务的74%，每千名老人拥有床位数达到32.95张；为农村敬老院配置1000张护理床：目前共有260张发放到位；为农村敬老院配置1000台空调：目前共有710台配置到位；全市新增8家护理型养老机构：截止目前，已全部建设完工，其中3家对外正式运营；培训养老护理员500名：截至8月底已培训共计560人。 </P>
+<P></P>                </div>
 
             </section>
 
@@ -229,15 +233,31 @@
         var userid = '';
         var newsid =513608;
         var tocommentid = '';
-        var cr_title = '【江海明珠网】今年1至8月全市新增养老床位3572张  每千名老人拥有床位数近33张';
-        var cr_img_url = 'img/dianshitai.jpg';
+        var cr_title = '【江海明珠网】今年1至8月南通全市新增养老床位3572张';
+        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/news/vod/xwsph/nttv1/nttv/fold17/small_1474597385_23512500.jpg';
         var cr_brief_cut = '　　记者从昨天召开的全市养老服务业工作推进会上了解到，今年1至8月，全...';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+           
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-22/122330/21464.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-22/122330/21464.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+            <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </html>
 

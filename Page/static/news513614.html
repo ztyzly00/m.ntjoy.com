@@ -6,7 +6,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>【江海明珠网】江海国际旅游节：广场舞大赛落幕  大妈舞动精彩</title>
+        <title>【江海明珠网】江海国际旅游节：广场舞大赛落幕 大妈舞动精彩</title>
         <!--加载css-->
         <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -59,7 +59,7 @@
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1">江海国际旅游节：广场舞大赛落幕  大妈舞动精彩</h1>
+                    <h1 class="art_title_h1">江海国际旅游节：广场舞大赛落幕 大妈舞动精彩</h1>
                     <article class="art_title_op">
                         <time class="news_time">2016-09-22 18:32:06                            <span>江海明珠网</span>
                         </time>
@@ -75,9 +75,11 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    
                 <div id="art_main_card_id">
-                    <p>　　南通江海国际旅游节的系列活动之一--首届“飞鹤杯”广场舞大赛昨天在汽车东站站前广场落幕。25支参赛队伍带来古典舞、木兰扇、民族舞等各式新排舞蹈。最终10支队伍进入决赛争夺，迎春花艺术团获得一等奖，虹桥木兰2队等3支队伍获得二等奖，</p><p></p>                </div>
+                    <P>　　南通江海国际旅游节的系列活动之一--首届“飞鹤杯”广场舞大赛昨天在汽车东站站前广场落幕。25支参赛队伍带来古典舞、木兰扇、民族舞等各式新排舞蹈。最终10支队伍进入决赛争夺，迎春花艺术团获得一等奖，虹桥木兰2队等3支队伍获得二等奖， </P>
+<P></P>                </div>
 
             </section>
 
@@ -229,15 +231,31 @@
         var userid = '';
         var newsid =513614;
         var tocommentid = '';
-        var cr_title = '【江海明珠网】江海国际旅游节：广场舞大赛落幕  大妈舞动精彩';
-        var cr_img_url = 'img/dianshitai.jpg';
+        var cr_title = '【江海明珠网】江海国际旅游节：广场舞大赛落幕 大妈舞动精彩';
+        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/63/122328.jpg';
         var cr_brief_cut = '　　南通江海国际旅游节的系列活动之一--首届“飞鹤杯”广场舞大赛昨天在...';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+           
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-22/122329/21463.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-22/122329/21463.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+            <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </html>
 

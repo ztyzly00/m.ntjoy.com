@@ -9,7 +9,6 @@ ws = new WebSocket("ws://xm.ntwifi.cn:10028");
 
 ws.onopen = function() {
     var send_string = '{"header":"confirm","content":{"classify":"ddh"}}';
-    //send_string = $.parseJSON(send_string);
     ws.send(send_string);
 };
 
@@ -20,7 +19,10 @@ ws.onmessage = function(e) {
     var boxElement = document.getElementById(boxId);
     boxElement.scrollTop = boxElement.scrollHeight - boxElement.clientHeight;
 };
-
+ws.onclose = function(e) {
+    var send_string = '{"header":"close","content":{"classify":"ddh"}}';
+    ws.send(send_string);
+};
 /* dom加载完执行 */
 $(function() {
     cssInit();

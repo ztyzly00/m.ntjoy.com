@@ -6,7 +6,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>【江海明珠网】我市举行"中国统计开放日"活动    首用卫星遥感技术助力农业普查</title>
+        <title>【江海明珠网】南通市举行“中国统计开放日”活动</title>
         <!--加载css-->
         <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -59,7 +59,7 @@
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1">我市举行"中国统计开放日"活动    首用卫星遥感技术助力农业普查</h1>
+                    <h1 class="art_title_h1">南通市举行“中国统计开放日”活动</h1>
                     <article class="art_title_op">
                         <time class="news_time">2016-09-22 18:34:06                            <span>江海明珠网</span>
                         </time>
@@ -75,9 +75,13 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    
                 <div id="art_main_card_id">
-                    <p>　　昨天下午，我市在海安县举办第七届“中国统计开放日”活动。活动现场，第三次全国农业普查员用无人机演示现场调查，这也是我市首次利用卫星遥感技术助力农业普查。</p><p>　　国家统计局将每年9月20日定为“中国统计开放日”，今年为第七届，又适逢第三次全国农业普查。此次普查中，首次利用卫星遥感技术对农作物面积进行遥感测量，全覆盖、多时相准确测量主要农作物的时空分布，查清地面现代农业设施情况。</p><p>　　据了解，全市农作物种植面积遥感测量工作涉及海安、如皋、如东、海门、启东、通州六个地区，测量数据将为科学制定三农政策提供参考。</p><p></p>                </div>
+                    <P>　　昨天下午，我市在海安县举办第七届“中国统计开放日”活动。活动现场，第三次全国农业普查员用无人机演示现场调查，这也是我市首次利用卫星遥感技术助力农业普查。 </P>
+<P>　　国家统计局将每年9月20日定为“中国统计开放日”，今年为第七届，又适逢第三次全国农业普查。此次普查中，首次利用卫星遥感技术对农作物面积进行遥感测量，全覆盖、多时相准确测量主要农作物的时空分布，查清地面现代农业设施情况。 </P>
+<P>　　据了解，全市农作物种植面积遥感测量工作涉及海安、如皋、如东、海门、启东、通州六个地区，测量数据将为科学制定三农政策提供参考。 </P>
+<P></P>                </div>
 
             </section>
 
@@ -229,15 +233,31 @@
         var userid = '';
         var newsid =513612;
         var tocommentid = '';
-        var cr_title = '【江海明珠网】我市举行"中国统计开放日"活动    首用卫星遥感技术助力农业普查';
-        var cr_img_url = 'img/dianshitai.jpg';
+        var cr_title = '【江海明珠网】南通市举行“中国统计开放日”活动';
+        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/63/122335.jpg';
         var cr_brief_cut = '　　昨天下午，我市在海安县举办第七届“中国统计开放日”活动。活动现场，...';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+           
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-22/122336/21470.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-22/122336/21470.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+            <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </html>
 

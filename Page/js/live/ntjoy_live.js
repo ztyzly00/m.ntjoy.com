@@ -8,7 +8,8 @@ var PHONE_HEIGHT = window.screen.availHeight;
 ws = new WebSocket("ws://xm.ntwifi.cn:10028");
 
 ws.onopen = function() {
-
+    var send_string = '{"header":"confirm","content":{"classify":"ntjoylive"}}';
+    ws.send(send_string);
 };
 
 ws.onmessage = function(e) {
@@ -36,6 +37,7 @@ function cssInit() {
 
 $('.chat_button').click(function() {
     var sd_msg = $('.chat_input').val();
-    ws.send(sd_msg);
+    var send_string = '{"header":"message","content":{"classify":"ntjoylive","data":"' + sd_msg + '"}}';
+    ws.send(send_string);
     $('.chat_input').val('');
 });

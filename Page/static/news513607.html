@@ -6,7 +6,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-touch-fullscreen" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>【江海明珠网】践行社会主义核心价值观   "濠滨夏夜"致敬文明典型</title>
+        <title>【江海明珠网】践行社会主义核心价值观 “濠滨夏夜”致敬文明典型</title>
         <!--加载css-->
         <link href="css/news/ntjoy_news.css" rel="stylesheet">
     </head>
@@ -59,7 +59,7 @@
             <section class="art_main_card j_article_main" data-sudaclick="articleContent">
                 <!--标题-->
                 <section class="art_title" data-sudaclick="title_share_cmnt">
-                    <h1 class="art_title_h1">践行社会主义核心价值观   "濠滨夏夜"致敬文明典型</h1>
+                    <h1 class="art_title_h1">践行社会主义核心价值观 “濠滨夏夜”致敬文明典型</h1>
                     <article class="art_title_op">
                         <time class="news_time">2016-09-22 18:39:06                            <span>江海明珠网</span>
                         </time>
@@ -75,9 +75,13 @@
                 </section>
 
                 <!--视频-->
-                
+                                    <div id="player" style="margin-bottom: 20px"></div>                   
+                    
                 <div id="art_main_card_id">
-                    <p>　　前天晚上，濠滨夏夜举行“汇聚道德力量、筑梦江海未来”专场文艺演出，进一步宣传和践行社会主义核心价值观，为全国第14个公民道德宣传日造势。</p><p>　　演出分为筑梦、追梦、圆梦三个篇章，歌舞《志愿者的旗帜飘起来》、配乐诗朗诵《南通好人之歌》、小品《三个老“烟枪”》等精彩节目，从多个角度展现了我市文明城市建设的丰硕成果。沈亚秋、赵志兰、陈新才等南通好人代表还登台与观众见面，掀起了演出的高潮。</p><p>　　长期以来，我市始终坚持以典型示范普及核心价值观，以群体效应提升城市文明程度。截至目前，全市已有6人荣获全国道德模范提名奖，13人当选江苏省道德模范，100多人荣登中国好人榜，精神文明“南通现象”享誉全国。市领导程静、朱晋观看演出。</p><p></p>                </div>
+                    <P>　　前天晚上，濠滨夏夜举行“汇聚道德力量、筑梦江海未来”专场文艺演出，进一步宣传和践行社会主义核心价值观，为全国第14个公民道德宣传日造势。 </P>
+<P>　　演出分为筑梦、追梦、圆梦三个篇章，歌舞《志愿者的旗帜飘起来》、配乐诗朗诵《南通好人之歌》、小品《三个老“烟枪”》等精彩节目，从多个角度展现了我市文明城市建设的丰硕成果。沈亚秋、赵志兰、陈新才等南通好人代表还登台与观众见面，掀起了演出的高潮。 </P>
+<P>　　长期以来，我市始终坚持以典型示范普及核心价值观，以群体效应提升城市文明程度。截至目前，全市已有6人荣获全国道德模范提名奖，13人当选江苏省道德模范，100多人荣登中国好人榜，精神文明“南通现象”享誉全国。市领导程静、朱晋观看演出。 </P>
+<P></P>                </div>
 
             </section>
 
@@ -229,15 +233,31 @@
         var userid = '';
         var newsid =513607;
         var tocommentid = '';
-        var cr_title = '【江海明珠网】践行社会主义核心价值观   "濠滨夏夜"致敬文明典型';
-        var cr_img_url = 'img/dianshitai.jpg';
+        var cr_title = '【江海明珠网】践行社会主义核心价值观 “濠滨夏夜”致敬文明典型';
+        var cr_img_url = 'http://www.ntjoy.com/liv_loadfile/63/122327.jpg';
         var cr_brief_cut = '　　前天晚上，濠滨夏夜举行“汇聚道德力量、筑梦江海未来”专场文艺演出，...';
     </script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="js/core/Jquery.lazyload.min.js"></script>
     <script src="js/news/ntjoy_news.js"></script>
 
-        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+           
+        <script type="text/javascript" src="js/ckplayer/ckplayer.min.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            var flashvars = {
+                f: "http://media.ntjoy.com/vod/vol1/2016-09-22/122328/21462.mp4",
+                c: 0,
+                p: 0,
+                r: "http://www.ntjoy.com/tiaozhuan15.html",
+                t: 15,
+                b: 1,
+                my_url: encodeURIComponent(window.location.href)
+            };
+
+            var video = ["http://media.ntjoy.com/vod/vol1/2016-09-22/122328/21462.mp4->video/mp4"];
+            CKobject.embed("js/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "100%", false, flashvars, video);
+        </script>
+            <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
 </html>
 
