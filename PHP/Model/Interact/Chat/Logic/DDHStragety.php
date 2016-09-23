@@ -2,20 +2,12 @@
 
 namespace Model\Interact\Chat\Logic;
 
-use Core\Redis\RedisFactory;
 use Core\MySql\Mysql_Model\XmMysqlObj;
-use Model\Interact\Chat\DataProcess;
 
 /**
  * 党代会消息推送策略
  */
-class DDHStragety implements IStragety {
-
-    public static function confirm($fd, $content) {
-        $redis_obj = RedisFactory::createRedisInstance();
-        $redis_key = DataProcess::GetRedisKey($content);
-        $redis_obj->hSet($redis_key, $fd, $fd);
-    }
+class DDHStragety extends Stragety {
 
     public static function message($content) {
         $return_data = '';
@@ -40,13 +32,6 @@ class DDHStragety implements IStragety {
         }
 
         return $return_data;
-    }
-
-    public static function getFdArray($content) {
-        $redis_obj = RedisFactory::createRedisInstance();
-        $redis_key = DataProcess::GetRedisKey($content);
-        $return_array = $redis_obj->hGetAll($redis_key);
-        return $return_array;
     }
 
 }

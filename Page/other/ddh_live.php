@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../../PHP/autoload.php';
 
 use Model\Other\Ddh\DdhForm;
+use Model\Other\Ddh\DdhChat;
 
 if (isset($_GET['cid'])) {
     $cid = $_GET['cid'];
@@ -25,6 +26,7 @@ if ($cid == 1) {
 
 //$content_array = DdhForm::getContent(10);
 $content_array = DdhForm::getContentByNtjoy(10);
+$chat_array = DdhChat::getChatContent(3);
 ?>
 
 <!DOCTYPE html>
@@ -70,12 +72,24 @@ $content_array = DdhForm::getContentByNtjoy(10);
                             <a style="color:#ffffff">此为用户聊天区域，发送聊天内容，等待审核通过即可显示</a>
                         </div>
                     </div>
-                    <div>
-                        <div class="chat_list" style="background-color:#f66296">
-                            <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">小编:</a>
-                            <a style="color:#ffffff">快來说两句话吧~</a>
+                    <!--                    <div>
+                                            <div class="chat_list" style="background-color:#f66296">
+                                                <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">小编:</a>
+                                                <a style="color:#ffffff">快來说两句话吧~</a>
+                                            </div>
+                                        </div>-->
+
+                    <?php
+                    for ($i = 0; $i < count($chat_array); $i++) {
+                        ?>
+                        <div>
+                            <div class="chat_list">
+                                <a class="chat_list_a_user">用户:</a><?= $chat_array[$i]['content'] ?>
+                            </div>
                         </div>
-                    </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
             <div style="padding:10px">

@@ -9,10 +9,7 @@ ignore_user_abort(true);
 
 $server = new \swoole_websocket_server("0.0.0.0", 10028);
 
-$server->on('open', function (\swoole_websocket_server $server, $request) {
-    //print_r($request);
-    //echo "server: handshake success with fd{$request->fd}\n";
-});
+$server->on('open', function (\swoole_websocket_server $server, $request) {});
 
 $server->on('message', function (\swoole_websocket_server $server, $frame) {
     DataProcess::pushData($server, $frame);
