@@ -26,6 +26,7 @@ ws.onclose = function(e) {
 /* dom加载完执行 */
 $(function() {
     cssInit();
+    loadWeiXinJs();
 });
 
 function cssInit() {
@@ -34,9 +35,67 @@ function cssInit() {
     PLAYER_HEIGHT = PLAYER_HEIGHT.substring(0, PLAYER_HEIGHT.length - 2);
     var CHATLIST_HEIGHT = PHONE_HEIGHT - (180 + parseInt(PLAYER_HEIGHT));
     $('.autoScroll').css('height', CHATLIST_HEIGHT + 'px');
-    $('.autoScroll').css('height', '100px');
+    $('.autoScroll').css('height', '130px');
     /* 频道颜色匹配 */
     $('#channel_' + cid).attr('class', 'channel_list_a active');
+    var boxId = "auto_scroll_id";
+    var boxElement = document.getElementById(boxId);
+    boxElement.scrollTop = boxElement.scrollHeight - boxElement.clientHeight;
+}
+
+/* Load WX module */
+function loadWeiXinJs() {
+
+    var cr_link = window.location.href;
+
+    $.get("/Ajax/WeiXinAjax.php", {cr_link: cr_link}, function(result) {
+
+        var Wx_attr_list = eval('(' + result + ')');
+
+        wx.config({
+            debug: false,
+            appId: Wx_attr_list['appId'],
+            timestamp: Wx_attr_list['timestamp'],
+            nonceStr: Wx_attr_list['nonceStr'],
+            signature: Wx_attr_list['signature'],
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+
+        });
+
+        wx.ready(function() {
+            wx.onMenuShareTimeline({
+                title: '【正在直播】中国共产党南通市第十二次代表大会开幕--江海明珠网、掌上南通APP同步直播',
+                link: '',
+                imgUrl: 'http://m.ntjoy.com/img/image/other/ddh/ddh_logo.png',
+                success: function() {
+
+                },
+                cancel: function() {
+
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: '【正在直播】中国共产党南通市第十二次代表大会开幕--江海明珠网、掌上南通APP同步直播',
+                desc: '【正在直播】中国共产党南通市第十二次代表大会开幕--江海明珠网、掌上南通APP同步直播',
+                link: '',
+                imgUrl: 'http://m.ntjoy.com/img/image/other/ddh/ddh_logo.png',
+                type: 'link',
+                dataUrl: '',
+                success: function() {
+
+                },
+                cancel: function() {
+
+                }
+            });
+
+        });
+    });
 }
 
 $('.chat_button').click(function() {

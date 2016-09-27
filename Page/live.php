@@ -11,6 +11,7 @@ if (isset($_GET['cid'])) {
  */
 if ($cid == 1) {
     $video_url = "http://m2.ntjoy.com/channels/nttv/NEWS/m3u8:SD"; //南通新闻综合频道
+    //$video_url = "http://media.ntjoy.com/channels/nttv/live/m3u8:live"; //南通新闻综合频道
 } elseif ($cid == 2) {
     $video_url = "http://media.ntjoy.com/channels/nttv/SOCIETY/m3u8:SD"; //南通都市生活频道
 } elseif ($cid == 3) {
@@ -64,9 +65,6 @@ if ($cid == 1) {
                     <a style="color:#ffffff">快來说两句话吧~</a>
                 </div>
             </div>
-
-
-
         </div>
 
         <!--聊天发送底部框-->

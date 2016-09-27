@@ -28,7 +28,7 @@ $hot_img_array = NewsManager::getHotImg();
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>【江海明珠网】<?= $new_content_array['title'] ?></title>
         <!--加载css-->
-        <link href="css/news/ntjoy_news.css" rel="stylesheet">
+        <link href="css/news/ntjoy_news.min.css" rel="stylesheet">
     </head>
     <body>
         <div id="main_body">

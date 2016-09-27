@@ -23,7 +23,8 @@ abstract class Stragety {
      * 处理数据
      */
     public static function message($content) {
-        
+        $push_data = $content['data'];
+        return $push_data;
     }
 
     /**

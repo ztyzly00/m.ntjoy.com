@@ -1,4 +1,6 @@
 <?php
+header('Location:http://m.ntjoy.com/404.html');
+
 require_once __DIR__ . '/../../PHP/autoload.php';
 
 use Model\Other\Ddh\DdhForm;
@@ -10,12 +12,12 @@ if (isset($_GET['cid'])) {
     $cid = 1;
 }
 
-
 /**
  * 频道播放地址
  */
 if ($cid == 1) {
-    $video_url = "http://m2.ntjoy.com/channels/nttv/NEWS/m3u8:SD"; //南通新闻综合频道
+    //$video_url = "http://media.ntjoy.com/channels/nttv/live/m3u8:live"; //南通新闻综合频道
+    $video_url = "http://media.ntjoy.com/channels/nttv/NEWS/m3u8:500k";
 } elseif ($cid == 2) {
     $video_url = "http://media.ntjoy.com/channels/nttv/SOCIETY/m3u8:SD"; //南通都市生活频道
 } elseif ($cid == 3) {
@@ -26,7 +28,7 @@ if ($cid == 1) {
 
 //$content_array = DdhForm::getContent(10);
 $content_array = DdhForm::getContentByNtjoy(10);
-$chat_array = DdhChat::getChatContent(3);
+$chat_array = DdhChat::getChatContent(300);
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +36,7 @@ $chat_array = DdhChat::getChatContent(3);
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title>江海明珠网-直播</title>
+        <title>【江海明珠网】中国共产党南通市第十二次代表大会网络直播</title>
 
         <!--加载css-->
         <link href="css/other/ddh_live.css" rel="stylesheet">
@@ -48,28 +50,17 @@ $chat_array = DdhChat::getChatContent(3);
             <div style="padding:10px 10px 0px 10px">
                 <div id="player"></div>
             </div>
-            <!--聊天列表-->
-
-            <!--    <marquee  scrollamount="6" direction="Right" class="scroll_mar">
-                    <ul class="scroll_ul">
-                        <li>这</li>
-                        <li>这次党代</li>
-                        <li>这次党代</li>
-                        <li>这次党代</li>
-                        <li>这次党代</li>
-                    </ul>
-                </marquee>-->
 
             <div style="padding:10px 10px 0px 10px">
                 <h2 style="margin-bottom: 10px">
-                    <img src="/img/image/other/connectLive-img-016.png">
+                    <img src="/img/image/other/connectLive-img-016.png" style="width:40px">
                     在线互动
                 </h2>
                 <div class="autoScroll" id="auto_scroll_id">
                     <div>
                         <div class="chat_list" style="background-color:#129bf0">
                             <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">公告通知:</a>
-                            <a style="color:#ffffff">此为用户聊天区域，发送聊天内容，等待审核通过即可显示</a>
+                            <a style="color:#ffffff">此为网友互动区域，发送留言内容，等待审核通过即可显示</a>
                         </div>
                     </div>
                     <!--                    <div>
@@ -93,7 +84,7 @@ $chat_array = DdhChat::getChatContent(3);
                 </div>
             </div>
             <div style="padding:10px">
-                <h2 style="margin-bottom: 10px"><img src="/img/image/other/icon-calendar.png">实时报道</h2>
+                <h2 style="margin-bottom: 10px"><img src="/img/image/other/icon-calendar.png" style="height:40px;width: 40px"> 实时报道</h2>
                 <div class="calendar js-same-height" data-related-selector=".js-left-video" tabindex="0" style="overflow: hidden; outline: none; ">
 
                     <?php
@@ -117,7 +108,7 @@ $chat_array = DdhChat::getChatContent(3);
             <!--聊天发送底部框-->
             <div class="bottom" align="center">
                 <div>
-                    <input class="chat_input" type="text" placeholder="请输入内容">
+                    <input class="chat_input" type="text" placeholder="请输入内容,审核通过即显示">
                     <button class="chat_button" type="button">
                         发送
                     </button>
@@ -144,8 +135,8 @@ $chat_array = DdhChat::getChatContent(3);
             var video = ["<?= $video_url ?>->video/m3u8"];
             CKobject.embed("http://media.ntjoy.com/ckplayer/ckplayer.swf", "player", "ckplayer_player", "100%", "95%", false, flashvars, video);
         </script>
-        <!--<script src="js/live/ntjoy_live.js"></script>-->
-        <script src="js/other/ddh_live.js"></script>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="js/other/ddh_live.js?randomId=<?= time() ?>"></script>
     </body>
 
 </html>

@@ -37,7 +37,7 @@ class DdhForm {
         $ntjoy_mysql_obj = MysqlObj::getInstance();
         $query = "select * from liv_contentmap lc "
                 . "left join liv_article_contentbody lac on lac.articleid=lc.contentid "
-                . "where columnid=1738 order by pubdate desc limit $count";
+                . "where columnid=1738 and status!=6 order by pubdate desc limit $count";
         $fetch_array = $ntjoy_mysql_obj->fetch_assoc($query);
         for ($i = 0; $i < count($fetch_array); $i++) {
             $fetch_array[$i]['time'] = date("Y-m-d H:i:s", $fetch_array[$i]['pubdate']);
