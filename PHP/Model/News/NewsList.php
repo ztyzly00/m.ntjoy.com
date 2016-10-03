@@ -30,7 +30,7 @@ class NewsList {
             $mysql_obj = MysqlObj::getInstance();
             $query = "select id from liv_contentmap lc "
                     . "left join liv_article la on lc.contentid=la.articleid "
-                    . "where lc.columnid=$column_id and la.liv_outlink='' "
+                    . "where lc.columnid=$column_id and la.liv_outlink='' and lc.status!=6 "
                     . "order by lc.pubdate desc limit $offset,$count";
             $article_list_raw = $mysql_obj->fetch_assoc($query);
             $article_list = $article_list_raw;
@@ -59,7 +59,7 @@ class NewsList {
         $mysql_obj = MysqlObj::getInstance();
         $query = "select id from liv_contentmap lc "
                 . "left join liv_article la on lc.contentid=la.articleid "
-                . "where lc.columnid=$column_id and la.liv_outlink='' "
+                . "where lc.columnid=$column_id and la.liv_outlink=''  and lc.status!=6 "
                 . "order by lc.pubdate desc limit 0,$count";
         $article_list_raw = $mysql_obj->fetch_assoc($query);
         $article_list = $article_list_raw;

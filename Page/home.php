@@ -140,11 +140,6 @@ $news_list = NewsManager::getNewsList($column_id);
             </ul>
         </section>
 
-        <!--党代会广告-->
-        <div>
-            <a href="http://www.ntjoy.com/zt/zt2016x/ddh/"><img src="/img/image/other/ddh/ddh_ad.png" style="width:100%"></a>
-        </div>
-
         <!--新闻区域-->
         <section class="card_module j_normal_card " id="main_news">            
             <?php
@@ -175,10 +170,10 @@ $news_list = NewsManager::getNewsList($column_id);
                             <img src="http://www.ntjoy.com/res/sy201308/images/G20l.jpg" width="100%">
                             <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
                         </a>-->
-            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
+<!--            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
                 <img src="img/image/xiangmu.jpg" width="100%">
-                <!--<img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">-->
-            </a>
+                <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
+            </a>-->
         </section>
         <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
             <span class="loading">小镇加载中.....</span>

@@ -8,7 +8,7 @@ if (!isset($_GET['keyword'])) {
 }
 
 if (!$key_word) {
-    $key_word = '南通';
+    $key_word = ' ';
 }
 ?>
 

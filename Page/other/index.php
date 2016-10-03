@@ -1,0 +1,1 @@
+/opt/web/xm.ntwifi.cn/index.php
