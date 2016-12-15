@@ -1,4 +1,6 @@
-﻿<?php
+<?php
+//header('Location:http://m.ntjoy.com/404.html');
+
 require_once __DIR__ . '/../../PHP/autoload.php';
 
 use Model\Other\Ddh\DdhForm;
@@ -15,8 +17,7 @@ if (isset($_GET['cid'])) {
  */
 if ($cid == 1) {
     //$video_url = "http://media.ntjoy.com/channels/nttv/live/m3u8:live"; //南通新闻综合频道
-    //$video_url = "http://media.ntjoy.com/channels/nttv/NEWS/m3u8:500k";
-$video_url = "http://media.ntjoy.com/channels/nttv/LIVE_NEW/m3u8:SD";
+    $video_url = "http://media.ntjoy.com/channels/nttv/NEWS/m3u8:500k";
 } elseif ($cid == 2) {
     $video_url = "http://media.ntjoy.com/channels/nttv/SOCIETY/m3u8:SD"; //南通都市生活频道
 } elseif ($cid == 3) {
@@ -35,7 +36,7 @@ $chat_array = DdhChat::getChatContent(300);
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
         <meta charset="UTF-8">
-        <title>【正在直播】2016南通大众创业 万众创新 “通创荟”走进南通高校直播-江海明珠网</title>
+        <title>【江海明珠网】中国共产党南通市第十二次代表大会网络直播</title>
 
         <!--加载css-->
         <link href="css/other/ddh_live.css" rel="stylesheet">
@@ -43,23 +44,9 @@ $chat_array = DdhChat::getChatContent(300);
     </head>
     <body>
         <div class="main_panel">
-            <!--            <div>
-                            <button class="chat_button" type="button" style="width:28%">
-                                <a href="?cid=1"><font style="color:#ffffff"> 南通一套</font></a>
-                            </button>
-                            <button class="chat_button" type="button" style="width:28%">
-                                <a href="?cid=2"><font style="color:#ffffff">南通二套</font></a>
-                            </button>
-                            <button class="chat_button" type="button" style="width:28%">
-                                <a href="?cid=3"> <font style="color:#ffffff">南通三套</font></a>
-                            </button>
-            
-                        </div>-->
-
-            <div>
-                <img src="img/image/other/ddh/tch.jpg" style="width:100%;height: 100%">
+            <div>            
+                <img src="img/image/other/ddh.jpg" width="100%">
             </div>
-
             <div style="padding:10px 10px 0px 10px">
                 <div id="player"></div>
             </div>
@@ -67,22 +54,13 @@ $chat_array = DdhChat::getChatContent(300);
             <div style="padding:10px 10px 0px 10px">
                 <h2 style="margin-bottom: 10px">
                     <img src="/img/image/other/connectLive-img-016.png" style="width:40px">
-                    活动介绍
+                    在线互动
                 </h2>
                 <div class="autoScroll" id="auto_scroll_id">
                     <div>
                         <div class="chat_list" style="background-color:#129bf0">
-                            <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600"></a>
-                            <a style="color:#ffffff">
-<p>
-&nbsp;&nbsp;“通创荟”，是“创新南通”服务平台的线下活动形式。主要针对草根创客、初创企业，鼓励本地青年创新创业，吸引市外优秀人才来通创业，引导国内知名创投风投机构来通投资。通过活动，在全市上下创造大众创业万众创新的良好氛围，提升全市经济创新发展活力。</p>
-  <p> &nbsp;&nbsp; “通创荟”系列活动，包括定期举办的投资对接活动、通创训练营、通创分享汇和创新创业大赛等。活动年内还将走进县（市）区、走进知名院校、走进中关村等地开展，持续扩大品牌影响力，促进创新创业成果落地和产业化，吸引全国创新资源来通落地。</p>
-    <p>&nbsp;&nbsp;针对“创新南通”服务平台线上线下活动，市科技局力争每年在“创新南通”平台上形成500个创新创业项目对接投资、增加500件发明专利、新增50家小微高企、20家“新三板”挂牌或进入辅导科技型企业。</p>
-
-    <p>&nbsp;&nbsp;“创新南通”服务平台，是为满足创新创业者及小微企业不同层面需求而打造的开放式、低成本、便利化、全要素的纯公益性的一站式服务平台，也是目前省内首家、国内功能最完整的全链式创新创业综合服务服务平台。</p>
-    <p>&nbsp;&nbsp;平台采取“线上+线下”相结合的形式，线上提供创新创业路径导航，线下提供承载创新创业活动的众创空间、公共服务和具体扶持政策，以及为创新创业对接投融资的“通创荟”系列活动。该平台主要有9个功能模块，即创业导航、通创荟、众创空间、最新发布、江海南通、创想邦、双创服务、创新驿站、创新地图。</p>
-
-</a>
+                            <a class="chat_list_a_user" style="color:#ffffff;font-weight: 600">公告通知:</a>
+                            <a style="color:#ffffff">此为网友互动区域，发送留言内容，等待审核通过即可显示</a>
                         </div>
                     </div>
                     <!--                    <div>
@@ -105,9 +83,30 @@ $chat_array = DdhChat::getChatContent(300);
                     ?>
                 </div>
             </div>
+            
+            <div style="padding:10px">
+                <h2 style="margin-bottom: 10px"><img src="/img/image/other/icon-calendar.png" style="height:40px;width: 40px"> 实时报道</h2>
+                <div class="calendar js-same-height" data-related-selector=".js-left-video" tabindex="0" style="overflow: hidden; outline: none; ">
 
+                    <?php
+                    for ($i = 0; $i < count($content_array); $i++) {
+                        ?>
+                        <div class="calendar-item">
+                            <div class="calendar-item-title">
+                                <p>
+                                    <img src="img/image/other/connectLive-img-013.jpg" class="timelist">
+                                    <span><?= $content_array[$i]['time'] ?></span>
+                                </p>
+                                <h4><?= $content_array[$i]['content'] ?></h4>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>               
+                </div>
+            </div>
 
-            <!--聊天发送底部框
+            <!--聊天发送底部框-->
             <div class="bottom" align="center">
                 <div>
                     <input class="chat_input" type="text" placeholder="请输入内容,审核通过即显示">
@@ -115,7 +114,7 @@ $chat_array = DdhChat::getChatContent(300);
                         发送
                     </button>
                 </div>
-            </div>-->
+            </div>
         </div>
         <!--js引入-->
         <script>

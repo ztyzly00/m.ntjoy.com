@@ -6,6 +6,7 @@
 
 namespace Model\News;
 
+use Config\WebConfig;
 use Core\MySql\Mysql_Model;
 use Core\Redis\RedisFactory;
 use Model\News\NewsModify;
@@ -24,7 +25,13 @@ class NewsInfo {
         $redis_obj = RedisFactory::createRedisInstance();
         $redis_key = 'newsinfo_' . $id;
 
-        if (!$return_array = $redis_obj->hGetAll($redis_key)) {
+        if (WebConfig::$cache) {
+            $return_array = $redis_obj->hGetAll($redis_key);
+        } else {
+            $return_array = [];
+        }
+
+        if (!$return_array) {
             /* 缓存未命中 */
             $mysql_obj = Mysql_Model\MysqlObj::getInstance();
             $query = "select "
@@ -40,11 +47,10 @@ class NewsInfo {
             /* 处理数据 */
             $return_array = NewsModify::processNewsInfo($mysql_obj->fetch_assoc($query));
 
-            /* 缓存数据 */
-            $redis_obj->hMset($redis_key, $return_array);
-
-            /* 1小时超时时间 */
-            $redis_obj->setTimeout($redis_key, 3600);
+            if (WebConfig::$cache) {
+                $redis_obj->hMset($redis_key, $return_array);
+                $redis_obj->setTimeout($redis_key, 3600);
+            }
         }
 
         return $return_array;

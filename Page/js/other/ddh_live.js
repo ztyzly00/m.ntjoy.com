@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Zanuck on 2016/5/16.
  * 小镇
  */
@@ -35,7 +35,7 @@ function cssInit() {
     PLAYER_HEIGHT = PLAYER_HEIGHT.substring(0, PLAYER_HEIGHT.length - 2);
     var CHATLIST_HEIGHT = PHONE_HEIGHT - (180 + parseInt(PLAYER_HEIGHT));
     $('.autoScroll').css('height', CHATLIST_HEIGHT + 'px');
-    $('.autoScroll').css('height', '130px');
+    $('.autoScroll').css('height', '250px');
     /* 频道颜色匹配 */
     $('#channel_' + cid).attr('class', 'channel_list_a active');
     var boxId = "auto_scroll_id";
@@ -69,9 +69,9 @@ function loadWeiXinJs() {
 
         wx.ready(function() {
             wx.onMenuShareTimeline({
-                title: '【正在直播】中国共产党南通市第十二次代表大会开幕--江海明珠网、掌上南通APP同步直播',
+                title: '【正在直播】2016南通大众创业 万众创新 “通创荟”走进南通高校直播-江海明珠网',
                 link: '',
-                imgUrl: 'http://m.ntjoy.com/img/image/other/ddh/ddh_logo.png',
+                imgUrl: 'http://m.ntjoy.com/img/image/other/ddh/tch_logo_small.png',
                 success: function() {
 
                 },
@@ -80,10 +80,10 @@ function loadWeiXinJs() {
                 }
             });
             wx.onMenuShareAppMessage({
-                title: '【正在直播】中国共产党南通市第十二次代表大会开幕--江海明珠网、掌上南通APP同步直播',
-                desc: '【正在直播】中国共产党南通市第十二次代表大会开幕--江海明珠网、掌上南通APP同步直播',
+                title: '【正在直播】2016南通大众创业 万众创新 “通创荟”走进南通高校直播-江海明珠网',
+                desc: '【正在直播】2016南通大众创业 万众创新 “通创荟”走进南通高校直播-江海明珠网',
                 link: '',
-                imgUrl: 'http://m.ntjoy.com/img/image/other/ddh/ddh_logo.png',
+                imgUrl: 'http://m.ntjoy.com/img/image/other/ddh/tch_logo_small.png',
                 type: 'link',
                 dataUrl: '',
                 success: function() {

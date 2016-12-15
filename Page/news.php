@@ -2,6 +2,7 @@
 ob_start();
 require_once __DIR__ . '/../PHP/autoload.php';
 
+use Config\WebConfig;
 use Manager\NewsManager;
 
 $id = $_GET['id'];
@@ -295,5 +296,7 @@ $hot_img_array = NewsManager::getHotImg();
 
 <?php
 $flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
+if (WebConfig::$static) {
+    file_put_contents(__DIR__ . "/static/news" . $id . ".html", $flush);
+}
 ?>

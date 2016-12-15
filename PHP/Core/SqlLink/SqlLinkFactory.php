@@ -9,6 +9,7 @@ class SqlLinkFactory {
     public static $tp_instance;
     public static $common_instance;
     public static $xm_instance;
+    public static $search_instance;
 
     public static function createNtjoyDatabase($opt = 0) {
         if ($opt == 0) {
@@ -46,6 +47,26 @@ class SqlLinkFactory {
             $new_instance->setUserName('webuser');
             $new_instance->setPassWord('webuserpassword');
             $new_instance->setDataBase('m_ntjoy_com');
+            return $new_instance;
+        }
+    }
+
+    public static function createSearchDatabase($opt = 0) {
+        if ($opt == 0) {
+            if (self::$search_instance == NULL) {
+                self::$search_instance = new SqlLinkInstance();
+                self::$search_instance->setServer('192.168.20.2');
+                self::$search_instance->setUserName('webuser');
+                self::$search_instance->setPassWord('webuserpassword');
+                self::$search_instance->setDataBase('scraper');
+            }
+            return self::$search_instance;
+        } else {
+            $new_instance = new SqlLinkInstance();
+            $new_instance->setServer('192.168.20.2');
+            $new_instance->setUserName('webuser');
+            $new_instance->setPassWord('webuserpassword');
+            $new_instance->setDataBase('scraper');
             return $new_instance;
         }
     }

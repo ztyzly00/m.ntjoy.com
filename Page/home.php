@@ -3,6 +3,7 @@ ob_start();
 
 require_once __DIR__ . '/../PHP/autoload.php';
 
+use Config\WebConfig;
 use Manager\NewsManager;
 
 if (!isset($_GET['columnid'])) {
@@ -170,13 +171,13 @@ $news_list = NewsManager::getNewsList($column_id);
                             <img src="http://www.ntjoy.com/res/sy201308/images/G20l.jpg" width="100%">
                             <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
                         </a>-->
-<!--            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
-                <img src="img/image/xiangmu.jpg" width="100%">
-                <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
-            </a>-->
+            <!--            <a href="http://www.ntjoy.com/zt/zt2016/xmjxs/">
+                            <img src="img/image/xiangmu.jpg" width="100%">
+                            <img src="http://i1.piimg.com/4851/09ede60e4492aa60.jpg" width="100%">
+                        </a>-->
         </section>
         <aside class="load-more j_load_bar" id="load_more_id" style="display:none">
-            <span class="loading">小镇加载中.....</span>
+            <span class="loading">加载中.....</span>
         </aside>
 
         <!--回顶部-->
@@ -211,5 +212,9 @@ $news_list = NewsManager::getNewsList($column_id);
 
 <?php
 $flush = ob_get_contents();
-file_put_contents(__DIR__ . "/static/home" . $column_id . ".html", $flush);
+
+if (WebConfig::$static) {
+    file_put_contents(__DIR__ . "/static/home" . $column_id . ".html", $flush);
+}
+
 ?>

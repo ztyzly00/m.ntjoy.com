@@ -8,6 +8,7 @@
 
 namespace Model\News;
 
+use Config\WebConfig;
 use Model\News\NewsInfo;
 use Core\MySql\Mysql_Model\MysqlObj;
 use Core\Redis\RedisFactory;
@@ -22,21 +23,31 @@ class NewsList {
      * @return type
      */
     public static function getNewsListByColumnId($column_id, $offset, $count) {
+
         $redis_obj = RedisFactory::createRedisInstance();
 
-        //超出缓存范围将如何处理,暂不做处理，没人会看这么多的新闻，人数多了在考虑
-        //未击中缓存，后续有需求才用到，暂时不需要缓存击中
-        if (!$news_list = $redis_obj->lRange('news_list' . $column_id, $offset, $offset + $count - 1)) {
+        if (WebConfig::$cache) {
+            $news_list = $redis_obj->lRange('news_list' . $column_id, $offset, $offset + $count - 1);
+        } else {
+            $news_list = [];
+        }
+
+        if (!$news_list) {
+
             $mysql_obj = MysqlObj::getInstance();
             $query = "select id from liv_contentmap lc "
                     . "left join liv_article la on lc.contentid=la.articleid "
                     . "where lc.columnid=$column_id and la.liv_outlink='' and lc.status!=6 "
                     . "order by lc.pubdate desc limit $offset,$count";
+
             $article_list_raw = $mysql_obj->fetch_assoc($query);
             $article_list = $article_list_raw;
+
             foreach ($article_list as $value) {
                 foreach ($value as $id) {
-                    $redis_obj->rpush('news_list' . $column_id, $id);
+                    if (WebConfig::$cache) {
+                        $redis_obj->rpush('news_list' . $column_id, $id);
+                    }
                     $news_list[] = $id;
                 }
             }
